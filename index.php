@@ -14,7 +14,9 @@
 		<div class="jumbotron">
 		    <h1>Dulles Robotics Club Points Page</h1>
 		</div>
-		<?phpinfo();?>
+		<?php
+		echo phpinfo();
+		?>
 		
 		
 		
