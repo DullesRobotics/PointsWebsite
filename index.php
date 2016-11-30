@@ -10,7 +10,11 @@
 
 	</head>
 	<body>
-		<h1>TEST OK</h1>
+		<nav class="navbar navbar-inverse"
+		<div class="jumbotron">
+		    <h1>Dulles Robotics Club Points Page</h1>
+		</div>
+		<?phpinfo();?>
 		
 		
 		
