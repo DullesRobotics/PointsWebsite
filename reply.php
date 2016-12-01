@@ -6,15 +6,9 @@
         <h1>Response</h1>
         <?php
             $raw = file_get_contents('php://input');
-            echo $raw;
-            $payload = $_POST['payload'];
-            echo var_dump($payload);
-            echo "\r\n";
-            $rcvObj = json_decode($payload);
-            
-            echo var_dump($rcvObj);
-            echo "\r\n";
-            echo $rcvObj->time;
+            echo "Raw: " . $raw;
+            $contents = split(":", $raw);
+            echo "      ID: " . $contents[1];
         ?>
     </body>
 </html>
