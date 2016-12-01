@@ -7,6 +7,8 @@
         <?php
             $payload = $_POST['payload'];
             $rcvObj = json_decode($payload);
+            echo $payload;
+            echo "\r\n";
             echo var_dump($rcvObj);
             echo "\r\n";
             echo $rcvObj->time;
