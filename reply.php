@@ -8,7 +8,8 @@
             $raw = file_get_contents('php://input');
             echo "Raw: " . $raw;
             $contents = split(":", $raw);
-            echo "      ID: " . $contents[1];
+            $id = trim(str_replace("}", "", $contents[1]));
+            echo "      ID: " . $id;
         ?>
     </body>
 </html>
