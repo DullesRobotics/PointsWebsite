@@ -5,10 +5,12 @@
     <body>
         <h1>Response</h1>
         <?php
+            $raw = file_get_contents('php://input');
             $payload = $_POST['payload'];
-            $rcvObj = json_decode($payload);
-            echo $payload;
+            echo var_dump($payload);
             echo "\r\n";
+            $rcvObj = json_decode($payload);
+            
             echo var_dump($rcvObj);
             echo "\r\n";
             echo $rcvObj->time;
