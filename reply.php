@@ -11,5 +11,6 @@
             $id = trim(str_replace("}", "", $contents[1]));
             echo "      ID: " . $id;
         ?>
+        <h3>Cron job test</h3>
     </body>
 </html>
