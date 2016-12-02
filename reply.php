@@ -11,7 +11,7 @@
             $id = trim(str_replace("}", "", $contents[1]));
             echo "      ID: " . $id;
             
-            $file = fopen("/logs/scannedId","a+") or die("cant open/create file");
+            $file = fopen("/logs/scannedID.txt","a+") or die("cant open/create file");
             fwrite($file,$id."\n");
             fclose($file);
         ?>
