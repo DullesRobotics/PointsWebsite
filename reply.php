@@ -10,6 +10,10 @@
             $contents = split(":", $raw);
             $id = trim(str_replace("}", "", $contents[1]));
             echo "      ID: " . $id;
+            
+            $file = fopen("/logs/scannedId","a+") or die("cant open/create file");
+            fwrite($file,$id."\n");
+            fclose($file);
         ?>
         <h3>Cron job test</h3>
     </body>
