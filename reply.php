@@ -18,14 +18,15 @@
             fclose($file);
             
             $time = date('Y-m-d h:i:s');
-            echo $time;
+            echo "      Time: " . $time;
 
         try {
             $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
          // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "\nConnected successfully\n";
-            $sql = "INSERT INTO 'attendance' (badgeID,time) VALUES ($id,$time)";
+            $sql = "INSERT INTO 'attendance' (badgeID,timeScanned) VALUES ($id,$time)"; //Dont forget to change column
+            //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
             //$sql = "INSERT INTO 'attendance' (badgeID) VALUES ($id)";
             $conn->exec($sql);
             echo "New record created successfully";
