@@ -17,7 +17,8 @@
             fwrite($file,$id."\n");
             fclose($file);
             
-            $timeVar = date('Y-m-d H:i:s');
+            //$timeVar = date('Y-m-d H:i:s');
+            $timeVar = CURRENT_TIMESTAMP;
             echo "      Time: " . $timeVar;
 
         try {
