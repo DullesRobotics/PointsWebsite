@@ -17,7 +17,7 @@
             fwrite($file,$id."\n");
             fclose($file);
             
-            $timeVar = date('Y-m-d h:i:s');
+            $timeVar = date('Y-m-d H:i:s');
             echo "      Time: " . $timeVar;
 
         try {
