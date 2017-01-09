@@ -19,7 +19,7 @@
             
             //$timeVar = date('Y-m-d H:i:s');
             $timeVar = CURRENT_TIMESTAMP;
-            echo "      Time: " . $timeVar;
+            //echo "      Time: " . $timeVar;
 
         try {
             $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
@@ -30,11 +30,11 @@
             //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
             //$sql = "INSERT INTO 'attendance' (badgeID) VALUES ($id)";
             $conn->exec($sql);
-            echo "New record created successfully";
+            echo "\nNew record created successfully\n";
           }
         catch(PDOException $e)
             {
-                echo "Connection failed: " . $e->getMessage();
+                echo "\nConnection failed: " . $e->getMessage();
             }
             
         ?>
