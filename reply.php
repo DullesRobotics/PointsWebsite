@@ -53,13 +53,15 @@
                         $currentTime = strtotime(date('Y-m-d H:i:s'));
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime; 
-                        echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
+                            echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
+                            $pointsToAdd = $difference % 60;
+                            echo "Points to add: ".$pointsToAdd."\n";
                         }
                         break;
                     }
