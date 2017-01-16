@@ -48,11 +48,9 @@
                 //$attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        echo "0";
                         $lastScanTime = new DateTime($person['Last_Time']);
-                        echo "1";
                         $currentTime = new DateTime("now");
-                        echo "2";
+                        echo "Now: ".$currentTime."\n";
                         $difference = $lastScanTime->diff($currentTime); 
                         echo "Last Scan: ".$difference;
                         if ($person["Signed_In"] % 2 == 0){
