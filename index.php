@@ -23,7 +23,7 @@
                  return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
              }
              else {
-                 return strlen($stringID).$stringID;
+                 return null;
              }
         }
         function getIdImageHTMLwithDim($StringId,$w,$h){
@@ -65,6 +65,7 @@
 		<table class="tg">
 		  <tr>
 		    <th class="tg-5ofl">Rank</th>
+		    <th class="tg-5ofl"Picture</th>
 		    <th class="tg-5ofl">First Name</th>
 		    <th class="tg-5ofl">Last Name</th>
 		    <th class="tg-5ofl">Points</th>
@@ -75,11 +76,12 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
+                $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "86", "114");
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
-                    //$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
-                    $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
-					echo "<td class = \"tg-c3ly\">".$imgHTML.$person['First_Name']."</td>";
+                    
+                    echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
+					echo "<td class = \"tg-c3ly\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
@@ -91,6 +93,7 @@
 					
 				} else {
 					echo "<td class = \"tg-7ttm\">".$indexOn."</td>";
+                    echo "<td class = \"tg-7ttm\">".$imgHTML."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
