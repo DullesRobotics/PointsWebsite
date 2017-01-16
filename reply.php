@@ -18,11 +18,11 @@
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
             $outputFile = fopen("logs/output.txt","a+") or die ("cant create/open/write to output file");
             fwrite($file,$id."\n");
-            fwrite($outputFile,"------------------------\n");
+            /*fwrite($outputFile,"------------------------\n");
             fwrite($outputFile,"ID: ".$id."\n");
             fwrite($outputFile,"raw: ".$raw."\n");
             fwrite($outputFile,"contents 1: ".$contents[1]."\n");
-            fwrite($outputFile,"------------------------");
+            fwrite($outputFile,"------------------------");*/
             fclose($outputFile);
             fclose($file);
             
@@ -43,7 +43,16 @@
             catch(PDOException $e)
                 {
                     echo "\nConnection failed: " . $e->getMessage();
+                    exit;
                 }
+        $getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
+        $getMember->execute();
+        $data = $getMembers->fetchAll();
+        foreach ($data as $person) {
+            if ($person['Tag_ID'] == $id) {
+                echo 'Found Person';
+            }
+        }
         ?>
         <h3>Cron job test</h3>
     </body>
