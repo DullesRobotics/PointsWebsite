@@ -49,8 +49,10 @@
         $getMember->execute();
         $data = $getMembers->fetchAll();
         foreach ($data as $person) {
-            if ($person['Tag_ID'] == $id) {
+            if (trim($person['Tag_ID']) == trim($id)) {
                 echo 'Found Person';
+            } else {
+                echo 'No Match: '.$person['Tag_ID']." not equal to ".$person['Tag_ID'];
             }
         }
         ?>
