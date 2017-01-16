@@ -10,8 +10,7 @@
             echo "Raw: " . $raw;
             $contents = split(":", $raw);
             //$id = trim(str_replace("}", "", $contents[1]));
-            $id = trim(substr($contents[1],1,-6)) ?: 'No Value';
-            $compare = 'No Value';
+            $id = trim(substr($contents[1],1,-6)) ?: '0000';
             echo "      ID: " .$id;
             
             
@@ -30,7 +29,6 @@
             //$timeVar = date('Y-m-d H:i:s');
             //$timeVar = CURRENT_TIMESTAMP;
             //echo "      Time: " . $timeVar;
-        if ($id == $compare){
             try {
                 $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
              // set the PDO error mode to exception
@@ -46,9 +44,6 @@
                 {
                     echo "\nConnection failed: " . $e->getMessage();
                 }
-        } else {
-         echo "ID has no value\n";   
-        }
         ?>
         <h3>Cron job test</h3>
     </body>
