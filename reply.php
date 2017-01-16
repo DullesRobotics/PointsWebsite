@@ -41,7 +41,7 @@
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
-                $getAttendance = $conn->prepare("SELECT * FROM attendance ORDER BY timeScanned DESC");
+                $getAttendance = $conn->prepare("SELECT * FROM attendance WHERE timeScanned > unix_timestamp() + 43200");
                 $getMembers->execute();
                 $getAttendance->execute();
                 $data = $getMembers->fetchAll();
@@ -49,17 +49,8 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         foreach($attendanceData as $row){
-                            $dateFromDatabase = new DateTime($row['timeScanned']);
-                            $dateTwelveHoursAgo = new DateTime(date('Y-m-d H:i:s'));
-                            $tosub = new DateInterval('PT12H');
-                            $date->sub($tdateTwelveHoursAgo);
-                            var_dump($dateFromDatabase ->diff($dateTwelveHoursAgo));
                             if ($row['badgeID'] == $id) {
-                               if($dateFromDatabase > $dateTwelveHoursAgo){
-                                  echo "Greater than 12 hours";
-                               }else{
-                                  echo "Less than 12 hours";
-                               }
+                               echo "Greater?";
                             }
                         }
                         if ($person["Signed_In"] % 2 == 0){
