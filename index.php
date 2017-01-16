@@ -57,11 +57,13 @@
 			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
 			.tg .tg-fity{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center;vertical-align:top}
 			.tg .tg-7ttm{font-size:36px;text-align:center}
+			.tg .tg-7ttj{font-size:36px;text-decoration:underline;text-align:center}
 			.tg .tg-qj3h{font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-5ofl{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center}
 			.tg .tg-5ofk{font-size:20px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:#b1c2ff;color:#000000;text-align:center;vertical-align:top}
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
+			.tg .tg-c3lz{background-color:#D2E4FC;text-decoration:underline;font-size:36px;text-align:center}
 		</style>
 		<table class="tg">
 		  <tr>
@@ -79,11 +81,11 @@
                 		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$indexOn." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Points']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
@@ -99,17 +101,17 @@
 					
 				} else {
 					if ($indexOn == 1){
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$indexOn." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Points']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Num_Meetings']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$person['Num_Meetings']." </font></td>";
 					} elseif ($indexOn == 3){
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$indexOn." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
