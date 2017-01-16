@@ -28,12 +28,11 @@
         }
         function getIdImageHTMLwithDim($StringId,$w,$h){
             $url = getIDurl($StringID);
-            if(url !== null){
-                return "<img src=". $url . " height='" . $h . "' width ='" .$w.">";
-            }
-            else{
-                return "";
-            }
+  
+                //return "<img src=". $url . " height='" . $h . "' width ='" .$w.">";
+                return "<img src=". $url .">";
+
+        
         }
 		try
 		{
