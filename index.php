@@ -78,7 +78,8 @@
 				echo "<tr>";
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
-					echo "<td class = \"tg-c3ly\">".getIdImageHTMLwithDim($person['Student_ID'], "43", "57").$person['First_Name']."</td>";
+                    $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
+					echo "<td class = \"tg-c3ly\">".$person['Student_ID'].$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
