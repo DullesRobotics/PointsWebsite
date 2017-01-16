@@ -17,6 +17,7 @@
             
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
             $outputFile = fopen("logs/output.txt","a+") or die ("cant create/open/write to output file");
+            $signedLogs = fopen("logs/attendanceLogs.txt","a+") or die("cant open/create file");
             fwrite($file,$id."\n");
             /*fwrite($outputFile,"------------------------\n");
             fwrite($outputFile,"ID: ".$id."\n");
@@ -43,7 +44,18 @@
                 $getMembers->execute();
                 $data = $getMembers->fetchAll();
                 $conn->exec("UPDATE Members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
-                echo("Successfully updated");
+                foreach($data as $person){
+                    if ($person["Tag_ID"] == $id){
+                        if ($person["Signed_In"] % 2 == 0){
+                            echo $person["First_Name"].$person["Last_Name"]." successfully signed out. \n";
+                            fwrite($signedLogs,$person["First_Name"].$person["Last_Name"]." successfully signed out. \n");
+                        } else {
+                            echo $person["First_Name"].$person["Last_Name"]." successfully signed in. \n";
+                            fwrite($signedLogs,$person["First_Name"].$person["Last_Name"]." successfully signed in. \n");
+                        }
+                    }
+                }
+                echo("Successfully Updated\n");
               }
             catch(PDOException $e)
                 {
