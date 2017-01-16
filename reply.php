@@ -53,10 +53,10 @@
                             $dateTwelveHoursAgo = strtotime("-12 hours");
                             if ($row['badgeID'] == $id) {
                                 if ($dateFromDatabase >= $dateTwelveHoursAgo) {
-                                    echo "Less than 12 hours.";
+                                    echo "Less than 12 hours.\n";
                                 }
                                 else {
-                                    echo "Greater than 12 hours.";
+                                    echo "Greater than 12 hours.\n";
                                 }
                             }
                         }
