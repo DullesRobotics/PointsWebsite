@@ -25,7 +25,9 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
+		
 		$getFirstNames = $conn->prepare("SELECT First_Name FROM Members");
+		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
 		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
@@ -61,7 +63,6 @@
 		    <td class="tg-w08d">0</td>
 		  </tr>
 		</table>
-		?>
 	</div>
         <!-- Bootstrap - Latest compiled JavaScript -->
        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
