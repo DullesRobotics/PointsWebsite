@@ -76,11 +76,10 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
-                $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
+                		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
-                    
-                    echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
+                    			echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
@@ -92,12 +91,28 @@
 					}
 					
 				} else {
-					echo "<td class = \"tg-7ttm\">".$indexOn."</td>";
-                    echo "<td class = \"tg-7ttm\">".$imgHTML."</td>";
-					echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
-					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
-					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
-					echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
+					if ($indexOn == 1){
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Num_Meetings']." </font></td>";
+					} elseif ($indexOn == 3){
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
+					} else {
+						echo "<td class = \"tg-7ttm\">".$indexOn."</td>";
+						echo "<td class = \"tg-7ttm\">".$imgHTML."</td>";
+						echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
+						echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
+						echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
+						echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
+					}
 					if ($person['Signed_In']%2 == 0){
 						echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
 					} else {
