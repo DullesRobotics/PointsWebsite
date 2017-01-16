@@ -17,6 +17,23 @@
 		</h1>
 		<?php
 		require("secretSettings.php");
+        function getIDurl($stringID){
+             if (strlen($stringID) == 6){
+                 return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
+             }
+             else {
+                 return null;
+             }
+        }
+        function getIdImageHTMLwithDim($StringId,$w,$h){
+            $url = getIDurl($StringID);
+            if(url !== null){
+                return "<img src=" + url + " height='" . $h . "' width ='" .$w."'>";
+            }
+            else{
+                return "";
+            }
+        }
 		try
 		{
 		   $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
