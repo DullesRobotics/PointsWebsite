@@ -41,12 +41,14 @@
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
+                $getAttendance = $conn->prepare("SELECT * FROM attendance");
                 $getMembers->execute();
+                $getAttendance->execute();
                 $data = $getMembers->fetchAll();
+                $attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $lastRecord = $conn->exec("SELECT badgeID, timeScanned FROM attendance");
-                        echo "Record: ".$lastRecord;
+                        
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
