@@ -15,7 +15,7 @@
 		    <h1>Dulles Robotics Club Points Page</h1>
 		</div>
 		<?php
-		echo phpinfo();
+		//echo phpinfo();
 		?>
 		
 		
