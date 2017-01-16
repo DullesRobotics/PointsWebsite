@@ -11,7 +11,8 @@
             $contents = split(":", $raw);
             //$id = trim(str_replace("}", "", $contents[1]));
             $id = trim(substr($contents[1],1,-6));
-            echo "      ID: " . $id;
+            echo "      ID: " .($id) ? 'No Value';
+            
             
             
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
@@ -28,23 +29,25 @@
             //$timeVar = date('Y-m-d H:i:s');
             $timeVar = CURRENT_TIMESTAMP;
             //echo "      Time: " . $timeVar;
-
-        try {
-            $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
-         // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "\nConnected successfully\n";
-            $sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
-            //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
-            //$sql = "INSERT INTO 'attendance' (badgeID) VALUES ($id)";
-            $conn->exec($sql);
-            echo "\nNew record created successfully\n";
-          }
-        catch(PDOException $e)
-            {
-                echo "\nConnection failed: " . $e->getMessage();
-            }
-            
+        if (strcmp($id,'No Value') == 0){
+            try {
+                $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+             // set the PDO error mode to exception
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "\nConnected successfully\n";
+                $sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
+                //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
+                //$sql = "INSERT INTO 'attendance' (badgeID) VALUES ($id)";
+                $conn->exec($sql);
+                echo "\nNew record created successfully\n";
+              }
+            catch(PDOException $e)
+                {
+                    echo "\nConnection failed: " . $e->getMessage();
+                }
+        } else {
+         echo "ID has no value.";   
+        }
         ?>
         <h3>Cron job test</h3>
     </body>
