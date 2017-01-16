@@ -27,11 +27,11 @@
 		    exit;
 		}
 		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
-		echo "Got Table Members";
+		//echo "Got Table Members";
 		$getMembers->execute();
-		echo "Executed";
+		//echo "Executed";
 		$data = $getMembers->fetchAll();
-		echo "Fetched";
+		//echo "Fetched";
 		
 		?>
 		<style type="text/css">
@@ -49,6 +49,7 @@
 		    <th class="tg-h60r">Meetings Attended</th>
 		  </tr>
 			<?php
+			$indexOn = 0;
 			foreach($data as $person){
 				echo "<tr>";
 				echo "<td class = \"tg-w08d\">".$person['First_Name']."</td>";
@@ -56,6 +57,8 @@
 				echo "<td class = \"tg-w08d\">".$person['Points']."</td>";
 				echo "<td class = \"tg-w08d\">".$person['Num_Meetings']."</td>";
 				echo "</tr>";
+				echo "Index: ".$indexOn;
+				$indexOn++;
 			}
 			?>
 		  <!--<tr>
