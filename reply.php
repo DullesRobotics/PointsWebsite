@@ -15,6 +15,7 @@
             
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
             fwrite($file,$id."\n");
+            fwrite($file,$raw."\n");
             fclose($file);
             
             //$timeVar = date('Y-m-d H:i:s');
