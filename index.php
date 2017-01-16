@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PointsPage</title>
+		<title>Points Page</title>
 			<!-- Bootstrap - Latest compiled and minified CSS -->
         		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- jQuery library -->
@@ -25,10 +25,12 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		$getFirstNames = $conn->prepare("SELECT First_Name FROM Members");
+		$getMembers = $conn->prepare("SELECT * FROM Members");
 		$getFirstNames->execute();
 		$firstNames = $getFirstNames->fetchAll();
-		echo $firstNames;
+		foreach ($firstNames as $firstName){
+			echo $firstName['First_Name']."<br/>";
+		}
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
