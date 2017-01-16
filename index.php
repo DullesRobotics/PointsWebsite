@@ -80,8 +80,7 @@
 					if ($indexOn == 2){
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
