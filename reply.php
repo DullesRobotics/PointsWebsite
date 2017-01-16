@@ -49,11 +49,11 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         $lastScanTime = strtotime($person['Last_Time']);
-                        echo "Last: ".$lastScanTime;
+                        echo "Last: ".$lastScanTime."\n";
                         $currentTime = strtotime(date('Y-m-d H:i:s'));
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime; 
-                        echo "Last Scan: ".$difference;
+                        echo "Last Scan: ".$difference."\n";
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
