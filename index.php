@@ -10,7 +10,7 @@
 	</head>
 	<body>
 	<nav class="navbar navbar-inverse"
-	<div style="text-align:center;" id="container">
+	<div style="text-align:center;">
 		<h1>
 		<font color="red">
 	    		Dulles Robotics Club Points Page
@@ -73,6 +73,7 @@
 			    height:200px;
 			}
 		</style>
+		<div  id="container">
 		<table class="tg">
 		  <tr>
 		    <th class="tg-5ofl">Rank</th>
@@ -151,6 +152,7 @@
 		    <td class="tg-w08d">0</td>
 		  </tr>-->
 		</table>
+		</div>
 	</div>
         <!-- Bootstrap - Latest compiled JavaScript -->
        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
