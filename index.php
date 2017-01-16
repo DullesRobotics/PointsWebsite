@@ -19,7 +19,7 @@
 		<?php
 		require("secretSettings.php");
         function getIDurl($stringID){
-             if (strlen($stringID) == 6){
+             if (strlen($stringID) > 1){
                  return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
              }
              else {
