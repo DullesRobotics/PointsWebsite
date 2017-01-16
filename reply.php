@@ -45,7 +45,7 @@
                 $data = $getMembers->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $test = "SELECT * FROM (
+                        $lastRecord = "SELECT * FROM (
                           SELECT
                             ROW_NUMBER() OVER (ORDER BY badeID ASC) AS rownumber,
                             columns
