@@ -10,7 +10,7 @@
             echo "Raw: " . $raw;
             $contents = split(":", $raw);
             //$id = trim(str_replace("}", "", $contents[1]));
-            $id = trim($contents[1],0,-5);
+            $id = trim(substr($contents[1],0,-5));
             echo "      ID: " . $id;
             
             
