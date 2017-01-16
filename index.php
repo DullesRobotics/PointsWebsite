@@ -20,20 +20,18 @@
 		<?php
 		require("secretSettings.php");
 		function getIDurl($stringID){
-		     if (strlen($stringID) >= 6){
+		     if (strlen($stringID) >= 6 && strlen($stringID) <= 10){
 			 return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
 		     }
-		     else {
+		     elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
 			 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
+		     } else {
+			 return NULL;
 		     }
 		}
 		function getIdImageHTMLwithDim($StringId,$w,$h){
-		    $url = getIDurl($StringId);
-
+		    	$url = getIDurl($StringId) ?: $StringID;
 			return "<img src=". $url . " height=" . $h . " width =" .$w.">";
-
-
-
 		}
 		try
 		{
@@ -80,7 +78,7 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
-                		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
+                		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'] ?: $person['Custom_Image], "57", "76");
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
