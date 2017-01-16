@@ -20,15 +20,20 @@
 		try
 		{
 		   $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+		   echo "Connected Successfully";
 		}
 		catch (PDOException $e) {
 		    echo "Failed to connect to database";
 		    exit;
 		}
 		$getMembers = $conn->prepare("SELECT First_Name FROM Members");
+		echo "Got Table Members";
 		$getFirstNames->execute();
+		echo "Executed";
 		$firstNames = $getFirstNames->fetchAll();
+		echo "Fetched";
 		print_r($firstNames);
+		echo "Printed";
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
