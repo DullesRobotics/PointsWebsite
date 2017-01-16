@@ -26,7 +26,7 @@
 		     elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
 			 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
 		     } else {
-			 return NULL;
+			 return "";
 		     }
 		}
 		function getIdImageHTMLwithDim($StringId,$w,$h){
@@ -78,7 +78,11 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
-                		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'] ?: $person['Custom_Image], "57", "76");
+				if ($person['Student_ID'] >= 11){
+					$imgHTML = getIdImageHTMLwithDim($person['Custom_Image'], "57", "76");
+				} else {
+                			$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
+				}
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
