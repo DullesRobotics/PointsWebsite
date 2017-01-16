@@ -45,8 +45,8 @@
                     echo "\nConnection failed: " . $e->getMessage();
                     exit;
                 }
-        $getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
-        $getMember->execute();
+        $getMembers = $conn->prepare("SELECT * FROM Members");
+        $getMembers->execute();
         $data = $getMembers->fetchAll();
         foreach ($data as $person) {
             if (trim($person['Tag_ID']) == trim($id)) {
