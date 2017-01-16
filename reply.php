@@ -43,9 +43,12 @@
                 $getMembers = $conn->prepare("SELECT * FROM Members");
                 $getMembers->execute();
                 $data = $getMembers->fetchAll();
-                $conn->exec("UPDATE Members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
+                        $lastRecord = $conn->exec("SELECT * FROM attendance WHERE badgeID == '$id'");
+                        foreach($lastRecord as $record){
+                            echo "Last Record: ".$record."\n";
+                        }
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
@@ -53,8 +56,10 @@
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                         }
+                        break;
                     }
                 }
+                $conn->exec("UPDATE Members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
                 echo("Successfully Updated\n");
               }
             catch(PDOException $e)
