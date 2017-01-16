@@ -51,7 +51,7 @@
                             fwrite($signedLogs,"CURRENT_TMESTAMP ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
-                            fwrite($signedLogs,"CURRENT_TIMESTAMP "$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
+                            fwrite($signedLogs,"CURRENT_TIMESTAMP ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                         }
                     }
                 }
