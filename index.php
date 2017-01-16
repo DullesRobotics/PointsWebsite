@@ -115,12 +115,12 @@
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
 					} else {
-						echo "<td class = \"tg-7ttm\">".$indexOn."</td>";
-						echo "<td class = \"tg-7ttm\">".$imgHTML."</td>";
-						echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
-						echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
-						echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
-						echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
 					}
 					if ($person['Signed_In']%2 == 0){
 						echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
