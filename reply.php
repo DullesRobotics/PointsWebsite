@@ -53,13 +53,14 @@
                         $currentTime = strtotime(date('Y-m-d H:i:s'));
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime;
-                        if ($person["Signed_In"] % 2 == 0){
+                        if ($person["Signed_In"] % 2 == 1){
+                            $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
                                 fwrite($signedLogs," ".$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
                                 break;
                             }
-                            $pointsToAdd = floor($difference/60);
+                            $pointsToAdd = floor($difference/1800);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
