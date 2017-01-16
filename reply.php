@@ -45,7 +45,7 @@
                 $data = $getMembers->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $lastRecord = "SELECT badgeID, timeScanned FROM attendance";
+                        $lastRecord = $conn->exec("SELECT badgeID, timeScanned FROM attendance");
                         echo "Record: ".$lastRecord;
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
