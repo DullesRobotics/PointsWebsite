@@ -79,12 +79,12 @@
                 		$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$indexOn." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Last_Name']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Points']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Num_Meetings']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
 						echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
