@@ -23,7 +23,7 @@
                  return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
              }
              else {
-                 return strlen($stringID);
+                 return strlen($stringID).$stringID;
              }
         }
         function getIdImageHTMLwithDim($StringId,$w,$h){
