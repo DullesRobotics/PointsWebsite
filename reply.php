@@ -50,9 +50,9 @@
                     if ($person["Tag_ID"] == $id){
                         $lastScanTime = strtotime($person['Last_Time']);
                         echo "Last: ".$lastScanTime;
-                        $currentTime = new DateTime(date('Y-m-d H:i:s'));
+                        $currentTime = strtotime(date('Y-m-d H:i:s'));
                         echo "Now: ".$currentTime."\n";
-                        $difference = $lastScanTime->diff($currentTime); 
+                        $difference = $currentTime - $lastScanTime; 
                         echo "Last Scan: ".$difference;
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
