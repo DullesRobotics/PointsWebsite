@@ -78,7 +78,7 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
-				if ($person['Student_ID'] >= 11){
+				if ($person['Student_ID'] == 1337){
 					$imgHTML = getIdImageHTMLwithDim($person['Custom_Image'], "57", "76");
 				} else {
                 			$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
