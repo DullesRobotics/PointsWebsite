@@ -49,15 +49,17 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         foreach($attendanceData as $row){
-                            $dateFromDatabase = strtotime($row['timeScanned']);
-                            $dateTwelveHoursAgo = strtotime("-12 hours");
+                            $dateFromDatabase = new DateTime($row['timeScanned']);
+                            $dateTwelveHoursAgo = new DateTime(date('Y-m-d H:i:s'));
+                            $tosub = new DateInterval('PT12H');
+                            $date->sub($tdateTwelveHoursAgo);
+                            var_dump($dateFromDatabase ->diff($dateTwelveHoursAgo));
                             if ($row['badgeID'] == $id) {
-                                if ($dateFromDatabase >= $dateTwelveHoursAgo) {
-                                    echo "Less than 12 hours.\n";
-                                }
-                                else {
-                                    echo "Greater than 12 hours.\n";
-                                }
+                               if($dateFromDatabase > $dateTwelveHoursAgo){
+                                  echo "Greater than 12 hours";
+                               }else{
+                                  echo "Less than 12 hours";
+                               }
                             }
                         }
                         if ($person["Signed_In"] % 2 == 0){
