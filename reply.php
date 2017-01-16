@@ -10,8 +10,8 @@
             echo "Raw: " . $raw;
             $contents = split(":", $raw);
             //$id = trim(str_replace("}", "", $contents[1]));
-            $id = trim(substr($contents[1],1,-6));
-            echo "      ID: " .($id) ? 'No Value';
+            $id = trim(substr($contents[1],1,-6)) ? 'No Value';
+            echo "      ID: " .$id;
             
             
             
