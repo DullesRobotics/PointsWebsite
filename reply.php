@@ -41,14 +41,25 @@
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
-                $getAttendance = $conn->prepare("SELECT * FROM attendance");
+                $getAttendance = $conn->prepare("SELECT * FROM attendance ORDER BY timeScanned DESC");
                 $getMembers->execute();
                 $getAttendance->execute();
                 $data = $getMembers->fetchAll();
                 $attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        
+                        foreach($attendanceData as $row){
+                            $dateFromDatabase = strtotime($row['timeScanned']);
+                            $dateTwelveHoursAgo = strtotime("-12 hours");
+                            if ($row['badgeID'] == $id) {
+                                if ($dateFromDatabase >= $dateTwelveHoursAgo) {
+                                    echo "Less than 12 hours.";
+                                }
+                                else {
+                                    echo "Greater than 12 hours.";
+                                }
+                            }
+                        }
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
