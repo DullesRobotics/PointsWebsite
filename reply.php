@@ -54,7 +54,7 @@
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime;
                         if ($person["Signed_In"] % 2 == 0){
-                            if ($difference > 43200) {
+                            if ($difference > 1) {
                                 echo "Difference is greater than 12 hours";
                                 fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.");
                                 break;
