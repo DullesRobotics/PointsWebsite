@@ -9,7 +9,7 @@
 	</head>
 	<body>
 	<nav class="navbar navbar-inverse"
-	<div class="jumbotron" style="text-align:center;">
+	<div style="text-align:center;">
 		<h1>
 		<font color="red">
 	    		Dulles Robotics Club Points Page
@@ -25,11 +25,11 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		$getMembers = $conn->prepare("SELECT * FROM Members");
+		$getMembers = $conn->prepare("SELECT First_Name FROM Members");
 		$getFirstNames->execute();
 		$firstNames = $getFirstNames->fetchAll();
 		foreach ($firstNames as $firstName){
-			echo $firstName['First_Name']."<br/>";
+			echo $firstName."<br/>";
 		}
 		?>
 		<style type="text/css">
