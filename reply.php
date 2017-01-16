@@ -42,7 +42,7 @@
                 $getMembers = $conn->prepare("SELECT * FROM Members");
                 $getMembers->execute();
                 $data = $getMembers->fetchAll();
-                $conn->exec("UPDATE members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
+                $conn->exec("UPDATE Members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
                 echo("Successfully updated");
               }
             catch(PDOException $e)
