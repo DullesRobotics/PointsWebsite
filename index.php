@@ -27,7 +27,7 @@
              }
         }
         function getIdImageHTMLwithDim($StringId,$w,$h){
-            $url = getIDurl($StringID);
+            $url = getIDurl($StringId);
   
                 //return "<img src=". $url . " height='" . $h . "' width ='" .$w.">";
                 return "<img src=". $url .">";
