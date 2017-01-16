@@ -52,9 +52,7 @@
                           FROM tablename
                         ) AS foo
                         WHERE rownumber == ('$id')";
-                        foreach($lastRecord as $record){
-                            echo "Last Record: ".$record."\n";
-                        }
+                        echo "Record: ".$lastRecord;
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
