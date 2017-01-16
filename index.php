@@ -29,7 +29,7 @@
         function getIdImageHTMLwithDim($StringId,$w,$h){
             $url = getIDurl($StringID);
             if(url !== null){
-                return "<img src=" + url + " height='" . $h . "' width ='" .$w."'>";
+                return "<img src=". $url . " height='" . $h . "' width ='" .$w.">";
             }
             else{
                 return "";
@@ -79,7 +79,7 @@
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
                     //$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
-                    $imgHTML = "<img src=".getIDurl("747644").">";
+                    $imgHTML = getIdImageHTMLwithDim("747644", "47", "52");
 					echo "<td class = \"tg-c3ly\">".$imgHTML.$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
