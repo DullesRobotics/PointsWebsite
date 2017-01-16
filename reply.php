@@ -54,7 +54,12 @@
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime;
                         if ($person["Signed_In"] % 2 == 1){
-                            $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
+                            if ($difference > 900){
+                               $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'"); 
+                            } else {
+                               echo "User was not there for 15 minutes. Meeting not recorded. \n"; 
+                               fwrite($signedLogs," ".$person["First_Name"]." ".$person["Last_Name"]." signed out too quick.\n");
+                            }
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
                                 fwrite($signedLogs," ".$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
