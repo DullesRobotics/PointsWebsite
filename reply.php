@@ -15,7 +15,7 @@
             
             
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
-            $outputFile = fopen("logs/output.txt","x+") or die ("cant create/open/write to output file");
+            $outputFile = fopen("logs/output.txt","a+") or die ("cant create/open/write to output file");
             fwrite($file,$id."\n");
             fwrite($outputFile,"ID: ".$id."\n");
             fwrite($outputFile,"raw: ".$raw."\n");
