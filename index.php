@@ -62,7 +62,7 @@
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
-					if ($person['Signed_In']%2 == 0){
+					if ($person['Signed_In']%2 == 1){
 						echo "<td class = \"tg-c3ly\"> Signed Out </td>";
 					} else {
 						echo "<td class = \"tg-c3ly\"> Signed In </td>";
@@ -73,7 +73,7 @@
 					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
-					if ($person['Signed_In']%2 == 0){
+					if ($person['Signed_In']%2 == 1){
 						echo "<td class = \"tg-7ttm\"> Signed Out </td>";
 					} else {
 						echo "<td class = \"tg-7ttm\"> Signed In </td>";
