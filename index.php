@@ -59,6 +59,7 @@
 			.tg .tg-7ttm{font-size:36px;text-align:center}
 			.tg .tg-qj3h{font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-5ofl{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center}
+			.tg .tg-5ofk{font-size:20px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:#b1c2ff;color:#000000;text-align:center;vertical-align:top}
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
 		</style>
@@ -68,7 +69,7 @@
 		    <th class="tg-5ofl"Picture</th>
 		    <th class="tg-5ofl">Name</th>
 		    <th class="tg-5ofl">Points</th>
-		    <th class="tg-5ofl">Meetings Attended</th>
+		    <th class="tg-5ofk">Meetings Attended</th>
 		    <th class="tg-5ofl">Status</th>
 		  </tr>
 			<?php
