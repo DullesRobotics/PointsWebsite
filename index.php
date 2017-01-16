@@ -66,8 +66,7 @@
 		  <tr>
 		    <th class="tg-5ofl">Rank</th>
 		    <th class="tg-5ofl"Picture</th>
-		    <th class="tg-5ofl">First Name</th>
-		    <th class="tg-5ofl">Last Name</th>
+		    <th class="tg-5ofl">Name</th>
 		    <th class="tg-5ofl">Points</th>
 		    <th class="tg-5ofl">Meetings Attended</th>
 		    <th class="tg-5ofl">Status</th>
@@ -88,8 +87,7 @@
 					} else {
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
 					}
@@ -103,22 +101,19 @@
 					if ($indexOn == 1){
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#FFD700\">".$person['Num_Meetings']." </font></td>";
 					} elseif ($indexOn == 3){
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
 					}
