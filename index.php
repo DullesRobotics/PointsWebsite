@@ -60,7 +60,7 @@
 			.tg .tg-qj3h{font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-5ofl{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center}
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
-			.tg .tg-c3ly{background-color:#000000;font-size:36px;text-align:center}
+			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
 		</style>
 		<table class="tg">
 		  <tr>
@@ -86,12 +86,12 @@
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-c3ly\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
-						echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
-						echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
-						echo "<td class = \"tg-c3ly\">".$person['First_Name']."</td>";
-						echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
-						echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
-						echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
 					}
 					if ($person['Signed_In']%2 == 0){
 						echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out </font> </td>";
