@@ -26,11 +26,11 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		$getMembers = $conn->prepare("SELECT * FROM Members");
+		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points ASC");
 		echo "Got Table Members";
 		$getMembers->execute();
 		echo "Executed";
-		$firstNames = $getMembers->fetchAll();
+		$data = $getMembers->fetchAll();
 		echo "Fetched";
 		
 		?>
@@ -48,19 +48,17 @@
 		    <th class="tg-h60r">Points</th>
 		    <th class="tg-h60r">Meetings Attended</th>
 		  </tr>
-		 <tr>
-			<td class="tg-w08d">
-			 <?php
-			foreach($firstNames as $firstName){	
-				echo $firstName['First_Name'];
+			<?php
+			foreach($data as $person){
+				echo "<tr>";
+				echo "<td class = \"tg-w08d\">".$person['First_Name']."</td>";
+				echo "<td class = \"tg-w08d\">".$person['Last_Name']."</td>";
+				echo "<td class = \"tg-w08d\">".$person['Points']."</td>";
+				echo "<td class = \"tg-w08d\">".$person['Num_Meetings']."</td>";
+				echo "</tr>";
 			}
 			?>
-		 	 </td>
-		    <td class="tg-w08d">ONE</td>
-		    <td class="tg-w08d">0</td>
-		    <td class="tg-w08d">0</td>
-		  </tr>
-		  <tr>
+		  <!--<tr>
 		    <td class="tg-rqeu">TEST</td>
 		    <td class="tg-rqeu">TWO</td>
 		    <td class="tg-rqeu">0</td>
@@ -71,7 +69,7 @@
 		    <td class="tg-w08d">THREE</td>
 		    <td class="tg-w08d">0</td>
 		    <td class="tg-w08d">0</td>
-		  </tr>
+		  </tr>-->
 		</table>
 	</div>
         <!-- Bootstrap - Latest compiled JavaScript -->
