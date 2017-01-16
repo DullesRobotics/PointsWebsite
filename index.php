@@ -28,9 +28,7 @@
 		$getMembers = $conn->prepare("SELECT First_Name FROM Members");
 		$getFirstNames->execute();
 		$firstNames = $getFirstNames->fetchAll();
-		foreach ($firstNames as $firstName){
-			echo $firstName."<br/>";
-		}
+		print_r($firstNames);
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
