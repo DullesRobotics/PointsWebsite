@@ -10,7 +10,7 @@
 	</head>
 	<body>
 	<nav class="navbar navbar-inverse"
-	<div style="text-align:center;">
+	<div style="text-align:center;" id="container">
 		<h1>
 		<font color="red">
 	    		Dulles Robotics Club Points Page
@@ -64,6 +64,14 @@
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
 			.tg .tg-c3lz{background-color:#D2E4FC;text-decoration:underline;font-size:36px;text-align:center}
+			#container {
+			    column-count:2;
+			    -moz-column-count:2;
+			    -webkit-column-count:2;
+
+			    width:200px;
+			    height:200px;
+			}
 		</style>
 		<table class="tg">
 		  <tr>
