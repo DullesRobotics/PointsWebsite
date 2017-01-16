@@ -32,10 +32,7 @@
 		echo "Executed";
 		$firstNames = $getMembers->fetchAll();
 		echo "Fetched";
-		foreach($firstNames as $firstName){
-			echo $firstName['First_Name'].'<br/ >';
-		}
-		echo "Echoed";
+		
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
@@ -52,9 +49,13 @@
 		    <th class="tg-h60r">Meetings Attended</th>
 		  </tr>
 		 <tr>
-			 <td class="tg-w08d">
-				 TEST
-			 </td>
+			<td class="tg-w08d">
+			 <?php
+			foreach($firstNames as $firstName){	
+				echo $firstName['First_Name'];
+			}
+			?>
+		 	 </td>
 		    <td class="tg-w08d">ONE</td>
 		    <td class="tg-w08d">0</td>
 		    <td class="tg-w08d">0</td>
