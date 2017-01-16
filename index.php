@@ -23,7 +23,7 @@
                  return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
              }
              else {
-                 return null;
+                 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
              }
         }
         function getIdImageHTMLwithDim($StringId,$w,$h){
