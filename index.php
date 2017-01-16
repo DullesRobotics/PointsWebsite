@@ -80,11 +80,11 @@
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$indexOn." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#C0C0C0\">".$imgHTML." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#C0C0C0\">".$person['First_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#C0C0C0\">".$person['Last_Name']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#C0C0C0\">".$person['Points']." </font></td>";
-						echo "<td class = \"tg-7ttm\"> <font color = \"#C0C0C0\">".$person['Num_Meetings']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$imgHTML." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['First_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Last_Name']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Points']." </font></td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"#C0C0C0\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
 						echo "<td class = \"tg-c3ly\">".$imgHTML."</td>";
