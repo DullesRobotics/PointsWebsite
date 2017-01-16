@@ -26,11 +26,11 @@
 		     elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
 			 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
 		     } else {
-			 return "";
+			 return NULL;
 		     }
 		}
 		function getIdImageHTMLwithDim($StringId,$w,$h){
-		    	$url = getIDurl($StringId) ?: $StringID;
+		    	$url = getIDurl($StringId) ?: $StringId;
 			return "<img src=". $url . " height=" . $h . " width =" .$w.">";
 		}
 		try
@@ -68,7 +68,7 @@
 		<table class="tg">
 		  <tr>
 		    <th class="tg-5ofl">Rank</th>
-		    <th class="tg-5ofl"Picture</th>
+		    <th class="tg-5ofl"> </th>
 		    <th class="tg-5ofl">Name</th>
 		    <th class="tg-5ofl">Points</th>
 		    <th class="tg-5ofk">Meetings<br/>Attended</th>
