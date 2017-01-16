@@ -26,14 +26,16 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		$getMembers = $conn->prepare("SELECT First_Name FROM Members");
+		$getMembers = $conn->prepare("SELECT * FROM Members");
 		echo "Got Table Members";
-		$getFirstNames->execute();
+		$getMembers->execute();
 		echo "Executed";
-		$firstNames = $getFirstNames->fetchAll();
+		$firstNames = $getMembers->fetchAll();
 		echo "Fetched";
-		print_r($firstNames);
-		echo "Printed";
+		foreach($firstNames as $firstName){
+			echo $firstName['First_Name'].'<br/ >';
+		}
+		echo "Echoed";
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
