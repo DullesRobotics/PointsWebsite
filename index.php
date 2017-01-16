@@ -76,7 +76,7 @@
 			$indexOn = 1;
 			foreach($data as $person){
 				echo "<tr>";
-                $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "86", "114");
+                $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
                     
