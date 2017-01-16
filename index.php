@@ -7,8 +7,17 @@
         		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		 var oldPos = 0;
+		  function moveWin()
+		  {
+			  oldPos++;
+			  window.scroll(0,oldPos);
+			  setTimeout('moveWin();',1000);
+		  }
+	  </script>
 	</head>
-	<body>
+	<body onLoad="moveWin();">
 	<nav class="navbar navbar-inverse"
 	<div style="text-align:center;">
 		<h1>
@@ -16,24 +25,25 @@
 	    		Dulles Robotics Club Points Page
 		</font>
 		</h1>
+		 
 		<?php
 		require("secretSettings.php");
-        function getIDurl($stringID){
-             if (strlen($stringID) >= 6){
-                 return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
-             }
-             else {
-                 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
-             }
-        }
-        function getIdImageHTMLwithDim($StringId,$w,$h){
-            $url = getIDurl($StringId);
-  
-                return "<img src=". $url . " height=" . $h . " width =" .$w.">";
-                
+		function getIDurl($stringID){
+		     if (strlen($stringID) >= 6){
+			 return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
+		     }
+		     else {
+			 return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
+		     }
+		}
+		function getIdImageHTMLwithDim($StringId,$w,$h){
+		    $url = getIDurl($StringId);
 
-        
-        }
+			return "<img src=". $url . " height=" . $h . " width =" .$w.">";
+
+
+
+		}
 		try
 		{
 		   $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
