@@ -28,18 +28,17 @@
             fclose($file);
             
             //$timeVar = date('Y-m-d H:i:s');
-            $timeVar = CURRENT_TIMESTAMP;
+            //$timeVar = CURRENT_TIMESTAMP;
             //echo "      Time: " . $timeVar;
         if ($id == $compare){
-            echo "ID: ".$id." \n";
             try {
                 $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
              // set the PDO error mode to exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "\nConnected successfully\n";
-                $sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
+                //$sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
                 //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
-                //$sql = "INSERT INTO 'attendance' (badgeID) VALUES ($id)";
+                $sql = "INSERT INTO attendance (badgeID) VALUES ($id)";
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
               }
