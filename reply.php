@@ -56,12 +56,12 @@
                         if ($person["Signed_In"] % 2 == 0){
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
-                                fwrite($signedLogs," <font color = \"red\">".$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points. </font>\n");
+                                fwrite($signedLogs," ".$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
                                 break;
                             }
                             $pointsToAdd = floor($difference/60);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
-                            fwrite($signedLogs,date('Y-m-d H:i:s')." <font color = \"red\"> ".$person["First_Name"]." ".$person["Last_Name"]." </font> successfully signed out. Awarded ".$pointsToAdd." points!\n");
+                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
                             if ($pointsToAdd > 0) {
                                 $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
@@ -69,7 +69,7 @@
                             }
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
-                            fwrite($signedLogs,date('Y-m-d H:i:s')." <font color = \"red\"> ".$person["First_Name"]." ".$person["Last_Name"]." </font> successfully signed in. \n");
+                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                         }
                         break;
                     }
