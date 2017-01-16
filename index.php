@@ -47,25 +47,25 @@
 		</style>
 		<table class="tg">
 		  <tr>
-		    <th class="tg-h60r">First Name</th>
-		    <th class="tg-h60r">Last Name</th>
-		    <th class="tg-h60r">Points</th>
-		    <th class="tg-h60r">Meetings Attended</th>
+		    <th class="tg-5ofl">First Name</th>
+		    <th class="tg-5ofl">Last Name</th>
+		    <th class="tg-5ofl">Points</th>
+		    <th class="tg-5ofl">Meetings Attended</th>
 		  </tr>
 			<?php
 			$indexOn = 0;
 			foreach($data as $person){
 				echo "<tr>";
 				if ($indexOn % 2 == 0){
-					echo "<td class = \"tg-w08d\">".$person['First_Name']."</td>";
-					echo "<td class = \"tg-w08d\">".$person['Last_Name']."</td>";
-					echo "<td class = \"tg-w08d\">".$person['Points']."</td>";
-					echo "<td class = \"tg-w08d\">".$person['Num_Meetings']."</td>";
+					echo "<td class = \"tg-c3ly\">".$person['First_Name']."</td>";
+					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
+					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
+					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
 				} else {
-					echo "<td class = \"tg-rqeu\">".$person['First_Name']."</td>";
-					echo "<td class = \"tg-rqeu\">".$person['Last_Name']."</td>";
-					echo "<td class = \"tg-rqeu\">".$person['Points']."</td>";
-					echo "<td class = \"tg-rqeu\">".$person['Num_Meetings']."</td>";
+					echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
+					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
+					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
+					echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
 				}
 				echo "</tr>";
 				//echo "Index: ".$indexOn;
