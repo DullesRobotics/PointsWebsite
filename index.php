@@ -69,7 +69,7 @@
 		    <th class="tg-5ofl"Picture</th>
 		    <th class="tg-5ofl">Name</th>
 		    <th class="tg-5ofl">Points</th>
-		    <th class="tg-5ofk">Meetings \n Attended</th>
+		    <th class="tg-5ofk">Meetings<br/>Attended</th>
 		    <th class="tg-5ofl">Status</th>
 		  </tr>
 			<?php
