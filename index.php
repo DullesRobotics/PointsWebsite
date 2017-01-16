@@ -63,9 +63,9 @@
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
 					if ($person['Signed_In']%2 == 0){
-						echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out <\font> </td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out </font> </td>";
 					} else {
-						echo "<td class = \"tg-c3ly\"> <font color = \"green\"> Signed In <\font> </td>";
+						echo "<td class = \"tg-c3ly\"> <font color = \"green\"> Signed In </font> </td>";
 					}
 					
 				} else {
@@ -74,9 +74,9 @@
 					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
 					if ($person['Signed_In']%2 == 0){
-						echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out <\font> </td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
 					} else {
-						echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In <\font> </td>";
+						echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
 					}
 				}
 				echo "</tr>";
