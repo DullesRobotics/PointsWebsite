@@ -45,7 +45,13 @@
                 $data = $getMembers->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $lastRecord = $conn->exec("SELECT * FROM attendance WHERE badgeID == '$id'");
+                        $test = "SELECT * FROM (
+                          SELECT
+                            ROW_NUMBER() OVER (ORDER BY badeID ASC) AS rownumber,
+                            columns
+                          FROM tablename
+                        ) AS foo
+                        WHERE rownumber == ('$id')";
                         foreach($lastRecord as $record){
                             echo "Last Record: ".$record."\n";
                         }
@@ -64,7 +70,7 @@
               }
             catch(PDOException $e)
                 {
-                    echo "\nConnection failed: " . $e->getMessage();
+                    echo "\nConnection aborted: " . $e->getMessage();
                     exit;
                 }
         
