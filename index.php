@@ -64,16 +64,8 @@
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
 			.tg .tg-c3lz{background-color:#D2E4FC;text-decoration:underline;font-size:36px;text-align:center}
-			#container {
-			    column-count:2;
-			    -moz-column-count:2;
-			    -webkit-column-count:2;
-
-			    width:200px;
-			    height:200px;
-			}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}
 		</style>
-		<div  id="container">
 		<table class="tg">
 		  <tr>
 		    <th class="tg-5ofl">Rank</th>
@@ -152,7 +144,6 @@
 		    <td class="tg-w08d">0</td>
 		  </tr>-->
 		</table>
-		</div>
 	</div>
         <!-- Bootstrap - Latest compiled JavaScript -->
        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
