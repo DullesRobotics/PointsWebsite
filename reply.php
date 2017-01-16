@@ -57,7 +57,7 @@
                             $pointsToAdd = floor($difference/60);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
-                            echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
+                            echo "Time Difference: ".gmdate("d H:i:s", $difference)."\n";
                             echo "Points to add: ".$pointsToAdd."\n";
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
