@@ -45,13 +45,7 @@
                 $data = $getMembers->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $lastRecord = "SELECT * FROM (
-                          SELECT
-                            ROW_NUMBER() OVER (ORDER BY badeID ASC) AS rownumber,
-                            columns
-                          FROM tablename
-                        ) AS foo
-                        WHERE rownumber == ('$id')";
+                        $lastRecord = "SELECT badgeID, timeScanned FROM attendance";
                         echo "Record: ".$lastRecord;
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
