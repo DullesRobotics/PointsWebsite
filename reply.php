@@ -39,17 +39,18 @@
                 $sql = "INSERT INTO attendance (badgeID) VALUES ('$id')";
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
+                $getMembers = $conn->prepare("SELECT * FROM Members");
+                $getMembers->execute();
+                $data = $getMembers->fetchAll();
+                $conn->exec("UPDATE members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
+                echo("Successfully updated");
               }
             catch(PDOException $e)
                 {
                     echo "\nConnection failed: " . $e->getMessage();
                     exit;
                 }
-        $getMembers = $conn->prepare("SELECT * FROM Members");
-        $getMembers->execute();
-        $data = $getMembers->fetchAll();
-        $conn->exec("UPDATE members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
-        echo("Successfully updated");
+        
         ?>
         <h3>Cron job test</h3>
     </body>
