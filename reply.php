@@ -48,11 +48,8 @@
         $getMembers = $conn->prepare("SELECT * FROM Members");
         $getMembers->execute();
         $data = $getMembers->fetchAll();
-        foreach ($data as $person) {
-            if (trim($person['Tag_ID']) == trim($id)) {
-                echo 'Found Person';
-            }
-        }
+        $conn->exec("UPDATE members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
+        echo("Successfully updated");
         ?>
         <h3>Cron job test</h3>
     </body>
