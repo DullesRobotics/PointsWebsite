@@ -48,10 +48,10 @@
                     if ($person["Tag_ID"] == $id){
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
-                            fwrite($signedLogs,"CURRENT_TMESTAMP ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
+                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
-                            fwrite($signedLogs,"CURRENT_TIMESTAMP ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
+                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                         }
                     }
                 }
