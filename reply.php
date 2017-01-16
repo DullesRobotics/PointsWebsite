@@ -47,11 +47,11 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         if ($person["Signed_In"] % 2 == 0){
-                            echo $person["First_Name"].$person["Last_Name"]." successfully signed out. \n";
-                            fwrite($signedLogs,$person["First_Name"].$person["Last_Name"]." successfully signed out. \n");
+                            echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
+                            fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
                         } else {
-                            echo $person["First_Name"].$person["Last_Name"]." successfully signed in. \n";
-                            fwrite($signedLogs,$person["First_Name"].$person["Last_Name"]." successfully signed in. \n");
+                            echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
+                            fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                         }
                     }
                 }
