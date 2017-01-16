@@ -41,18 +41,17 @@
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
-                $getAttendance = $conn->prepare("SELECT * FROM attendance WHERE timeScanned > unix_timestamp() + 43200");
+                //$getAttendance = $conn->prepare("SELECT * FROM attendance WHERE timeScanned > unix_timestamp() + 43200");
                 $getMembers->execute();
-                $getAttendance->execute();
+                //$getAttendance->execute();
                 $data = $getMembers->fetchAll();
-                $attendanceData = $getAttendance->fetchAll();
+                //$attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        foreach($attendanceData as $row){
-                            if ($row['badgeID'] == $id) {
-                               echo "Greater?";
-                            }
-                        }
+                        $lastScanTime = new DateTime($person['Last_Time']);
+                        $currentTime = new DateTime("now");
+                        $difference = $lastScanTime->diff($currentTime); 
+                        echo "Last Scan: ".$difference;
                         if ($person["Signed_In"] % 2 == 0){
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n");
