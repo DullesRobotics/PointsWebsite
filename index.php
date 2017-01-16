@@ -60,7 +60,7 @@
 			.tg .tg-qj3h{font-size:36px;text-align:center;vertical-align:top}
 			.tg .tg-5ofl{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center}
 			.tg .tg-w08d{background-color:#D2E4FC;font-size:36px;text-align:center;vertical-align:top}
-			.tg .tg-c3ly{background-color:#D2E4FC;font-size:36px;text-align:center}
+			.tg .tg-c3ly{background-color:#000000;font-size:36px;text-align:center}
 		</style>
 		<table class="tg">
 		  <tr>
