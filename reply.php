@@ -67,6 +67,7 @@
                             if ($pointsToAdd > 0) {
                                 $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
                                 echo "Points awarded: ".$pointsToAdd."\n";
+                                fwrite($signedLogs,$person['First_Name']." ".$person['Last_Name']." awarded ".$pointsToAdd."\n");
                             }
                         } else {
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
