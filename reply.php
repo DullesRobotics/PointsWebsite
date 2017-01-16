@@ -39,7 +39,7 @@
                 //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
                 $sql = "INSERT INTO attendance (badgeID) VALUES ('$id')";
                 $conn->exec($sql);
-                echo "\nNew record created successfully\n";
+                echo "New record created successfully\n\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
                 //$getAttendance = $conn->prepare("SELECT * FROM attendance WHERE timeScanned > unix_timestamp() + 43200");
                 $getMembers->execute();
@@ -48,10 +48,10 @@
                 //$attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $lastScanTime = $person['Last_Time'];
+                        $lastScanTime = strtotime($person['Last_Time']);
                         echo "Last: ".$lastScanTime;
                         $currentTime = new DateTime(date('Y-m-d H:i:s'));
-                        echo "Now: ".$currentTime->diff($lastScanTime)."\n";
+                        echo "Now: ".$currentTime."\n";
                         $difference = $lastScanTime->diff($currentTime); 
                         echo "Last Scan: ".$difference;
                         if ($person["Signed_In"] % 2 == 0){
