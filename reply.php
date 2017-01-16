@@ -9,13 +9,15 @@
             $raw = file_get_contents('php://input');
             echo "Raw: " . $raw;
             $contents = split(":", $raw);
-            $id = trim(str_replace("}", "", $contents[1]));
+            //$id = trim(str_replace("}", "", $contents[1]));
+            $id = trim($contents[1]);
             echo "      ID: " . $id;
             
             
             $file = fopen("logs/scannedID.txt","a+") or die("cant open/create file");
             $outputFile = fopen("logs/output.txt","x+") or die ("cant create/open/write to output file");
             fwrite($file,$id."\n");
+            fwrite($outputFile,"ID: ".$id."\n");
             fwrite($outputFile,"raw: ".$raw."\n");
             fwrite($outputFile,"contents 1 :".$contents[1]."\n");
             fclose($outputFile);
