@@ -36,7 +36,7 @@
                 echo "\nConnected successfully\n";
                 //$sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
                 //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
-                $sql = "INSERT INTO attendance (badgeID) VALUES ($id)";
+                $sql = "INSERT INTO attendance (badgeID) VALUES ('$id')";
                 $conn->exec($sql);
                 echo "\nNew record created successfully\n";
               }
