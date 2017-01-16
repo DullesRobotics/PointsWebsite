@@ -54,7 +54,7 @@
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime; 
                         if ($person["Signed_In"] % 2 == 0){
-                            $pointsToAdd = $difference/60;
+                            $pointsToAdd = floor($difference/60);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
