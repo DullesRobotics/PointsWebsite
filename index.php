@@ -25,8 +25,10 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		
 		$getFirstNames = $conn->prepare("SELECT First_Name FROM Members");
+		$getFirstNames->execute();
+		$firstNames = $getFirstNames->fetchAll();
+		echo $firstNames;
 		?>
 		<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;border:none;margin:0px auto;}
@@ -42,10 +44,10 @@
 		    <th class="tg-h60r">Points</th>
 		    <th class="tg-h60r">Meetings Attended</th>
 		  </tr>
-			    // $indexOn = 0;
-			     //foreach()
 		 <tr>
-		    <td class="tg-w08d">TEST</td>
+			 <td class="tg-w08d">
+				 TEST
+			 </td>
 		    <td class="tg-w08d">ONE</td>
 		    <td class="tg-w08d">0</td>
 		    <td class="tg-w08d">0</td>
