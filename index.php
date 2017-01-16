@@ -47,6 +47,7 @@
 		</style>
 		<table class="tg">
 		  <tr>
+		    <th class="tg-5ofl">Rank</th>
 		    <th class="tg-5ofl">First Name</th>
 		    <th class="tg-5ofl">Last Name</th>
 		    <th class="tg-5ofl">Points</th>
@@ -58,6 +59,7 @@
 			foreach($data as $person){
 				echo "<tr>";
 				if ($indexOn % 2 == 0){
+					echo "<td class = \"tg-c3ly\">".$indexOn++."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
@@ -69,6 +71,7 @@
 					}
 					
 				} else {
+					echo "<td class = \"tg-7ttm\">".$indexOn++."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
