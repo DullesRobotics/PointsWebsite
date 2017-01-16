@@ -51,6 +51,7 @@
 		    <th class="tg-5ofl">Last Name</th>
 		    <th class="tg-5ofl">Points</th>
 		    <th class="tg-5ofl">Meetings Attended</th>
+		    <th class="tg-5ofl">Status</th>
 		  </tr>
 			<?php
 			$indexOn = 0;
@@ -61,11 +62,22 @@
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Num_Meetings']."</td>";
+					if ($person['Signed_In']%2 == 0){
+						echo "<td class = \"tg-c3ly\"> Signed Out </td>";
+					} else {
+						echo "<td class = \"tg-c3ly\"> Signed In </td>";
+					}
+					
 				} else {
 					echo "<td class = \"tg-7ttm\">".$person['First_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Points']."</td>";
 					echo "<td class = \"tg-7ttm\">".$person['Num_Meetings']."</td>";
+					if ($person['Signed_In']%2 == 0){
+						echo "<td class = \"tg-7ttm\"> Signed Out </td>";
+					} else {
+						echo "<td class = \"tg-7ttm\"> Signed In </td>";
+					}
 				}
 				echo "</tr>";
 				//echo "Index: ".$indexOn;
