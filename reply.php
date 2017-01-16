@@ -51,8 +51,6 @@
         foreach ($data as $person) {
             if (trim($person['Tag_ID']) == trim($id)) {
                 echo 'Found Person';
-            } else {
-                echo 'No Match: '.$person['Tag_ID']." not equal to ".$person['Tag_ID'];
             }
         }
         ?>
