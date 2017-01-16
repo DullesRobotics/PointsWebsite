@@ -49,6 +49,7 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         $lastScanTime = new DateTime($person['Last_Time']);
+                        echo "Last: ".$lastScanTime;
                         $currentTime = new DateTime(date('Y-m-d H:i:s'));
                         echo "Now: ".$currentTime->diff($lastScanTime)."\n";
                         $difference = $lastScanTime->diff($currentTime); 
