@@ -19,7 +19,7 @@
 		<?php
 		require("secretSettings.php");
         function getIDurl($stringID){
-             if (strlen($stringID) > 1){
+             if (strlen($stringID) >= 6){
                  return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
              }
              else {
@@ -78,7 +78,7 @@
 				if ($indexOn % 2 == 0){
 					echo "<td class = \"tg-c3ly\">".$indexOn."</td>";
                     //$imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
-                    $imgHTML = getIdImageHTMLwithDim("747644", "47", "52");
+                    $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "43", "57");
 					echo "<td class = \"tg-c3ly\">".$imgHTML.$person['First_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Last_Name']."</td>";
 					echo "<td class = \"tg-c3ly\">".$person['Points']."</td>";
