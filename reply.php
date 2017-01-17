@@ -45,7 +45,8 @@
                 //$attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
-                        $sql = "INSERT INTO attendance (Full_Name,badgeID) VALUES ('$person['First_Name']." ".$person['Last_Name']','$id')";
+                        $name = $person['First_Name']." ".$person['Last_Name'];
+                        $sql = "INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')";
                         $conn->exec($sql);
                         $lastScanTime = strtotime($person['Last_Time']);
                         echo "Last: ".$lastScanTime."\n";
