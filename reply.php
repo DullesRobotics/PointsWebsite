@@ -65,7 +65,7 @@
                                 fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
                                 break;
                             }
-                            $pointsToAdd = floor($difference/1800);
+                            $pointsToAdd = ((floatval($difference))/3600.0;
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
