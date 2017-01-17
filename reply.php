@@ -37,9 +37,6 @@
                 echo "\nConnected successfully\n";
                 //$sql = "INSERT INTO attendance (badgeID,timeScanned) VALUES ($id,$timeVar)"; //Dont forget to change column
                 //$sql = "INSERT INTO 'attendance' (badgeID,'time') VALUES ($id,$time)"; //Use this if you dont rename the column
-                $sql = "INSERT INTO attendance (badgeID) VALUES ('$id')";
-                $conn->exec($sql);
-                echo "New record created successfully\n\n";
                 $getMembers = $conn->prepare("SELECT * FROM Members");
                 //$getAttendance = $conn->prepare("SELECT * FROM attendance WHERE timeScanned > unix_timestamp() + 43200");
                 $getMembers->execute();
@@ -48,6 +45,8 @@
                 //$attendanceData = $getAttendance->fetchAll();
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
+                        $sql = "INSERT INTO attendance (Full_Name,badgeID) VALUES ('$person['First_Name']." ".$person['Last_Name']','$id')";
+                        $conn->exec($sql);
                         $lastScanTime = strtotime($person['Last_Time']);
                         echo "Last: ".$lastScanTime."\n";
                         $currentTime = strtotime(date('Y-m-d H:i:s'));
