@@ -43,8 +43,10 @@
                 //$getAttendance->execute();
                 $data = $getMembers->fetchAll();
                 //$attendanceData = $getAttendance->fetchAll();
+                $found = false;
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
+                        $found = true;
                         $name = $person['First_Name']." ".$person['Last_Name'];
                         $sql = "INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')";
                         $conn->exec($sql);
@@ -54,6 +56,8 @@
                         echo "Now: ".$currentTime."\n";
                         $difference = $currentTime - $lastScanTime;
                         if ($person["Signed_In"] % 2 == 1){
+                            //Signing out
+                            $pointsToAdd = round($difference/1800,2);
                             if ($difference > 900){
                                $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'"); 
                             } else {
@@ -63,10 +67,10 @@
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
                                 fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
-                                break;
+                                $pointsToAdd = 0;
                             }
                             //$pointsToAdd = ((floatval($difference))/3600.0;
-                            $pointsToAdd = $difference/1800;
+                            
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
@@ -75,14 +79,17 @@
                                 echo "Points awarded: ".$pointsToAdd."\n";
                                 fwrite($signedLogs,$person['First_Name']." ".$person['Last_Name']." awarded ".$pointsToAdd."\n");
                             }
+                            $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$id'");
                         } else {
+                            //Signing In
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
+                            $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$id'");
                         }
                         break;
                     }
                 }
-                $conn->exec("UPDATE Members SET Signed_In = Signed_In + 1 WHERE Tag_ID = '$id'");
+                
                 echo("Successfully Updated\n");
               }
             catch(PDOException $e)
