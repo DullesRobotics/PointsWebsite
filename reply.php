@@ -63,6 +63,7 @@
                             } else {
                                echo "User was not there for 15 minutes. Meeting not recorded. \n"; 
                                fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." signed out too quick.\n");
+                                $pointsToAdd = 0;
                             }
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
