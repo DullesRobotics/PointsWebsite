@@ -97,6 +97,12 @@
                     echo "\nConnection aborted: " . $e->getMessage();
                     exit;
                 }
+        if ($found) {
+          echo "\n User was successfully logged. \n";   
+        } else {
+            $name = "UNKNOWN";
+            $conn->exec("INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')");
+        }
         fclose($signedLogs);
         
         ?>
