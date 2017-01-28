@@ -106,8 +106,8 @@
                             } else {
                                 echo "\nThis person!";
                             }
-                            if ($idSplit == null){
-                                echo "\nWow, its nill too?";
+                            if ($idSplit == " "){
+                                echo "\nWow, its nothing too?";
                             }
                             switch (trim($word[1])) {
                                 case "sign all out": //SIGNS EVERYONE OUT
