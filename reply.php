@@ -90,7 +90,9 @@
                         break;
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
-                        echo "\n".sizeof($word);
+                        if (sizeof($word) > 1){
+                            echo "\nCOMMAND: ".$word[1];
+                        }
                     }
                 }
                 
