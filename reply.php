@@ -91,9 +91,9 @@
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
-                            echo "\nAttempting post\n";
+                            $conn->exec("UPDATE Members SET Signed_In = 1");
                             $url = 'http://dhsrobotics.ddns.net/reply.php';
-                            $data = array('key1' => 'value1', 'key2' => 'value2');
+                            $data = array($person["Tag_ID"]);
 
                             // use key 'http' even if you send the request to https://...
                             $options = array(
@@ -105,7 +105,7 @@
                             );
                             $context  = stream_context_create($options);
                             $result = file_get_contents($url, false, $context);
-                            if ($result === FALSE) { /* Handle error */ }
+                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
 
                             var_dump($result);
                         }
