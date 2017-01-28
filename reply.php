@@ -89,7 +89,8 @@
                         }
                         break;
                     } else {
-                        echo "\n".$id;
+                        $word = split("$COMMANDSPASSWORD",$raw);
+                        echo "\n".$word."\n";
                     }
                 }
                 
