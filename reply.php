@@ -147,7 +147,7 @@
                                         break;
                                 }
                             } else {
-                                echo "\nThis person!";
+                                echo "\n".$person["First_Name"];
                                 break;
                             }
                         }
