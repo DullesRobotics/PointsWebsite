@@ -97,7 +97,7 @@
                         if (sizeof($word) > 1){
                             switch (trim($word[1])) {
                                 case "sign all out":
-                                    $conn->exec("UPDATE Members SET Signed_In = 1");
+                                    //$conn->exec("UPDATE Members SET Signed_In = 1");
                                     $url = 'http://dhsrobotics.ddns.net/reply.php';
                                     $data = array($person["Tag_ID"]);
 
