@@ -95,7 +95,7 @@
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
-                            switch ($word[2]) {
+                            switch ($word[1]) {
                                 case "sign all out":
                                     $conn->exec("UPDATE Members SET Signed_In = 1");
                                     $url = 'http://dhsrobotics.ddns.net/reply.php';
@@ -113,6 +113,9 @@
                                     $result = file_get_contents($url, false, $context);
                                     if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
                                     var_dump($result);
+                                    break;
+                                default:
+                                    echo "\n Command not recognized: ".$word[1];
                                     break;
                             }
                         }
