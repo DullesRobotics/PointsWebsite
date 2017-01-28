@@ -95,7 +95,7 @@
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
-                            switch ($word[1]) {
+                            switch (trim($word[1])) {
                                 case "sign all out":
                                     $conn->exec("UPDATE Members SET Signed_In = 1");
                                     $url = 'http://dhsrobotics.ddns.net/reply.php';
@@ -115,7 +115,7 @@
                                     var_dump($result);
                                     break;
                                 default:
-                                    echo "\n Command not recognized: ".$word[1];
+                                    echo "\n Command not recognized: ".trim($word[1]);
                                     break;
                             }
                         }
