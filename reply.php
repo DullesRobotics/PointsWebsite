@@ -90,11 +90,11 @@
                         break;
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
-                        echo "\n".$word[0]."\n";
+                        echo "\n".sizeof($word);
                     }
                 }
                 
-                echo("Successfully Updated\n");
+                echo("\nSuccessfully Updated\n");
               }
             catch(PDOException $e)
                 {
