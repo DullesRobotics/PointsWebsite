@@ -88,6 +88,8 @@
                             $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$id'");
                         }
                         break;
+                    } else {
+                        echo "\n".$id;
                     }
                 }
                 
