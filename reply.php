@@ -96,8 +96,8 @@
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
                             $testsplt = split($person["Tag_ID"],trim($word[1]));
-                            //echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
-                            echo "\n".$person["Tag_ID"];
+                            echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
+                            //echo "\n".$person["Tag_ID"];
                             switch (trim($word[1])) {
                                 case "sign all out":
                                     $tagID = $person["Tag_ID"];
