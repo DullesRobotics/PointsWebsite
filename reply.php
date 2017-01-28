@@ -93,13 +93,24 @@
                         }
                         break;
                     } else {
+                        //COMMANDS BELOW
+                        
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
-                            $testsplit = split($person["Tag_ID"],trim($word[1]));
-                            echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
-                            echo "\n".$person["Tag_ID"];
+                            $idSplit = split($person["Tag_ID"],trim($word[1]));
+                            //echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
+                            //echo "\n".$person["Tag_ID"];
+                            $customCommand = trim($idSplit[1]) ?: 'NOT CUSTOM';
+                            if ($customCommand == "NOT CUSTOM"){
+                                echo "\nNot this person";
+                            } else {
+                                echo "\nThis person!";
+                            }
+                            if ($idSplit == null){
+                                echo "\nWow, its nill too?";
+                            }
                             switch (trim($word[1])) {
-                                case "sign all out":
+                                case "sign all out": //SIGNS EVERYONE OUT
                                     $tagID = $person["Tag_ID"];
                                     $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
                                     $url = 'http://dhsrobotics.ddns.net/reply.php';
@@ -118,7 +129,7 @@
                                     if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
                                     var_dump($result);
                                     break;
-                                case "sign all in":
+                                case "sign all in": //SIGNS EVERYONE IN
                                     $tagID = $person["Tag_ID"];
                                     $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
                                     $url = 'http://dhsrobotics.ddns.net/reply.php';
