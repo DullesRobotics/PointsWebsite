@@ -92,7 +92,7 @@
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
                             echo "\nAttempting post\n";
-                            $url = 'http://server.com/path';
+                            $url = 'http://dhsrobotics.ddns.net/reply.php';
                             $data = array('key1' => 'value1', 'key2' => 'value2');
 
                             // use key 'http' even if you send the request to https://...
