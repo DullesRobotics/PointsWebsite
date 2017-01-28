@@ -90,7 +90,7 @@
                         break;
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
-                        echo "\n".$word."\n";
+                        echo "\n".$word[0]."\n";
                     }
                 }
                 
