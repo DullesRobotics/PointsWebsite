@@ -13,7 +13,7 @@
             $id = trim(substr($contents[1],1,-6)) ?: '0000';
             if ($id == '0000'){
                 $contents = split("0=", $raw);
-                $id = trim($contents[1]) ?: '1111';
+                $id = trim($contents[1]) ?: '0000';
             }
             echo "      ID: " .$id;
             
@@ -95,23 +95,26 @@
                     } else {
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
-                            $conn->exec("UPDATE Members SET Signed_In = 1");
-                            $url = 'http://dhsrobotics.ddns.net/reply.php';
-                            $data = array($person["Tag_ID"]);
+                            switch ($word[2]) {
+                                case "sign all out":
+                                    $conn->exec("UPDATE Members SET Signed_In = 1");
+                                    $url = 'http://dhsrobotics.ddns.net/reply.php';
+                                    $data = array($person["Tag_ID"]);
 
-                            // use key 'http' even if you send the request to https://...
-                            $options = array(
-                                'http' => array(
-                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                                    'method'  => 'POST',
-                                    'content' => http_build_query($data)
-                                )
-                            );
-                            $context  = stream_context_create($options);
-                            $result = file_get_contents($url, false, $context);
-                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-
-                            var_dump($result);
+                                    // use key 'http' even if you send the request to https://...
+                                    $options = array(
+                                        'http' => array(
+                                            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                            'method'  => 'POST',
+                                            'content' => http_build_query($data)
+                                        )
+                                    );
+                                    $context  = stream_context_create($options);
+                                    $result = file_get_contents($url, false, $context);
+                                    if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+                                    var_dump($result);
+                                    break;
+                            }
                         }
                     }
                 }
