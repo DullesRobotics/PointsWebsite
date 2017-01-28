@@ -11,6 +11,10 @@
             $contents = split(":", $raw);
             //$id = trim(str_replace("}", "", $contents[1]));
             $id = trim(substr($contents[1],1,-6)) ?: '0000';
+            if ($id == '0000'){
+                $contents = split("0=", $raw);
+                $id = trim($contents[1] ?: '1111';
+            }
             echo "      ID: " .$id;
             
             
