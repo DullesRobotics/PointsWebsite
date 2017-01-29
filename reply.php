@@ -148,12 +148,19 @@
                                 }
                             } else {
                                 $pointAddSplit = split("change points by",$customCommand);
+                                $meetingsAddSplit = split("change meetings by",$customCommand);
                                 //echo "\n".$numSplit[0]." 1: ".$numSplit[1]." 2: ".$numSplit[2];
                                 if (sizeof($pointAddSplit) > 1){
                                     $pointsToAdd = doubleval($pointAddSplit[1]);
                                     $tagID = $person["Tag_ID"];
                                     $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagID'");
                                     echo "\n Successfully changed points by ".$pointsToAdd." for ".$person["First_Name"]." ".$person["Last_Name"];
+                                    break;
+                                } elseif (sizeof($pointAddSplit) > 1) {
+                                    $meetingsToAdd = doubleval($meetingsAddSplit[1]);
+                                    $tagID = $person["Tag_ID"];
+                                     $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$tagID'");
+                                    echo "\n Successfully changed meetings attended by ".$meeintgsAddSplit." for ".$person["First_Name"]." ".$person["Last_Name"];
                                     break;
                                 } else {
                                     switch($customCommand){
