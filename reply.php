@@ -147,57 +147,63 @@
                                         break;
                                 }
                             } else {
-                                $numSplit = split("add points",$customCommand);
+                                $pointAddSplit = split("add points",$customCommand);
                                 //echo "\n".$numSplit[0]." 1: ".$numSplit[1]." 2: ".$numSplit[2];
-                                echo "\n".sizeof($numSplit);
-                                switch($customCommand){
-                                    case "sign out":
-                                        $tagID = $person["Tag_ID"];
-                                        $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
-                                        $url = 'http://dhsrobotics.ddns.net/reply.php';
-                                        $data = array($person["Tag_ID"]);
+                                if (sizeof($pointAddSplit) > 1){
+                                    $pointsToAdd = intval($pointAddSplit[1]);
+                                    $tagID = $person["Tag_ID"];
+                                    $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagID'");
+                                    echo "\n Successfully added ".$pointsToAdd." to ".$person["First_Name"]." ".$person["Last_Name"];
+                                    break;
+                                } else {
+                                    switch($customCommand){
+                                        case "sign out":
+                                            $tagID = $person["Tag_ID"];
+                                            $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
+                                            $url = 'http://dhsrobotics.ddns.net/reply.php';
+                                            $data = array($person["Tag_ID"]);
 
-                                        // use key 'http' even if you send the request to https://...
-                                        $options = array(
-                                            'http' => array(
-                                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                                                'method'  => 'POST',
-                                                'content' => http_build_query($data)
-                                            )
-                                        );
-                                        $context  = stream_context_create($options);
-                                        $result = file_get_contents($url, false, $context);
-                                        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-                                        var_dump($result);
-                                        break;
-                                    case "sign in":
-                                        $tagID = $person["Tag_ID"];
-                                        $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
-                                        $url = 'http://dhsrobotics.ddns.net/reply.php';
-                                        $data = array($person["Tag_ID"]);
+                                            // use key 'http' even if you send the request to https://...
+                                            $options = array(
+                                                'http' => array(
+                                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                                    'method'  => 'POST',
+                                                    'content' => http_build_query($data)
+                                                )
+                                            );
+                                            $context  = stream_context_create($options);
+                                            $result = file_get_contents($url, false, $context);
+                                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+                                            var_dump($result);
+                                            break;
+                                        case "sign in":
+                                            $tagID = $person["Tag_ID"];
+                                            $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
+                                            $url = 'http://dhsrobotics.ddns.net/reply.php';
+                                            $data = array($person["Tag_ID"]);
 
-                                        // use key 'http' even if you send the request to https://...
-                                        $options = array(
-                                            'http' => array(
-                                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                                                'method'  => 'POST',
-                                                'content' => http_build_query($data)
-                                            )
-                                        );
-                                        $context  = stream_context_create($options);
-                                        $result = file_get_contents($url, false, $context);
-                                        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-                                        var_dump($result);
-                                        break;
-                                    default:
-                                        break;
+                                            // use key 'http' even if you send the request to https://...
+                                            $options = array(
+                                                'http' => array(
+                                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                                    'method'  => 'POST',
+                                                    'content' => http_build_query($data)
+                                                )
+                                            );
+                                            $context  = stream_context_create($options);
+                                            $result = file_get_contents($url, false, $context);
+                                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+                                            var_dump($result);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    break;
                                 }
-                                break;
                             }
                         }
                     }
                 }
-                
                 echo("\nSuccessfully Updated\n");
               }
             catch(PDOException $e)
