@@ -147,7 +147,7 @@
                                         break;
                                 }
                             } else {
-                                $pointAddSplit = split("point change by",$customCommand);
+                                $pointAddSplit = split("change points by",$customCommand);
                                 //echo "\n".$numSplit[0]." 1: ".$numSplit[1]." 2: ".$numSplit[2];
                                 if (sizeof($pointAddSplit) > 1){
                                     $pointsToAdd = doubleval($pointAddSplit[1]);
