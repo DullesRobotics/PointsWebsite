@@ -160,7 +160,7 @@
                                     $meetingsToAdd = doubleval($meetingsAddSplit[1]);
                                     $tagID = $person["Tag_ID"];
                                      $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$tagID'");
-                                    echo "\n Successfully changed meetings attended by ".$meetingsAddSplit." for ".$person["First_Name"]." ".$person["Last_Name"];
+                                    echo "\n Successfully changed meetings attended by ".$meetingsToAdd." for ".$person["First_Name"]." ".$person["Last_Name"];
                                     break;
                                 } else {
                                     switch($customCommand){
