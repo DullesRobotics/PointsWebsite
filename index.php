@@ -95,9 +95,9 @@
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
-							echo "<td class = \"tg-c3lz<font color = \"#708090\"> Officer </font></td>";
+							echo "<td class = \"tg-c3lz\<font color = \"#708090\"> Officer </font></td>";
 						} else {
-							echo "<td class = \"tg-c3lz<font color = \"#708090\">".$indexOn." </font></td>";
+							echo "<td class = \"tg-c3lz\<font color = \"#708090\">".$indexOn." </font></td>";
 						}
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
