@@ -156,7 +156,7 @@
                                     $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagID'");
                                     echo "\n Successfully changed points by ".$pointsToAdd." for ".$person["First_Name"]." ".$person["Last_Name"];
                                     break;
-                                } elseif (sizeof($pointAddSplit) > 1) {
+                                } elseif (sizeof($meetingsAddSplit) > 1) {
                                     $meetingsToAdd = doubleval($meetingsAddSplit[1]);
                                     $tagID = $person["Tag_ID"];
                                      $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$tagID'");
