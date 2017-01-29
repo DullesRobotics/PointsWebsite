@@ -147,7 +147,7 @@
                                         break;
                                 }
                             } else {
-                                $numSplit = split($customCommand,"add points");
+                                $numSplit = split("add points",$customCommand);
                                 echo "\n".$numSplit[0]." 1: ".$numSplit[1]." 2: ".$numSplit[2];
                                 switch($customCommand){
                                     case "sign out":
