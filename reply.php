@@ -51,9 +51,6 @@
                 foreach($data as $person){
                     if ($person["Tag_ID"] == $id){
                         $found = true;
-                        $name = $person['First_Name']." ".$person['Last_Name'];
-                        $sql = "INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')";
-                        $conn->exec($sql);
                         $lastScanTime = strtotime($person['Last_Time']);
                         echo "Last: ".$lastScanTime."\n";
                         $currentTime = strtotime(date('Y-m-d H:i:s'));
@@ -63,7 +60,11 @@
                             //Signing out
                             $pointsToAdd = round($difference/1800,2);
                             if ($difference > 900){
-                               $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'"); 
+                               $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
+                                $name = $person['First_Name']." ".$person['Last_Name'];
+                                $status = "Sign Out"
+                                $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
+                                $conn->exec($sql);
                             } else {
                                echo "User was not there for 15 minutes. Meeting not recorded. \n"; 
                                fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." signed out too quick.\n");
@@ -87,6 +88,10 @@
                             $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$id'");
                         } else {
                             //Signing In
+                            $name = $person['First_Name']." ".$person['Last_Name'];
+                            $status = "Sign In"
+                            $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
+                            $conn->exec($sql);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
                             fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
                             $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$id'");
