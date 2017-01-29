@@ -140,7 +140,12 @@
 				}
 				echo "</tr>";
 				//echo "Index: ".$indexOn;
-				$indexOn++;
+				if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+					echo "\nOfficer!";
+				} else {
+					$indexOn++;
+				}
+				
 			}
 			?>
 		  <!--<tr>
