@@ -59,15 +59,20 @@
                         if ($person["Signed_In"] % 2 == 1){
                             //Signing out
                             $pointsToAdd = round($difference/1800,2);
-                            $name = $person['First_Name']." ".$person['Last_Name'];
-                            $status = "Sign Out";
-                            $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
-                            $conn->exec($sql);
+                            
                             if ($difference > 900){
-                               $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
+                                $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
+                                $name = $person['First_Name']." ".$person['Last_Name'];
+                                $status = "Sign Out";
+                                $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
+                                $conn->exec($sql);
                             } else {
                                echo "User was not there for 15 minutes. Meeting not recorded. \n"; 
                                fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." signed out too quick.\n");
+                               $name = $person['First_Name']." ".$person['Last_Name'];
+                               $status = "Early Sign Out";
+                               $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
+                               $conn->exec($sql);
                                 $pointsToAdd = 0;
                             }
                             if ($difference > 43200) {
