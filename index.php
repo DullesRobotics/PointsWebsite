@@ -95,9 +95,9 @@
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
-							echo "<td class = \"tg-c3lz\<font color = \"#708090\"> Officer 1 </font></td>";
+							echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
 						} else {
-							echo "<td class = \"tg-c3lz\<font color = \"#708090\">".$indexOn." </font></td>";
+							echo "<td class = \"tg-c3lz\"<font color = \"#708090\">".$indexOn." </font></td>";
 						}
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
@@ -105,7 +105,7 @@
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
 						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
-							echo "<td class = \"tg-c3ly\"> <font color = \"#000000\"> Officer 2 </font></td>";
+							echo "<td class = \"tg-c3ly\"> <font color = \"#000000\"> Officer</font></td>";
 						} else {
 							echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
 						}
@@ -123,7 +123,7 @@
 				} else {
 					if ($indexOn == 1){
 						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
-							echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer 3</font></td>";
+							echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer</font></td>";
 						} else {
 							echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
 						}
