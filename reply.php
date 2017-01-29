@@ -147,13 +147,13 @@
                                         break;
                                 }
                             } else {
-                                $pointAddSplit = split("add points",$customCommand);
+                                $pointAddSplit = split("point change by",$customCommand);
                                 //echo "\n".$numSplit[0]." 1: ".$numSplit[1]." 2: ".$numSplit[2];
                                 if (sizeof($pointAddSplit) > 1){
                                     $pointsToAdd = intval($pointAddSplit[1]);
                                     $tagID = $person["Tag_ID"];
                                     $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagID'");
-                                    echo "\n Successfully added ".$pointsToAdd." to ".$person["First_Name"]." ".$person["Last_Name"];
+                                    echo "\n Successfully changed points by ".$pointsToAdd." for ".$person["First_Name"]." ".$person["Last_Name"];
                                     break;
                                 } else {
                                     switch($customCommand){
