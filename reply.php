@@ -62,7 +62,7 @@
                             if ($difference > 900){
                                $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
                                 $name = $person['First_Name']." ".$person['Last_Name'];
-                                $status = "Sign Out"
+                                $status = "Sign Out";
                                 $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
                                 $conn->exec($sql);
                             } else {
@@ -89,7 +89,7 @@
                         } else {
                             //Signing In
                             $name = $person['First_Name']." ".$person['Last_Name'];
-                            $status = "Sign In"
+                            $status = "Sign In";
                             $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
                             $conn->exec($sql);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
