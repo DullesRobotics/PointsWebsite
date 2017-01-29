@@ -147,6 +147,8 @@
                                         break;
                                 }
                             } else {
+                                $numSplit = split($customCommand,"add points");
+                                echo "\n".sizeof($numSplit);
                                 switch($customCommand){
                                     case "sign out":
                                         $tagID = $person["Tag_ID"];
