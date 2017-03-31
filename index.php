@@ -13,7 +13,7 @@
 	<div style="text-align:center;">
 		<h1>
 		<font color="red">
-	    		<!--Dulles Robotics Club Points Page
+	    		<!--Dulles Robotics Club Points Page-->
 			<!--SITE UNDERGOING CHANGES; IGNORE ANYTHING WEIRD-->
 			
 			TEMPORARILY OFFLINE; CHECK BACK SOON
