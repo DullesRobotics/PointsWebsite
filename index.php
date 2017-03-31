@@ -13,8 +13,10 @@
 	<div style="text-align:center;">
 		<h1>
 		<font color="red">
-	    		Dulles Robotics Club Points Page
+	    		<!--Dulles Robotics Club Points Page
 			<!--SITE UNDERGOING CHANGES; IGNORE ANYTHING WEIRD-->
+			
+			TEMPORARILY OFFLINE; CHECK BACK SOON
 		</font>
 		</h1>
 		 
@@ -77,7 +79,7 @@
 		  </tr>
 			<?php
 			$indexOn = 1;
-			foreach($data as $person){
+			/*foreach($data as $person){
 				echo "<tr>";
 				if (strlen($person['Custom_Image']) > 0){
 				    $imgHTML = "<img src=". $person['Custom_Image'] . " height=" . "57" . " width =" ."76".">";
@@ -92,7 +94,7 @@
 				}
                  * */
                  
-				if ($indexOn % 2 == 0){
+				/*if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
 						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
 							echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
@@ -167,7 +169,7 @@
 					$indexOn++;
 				}
 				
-			}
+			}*/
 			?>
 		  <!--<tr>
 		    <td class="tg-rqeu">TEST</td>
