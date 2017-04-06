@@ -108,10 +108,10 @@
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
                             $idSplit = split($person["Tag_ID"],trim($word[1]));
-                            $nameSplit = split($person["First_Name"],$trim($word[1]))
+                            //$nameSplit = split($person["First_Name"],$trim($word[1]))
                             //echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
                             //echo "\n".$person["Tag_ID"];
-                            echo "\n Possible Name: ".$nameSplit;
+                            //echo "\n Possible Name: ".$nameSplit;
                             $customCommand = trim($idSplit[1]) ?: 'NOT CUSTOM';
                             if ($customCommand == "NOT CUSTOM"){
                                 //echo "\nNot this person";
