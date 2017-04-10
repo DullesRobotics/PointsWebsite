@@ -79,6 +79,19 @@
 		  </tr>
 			<?php
 			$indexOn = 1;
+			
+			$officers = array("Karim Karim","Kenneth Mitra","Austin Joseph");
+			
+			function isOfficer($firstName,$lastName){
+				foreach ($officers as $current){
+					list($first,$last) = split(' ',$current);
+					if ($first == $firstName && $last == $lastName) {
+						return true;
+					}
+				}
+				return false;
+			}
+			
 			foreach($data as $person){
 				echo "<tr>";
 				/*if (strlen($person['Custom_Image']) > 0){
@@ -96,7 +109,7 @@
                  
 				if ($indexOn % 2 == 0){
 					if ($indexOn == 2){
-						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+						if (isOfficer($person["First_name"],$person["Last_Name"])){
 							echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
 						} else {
 							echo "<td class = \"tg-c3lz\"<font color = \"#708090\">".$indexOn." </font></td>";
@@ -106,7 +119,7 @@
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 					} else {
-						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+						if (isOfficer($person["First_name"],$person["Last_Name"])){
 							echo "<td class = \"tg-c3ly\"> <font color = \"#000000\"> Officer</font></td>";
 						} else {
 							echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
@@ -124,7 +137,7 @@
 					
 				} else {
 					if ($indexOn == 1){
-						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+						if (isOfficer($person["First_name"],$person["Last_Name"])){
 							echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer</font></td>";
 						} else {
 							echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
@@ -134,7 +147,7 @@
 						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttj\"> <font color = \"	#FFD700\">".$person['Num_Meetings']." </font></td>";
 					} elseif ($indexOn == 3){
-						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+						if (isOfficer($person["First_name"],$person["Last_Name"])){
 							echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\"> Officer </font></td>";
 						} else {
 							echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">".$indexOn." </font></td>";
@@ -144,7 +157,7 @@
 						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$person['Points']." </font></td>";
 						echo "<td class = \"tg-7ttj\"> <font color = \"	#8B4513\">".$person['Num_Meetings']." </font></td>";
 					} else {
-						if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+						if (isOfficer($person["First_name"],$person["Last_Name"])){
 							echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> Officer </font></td>";
 						} else {
 							echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
