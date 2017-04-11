@@ -83,10 +83,9 @@
 			$officers = array("Karim Karim","Kenneth Mitra","Austin Joseph");
 			
 			function isOfficer($firstName,$lastName){
-				echo "Test: ".$firstName." and ".$lastName."\n";
 				foreach ($officers as $current){
 					list($first,$last) = split(' ',$current);
-					echo "List: ".$first." and ".$last."\n";
+					echo "Current: ".$current."\n";
 					if ($first == $firstName && $last == $lastName) {
 						return true;
 					}
