@@ -80,11 +80,12 @@
 			<?php
 			$indexOn = 1;
 			
-			$officers = array("Karim,Karim","Kenneth,Mitra","Austin,Joseph");
+			$officers = array("Karim Karim","Kenneth Mitra","Austin Joseph");
 			
 			function isOfficer($firstName,$lastName){
 				foreach ($officers as $current){
-					list($first,$last) = split(',',$current);
+					list($first,$last) = split(' ',$current);
+					echo "List: ".$first." and ".$last."\n"
 					if ($first == $firstName && $last == $lastName) {
 						return true;
 					}
