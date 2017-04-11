@@ -176,7 +176,7 @@
 				}
 				echo "</tr>";
 				//echo "Index: ".$indexOn;
-				if ($person["First_Name"] == "Karim" || $person["First_Name"] == "Kenneth" || $person["First_Name"] == "Austin"){
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
 					echo "\nOfficer!";
 				} else {
 					$indexOn++;
