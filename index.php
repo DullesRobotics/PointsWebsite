@@ -83,6 +83,7 @@
 			$officers = array("Karim Karim","Kenneth Mitra","Austin Joseph");
 			
 			function isOfficer($firstName,$lastName){
+				echo var_dump($officers);
 				foreach ($officers as $current){
 					echo "Current: ".$current."\n";
 					list($first,$last) = split(' ',$current);
