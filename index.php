@@ -80,9 +80,10 @@
 			<?php
 			$indexOn = 1;
 			
-			$officers = array('Karim Karim','Kenneth Mitra','Austin Joseph');
+			
 			
 			function isOfficer($firstName,$lastName){
+				$officers = array('Karim Karim','Kenneth Mitra','Austin Joseph');
 				echo var_dump($officers);
 				foreach ($officers as $current){
 					echo "Current: ".$current."\n";
