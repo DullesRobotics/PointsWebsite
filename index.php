@@ -84,8 +84,8 @@
 			
 			function isOfficer($firstName,$lastName){
 				foreach ($officers as $current){
-					list($first,$last) = split(' ',$current);
 					echo "Current: ".$current."\n";
+					list($first,$last) = split(' ',$current);
 					if ($first == $firstName && $last == $lastName) {
 						return true;
 					}
