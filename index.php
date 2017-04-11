@@ -86,8 +86,10 @@
 				$officers = array('Karim Karim','Kenneth Mitra','Austin Joseph');
 				//echo var_dump($officers);
 				foreach ($officers as $current){
-					echo "Current: ".$current."\n";
+					//echo "Current: ".$current."\n";
 					list($first,$last) = split(' ',$current);
+					echo "First: ".$first."\n";
+					echo "Last: ".$last."\n";
 					if ($first == $firstName && $last == $lastName) {
 						return true;
 					}
