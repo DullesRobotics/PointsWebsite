@@ -80,7 +80,7 @@
 			<?php
 			$indexOn = 1;
 			
-			$officers = array("Karim Karim","Kenneth Mitra","Austin Joseph");
+			$officers = array('Karim Karim','Kenneth Mitra','Austin Joseph');
 			
 			function isOfficer($firstName,$lastName){
 				echo var_dump($officers);
