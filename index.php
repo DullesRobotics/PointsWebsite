@@ -181,11 +181,12 @@
 				}
 				echo "</tr>";
 				//echo "Index: ".$indexOn;
-				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				/*if (isOfficer($person["First_Name"],$person["Last_Name"])){
 					echo "\nOfficer!";
 				} else {
 					$indexOn++;
-				}
+				}*/
+				$indexOn++;
 				
 			}
 			?>
