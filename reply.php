@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head><title>Response</title></head>
@@ -104,64 +103,57 @@
                         break;
                     } else {
                         //COMMANDS BELOW
+                        
                         $word = split("$COMMANDSPASSWORD",$raw);
                         if (sizeof($word) > 1){
                             $idSplit = split($person["Tag_ID"],trim($word[1]));
-                            $nameSplit = split($person["First_Name"],$trim($word[1]));
-                            $customCommand = trim($idSplit[1]) ?: 'NOT CUSTOM';
-                            $customCommand2 = trim($nameSplit[1]) ?: 'NOT CUSTOM2';
+                            //$nameSplit = split($person["First_Name"],$trim($word[1]))
                             //echo "\n ID split: ".$testsplit[0]." command split: ".$testsplit[1];
                             //echo "\n".$person["Tag_ID"];
-                            echo "\n Possible Name: ".$nameSplit;
-                            echo "\n Possible corresponding command: ".;
+                            //echo "\n Possible Name: ".$nameSplit;
+                            $customCommand = trim($idSplit[1]) ?: 'NOT CUSTOM';
                             if ($customCommand == "NOT CUSTOM"){
-                                if ($customCommand2 == "NOT CUSTOM2"){
-                                    //echo "\nNot this person";
-                                    switch (trim($word[1])) {
-                                        case "sign all out": //SIGNS EVERYONE OUT
-                                            $tagID = $person["Tag_ID"];
-                                            $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
-                                            $url = 'http://dhsrobotics.ddns.net/reply.php';
-                                            $data = array($person["Tag_ID"]);
-
-                                            // use key 'http' even if you send the request to https://...
-                                            $options = array(
-                                                'http' => array(
-                                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                                                    'method'  => 'POST',
-                                                    'content' => http_build_query($data)
-                                                )
-                                            );
-                                            $context  = stream_context_create($options);
-                                            $result = file_get_contents($url, false, $context);
-                                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-                                            var_dump($result);
-                                            break;
-                                        case "sign all in": //SIGNS EVERYONE IN
-                                            $tagID = $person["Tag_ID"];
-                                            $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
-                                            $url = 'http://dhsrobotics.ddns.net/reply.php';
-                                            $data = array($person["Tag_ID"]);
-
-                                            // use key 'http' even if you send the request to https://...
-                                            $options = array(
-                                                'http' => array(
-                                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                                                    'method'  => 'POST',
-                                                    'content' => http_build_query($data)
-                                                )
-                                            );
-                                            $context  = stream_context_create($options);
-                                            $result = file_get_contents($url, false, $context);
-                                            if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-                                            var_dump($result);
-                                            break;
-                                        default:
-                                            //echo "\n Command not recognized: ".trim($word[1]);
-                                            break;
-                                    }
-                                } else {
-                                    echo "Command Confirmed: ".$customCommand2;
+                                //echo "\nNot this person";
+                                switch (trim($word[1])) {
+                                    case "sign all out": //SIGNS EVERYONE OUT
+                                        $tagID = $person["Tag_ID"];
+                                        $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
+                                        $url = 'http://dhsrobotics.ddns.net/reply.php';
+                                        $data = array($person["Tag_ID"]);
+                                        // use key 'http' even if you send the request to https://...
+                                        $options = array(
+                                            'http' => array(
+                                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                                'method'  => 'POST',
+                                                'content' => http_build_query($data)
+                                            )
+                                        );
+                                        $context  = stream_context_create($options);
+                                        $result = file_get_contents($url, false, $context);
+                                        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+                                        var_dump($result);
+                                        break;
+                                    case "sign all in": //SIGNS EVERYONE IN
+                                        $tagID = $person["Tag_ID"];
+                                        $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
+                                        $url = 'http://dhsrobotics.ddns.net/reply.php';
+                                        $data = array($person["Tag_ID"]);
+                                        // use key 'http' even if you send the request to https://...
+                                        $options = array(
+                                            'http' => array(
+                                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                                'method'  => 'POST',
+                                                'content' => http_build_query($data)
+                                            )
+                                        );
+                                        $context  = stream_context_create($options);
+                                        $result = file_get_contents($url, false, $context);
+                                        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+                                        var_dump($result);
+                                        break;
+                                    default:
+                                        //echo "\n Command not recognized: ".trim($word[1]);
+                                        break;
                                 }
                             } else {
                                 $pointAddSplit = split("change points by",$customCommand);
@@ -186,7 +178,6 @@
                                             $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
                                             $url = 'http://dhsrobotics.ddns.net/reply.php';
                                             $data = array($person["Tag_ID"]);
-
                                             // use key 'http' even if you send the request to https://...
                                             $options = array(
                                                 'http' => array(
@@ -205,7 +196,6 @@
                                             $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
                                             $url = 'http://dhsrobotics.ddns.net/reply.php';
                                             $data = array($person["Tag_ID"]);
-
                                             // use key 'http' even if you send the request to https://...
                                             $options = array(
                                                 'http' => array(
