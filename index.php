@@ -28,7 +28,7 @@
 			function update_content(){
 			    $.ajax({
 			      type: "GET",
-			      url: "http://dhsrobotics.ddns.net/index.php", // post it back to itself - use relative path or consistent www. or non-www. to avoid cross domain security issues
+			      url: "index.php", // post it back to itself - use relative path or consistent www. or non-www. to avoid cross domain security issues
 			      cache: false, // be sure not to cache results
 			    })
 			      .done(function( page_html ) {
