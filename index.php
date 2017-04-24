@@ -3,6 +3,9 @@
 	<head>
 		<title>Points Page</title>
 		     <!--<meta http-equiv="refresh" content = "5" />-->
+			<script> 
+				window.location.href = window.location.href;
+			</script>
 		<script type="text/javascript" src="engine1/jquery.js"></script>
 		<script>
 			$.ajax({
