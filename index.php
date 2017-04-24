@@ -22,11 +22,10 @@
 		
 		<script>
 			$(document).ready(function(e) {
-			    var refresher = setInterval("update_content();",5000); // 30 seconds
+			    var refresher = setInterval("update_content();",2000); // 30 seconds
 			})
 
 			function update_content(){
-
 			    $.ajax({
 			      type: "GET",
 			      url: "http://dhsrobotics.ddns.net/index.php", // post it back to itself - use relative path or consistent www. or non-www. to avoid cross domain security issues
@@ -37,7 +36,6 @@
 				    newDoc.write(page_html);
 				    newDoc.close();
 			    });   
-
 			}
 		</script>
 		 
