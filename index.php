@@ -33,11 +33,9 @@
 			      cache: false, // be sure not to cache results
 			    })
 			      .done(function( page_html ) {
-				alert("LOADED");
-			    var newDoc = document.open("text/html", "replace");
-			    newDoc.write(page_html);
-			    newDoc.close();
-
+				    var newDoc = document.open("text/html", "replace");
+				    newDoc.write(page_html);
+				    newDoc.close();
 			    });   
 
 			}
