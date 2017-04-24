@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Points Page</title>
-		     <!--<meta http-equiv="refresh" content = "5" />-->
+		     <meta http-equiv="refresh" content = "5" />
 			<!-- Bootstrap - Latest compiled and minified CSS -->
         		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- jQuery library -->
@@ -20,7 +20,7 @@
 		</font>
 		</h1>
 		
-		<script>
+		<!--<script>
 			$(document).ready(function(e) {
 			    var refresher = setInterval("update_content();",5000); // 5 seconds
 			})
@@ -41,7 +41,7 @@
 					}
 			    });   
 			}
-		</script>
+		</script>-->
 		 
 		<?php
 		require("secretSettings.php");
