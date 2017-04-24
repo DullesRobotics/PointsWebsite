@@ -22,7 +22,7 @@
 		
 		<script>
 			$(document).ready(function(e) {
-			    var refresher = setInterval("update_content();",30000); // 30 seconds
+			    var refresher = setInterval("update_content();",5000); // 30 seconds
 			})
 
 			function update_content(){
