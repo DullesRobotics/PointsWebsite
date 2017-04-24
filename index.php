@@ -32,9 +32,13 @@
 			      cache: false, // be sure not to cache results
 			    })
 			      .done(function( page_html ) {
-				    var newDoc = document.open("text/html", "replace");
-				    newDoc.write(page_html);
-				    newDoc.close();
+				    var newDoc = document.documentElement.innerHTML;
+					if (page_html != newDoc)
+					{
+					    	var newDoc = document.open("text/html", "replace");
+						newDoc.write(page_html);
+					    	newDoc.close();
+					}
 			    });   
 			}
 		</script>
