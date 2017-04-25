@@ -21,8 +21,18 @@
 
 <body oncontextmenu="return false">
   <div class="body"></div>
-		<div class="grad"></div>
-		<br>
+	<div class="grad"></div>
+	<div class="dropdown">
+	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+	  <div id="myDropdown" class="dropdown-content">
+		  <?php
+		  	
+		  ?>
+	    <a href="#">Link 1</a>
+	    <a href="#">Link 2</a>
+	    <a href="#">Link 3</a>
+	  </div>
+	</div>
     <script language="javascript">
 	    
     </script>
