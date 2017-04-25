@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <?php
-	if(!$_SESSION['login']){
-	   	header("location:index.php");
-	   	die;
+	session_start();
+	if($_SESSION['login']){
+		echo "Allowed!";
+	}else {
+		echo "Nope! ".$_SESSION['login'];
+	   	//header("location:index.php");
+	   	//die;
 	}	
 ?>	
 
