@@ -72,6 +72,7 @@
 		  <?php
 			foreach ($data as $person) {
 				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
+				echo $person["First_Name"]." loaded!";
 			}
 		  ?>
 	  </div>
