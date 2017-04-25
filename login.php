@@ -93,6 +93,7 @@
 	var username = splitData[0];
 	var password = splitData[1];
 	alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
+	alert("o");
 	function check(form)
 	{
 		if (tries <= 1) {
