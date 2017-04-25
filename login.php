@@ -1,5 +1,12 @@
-
 <!DOCTYPE html>
+<div id="username-target" style="display: none;">
+    <?php 
+	require("secretSettings.php");
+	//$PAGEPASSWORD;
+	//$PAGEUSERNAME;
+	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
+    ?>
+</div>
 <html>
 
 <head>
@@ -76,15 +83,6 @@
 			<input type="button" onclick="check(this.form)" value="Login"/>
 		</div>
 </form>
-	
-<div id="username-target" style="display: none;">
-    <?php 
-	require("secretSettings.php");
-	//$PAGEPASSWORD;
-	//$PAGEUSERNAME;
-	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
-    ?>
-</div>
 
 <script language="javascript">
 	var tries = 3;
