@@ -3,12 +3,6 @@
 <html>
 
 <head>
-	<?php
-	//put this at the first line
-	//session_start();
-	//if  authentication successful 
-	//$_SESSION['login'] = true;
-	?>
 
   <meta charset="UTF-8">
 
@@ -96,7 +90,7 @@
 	    <?php 
 		//$output = "42"; //Again, do some operation, get the output.
 		//echo htmlspecialchars($output); /* You have to escape because the result
-						   will not be valid HTML otherwise. */
+						  // will not be valid HTML otherwise. */
 	    ?>
 	</div>*/
 	var tries = 3;
