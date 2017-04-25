@@ -70,7 +70,7 @@
 	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
 	  <div id="myDropdown" class="dropdown-content">
 		  <?php
-			for ($data as $person) {
+			foreach ($data as $person) {
 				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
 		  ?>
