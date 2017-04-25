@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <?php
-	session_start();
-	if($_SESSION['login']){
-		echo "Allowed! ".$_SESSION['login'];
+	if(isset($_COOKIE("admin")) && $_COOKIE("admin")){
+		echo "Allowed! ".$_COOKIE("admin");
 	}else {
-		echo "Nope! ".$_SESSION['login'];
+		echo "Nope! ".$_COOKIE("admin");
 	   	//header("location:index.php");
 	   	//die;
 	}	
