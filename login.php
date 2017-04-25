@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <div id="username-target" style="display: none;">
-    <?php 
+    <?php
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
+	session_start();
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
