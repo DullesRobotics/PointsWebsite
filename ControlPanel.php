@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 	if(!$_SESSION['login']){
-		alert("wot");
 	   	header("location:index.php");
 	   	die;
 	}	
