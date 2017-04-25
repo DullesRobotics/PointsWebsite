@@ -4,41 +4,6 @@
 		<title>Points Page</title>
 		
 		<style>
-			.body{
-			    position: fixed; 
-			    overflow-y: scroll;
-			    width: 100%;
-				top: -20px;
-				left: -20px;
-				right: -40px;
-				bottom: -40px;
-				width: auto;
-				height: auto;
-				-webkit-filter: blur(0px);
-
-			}
-
-
-
-			.header{
-				position: absolute;
-				top: calc(50% - 35px);
-				left: calc(50% - 255px);
-
-			}
-
-			.header div{
-				float: left;
-				color: #fff;
-				font-family: 'Exo', sans-serif;
-				font-size: 40px;
-				font-weight: 200;
-			}
-
-			.header div span{
-				color: #F29E20 !important;
-			}
-
 			.login{
 				position: absolute;
 				top: calc(50% - 75px);
@@ -76,34 +41,9 @@
 		<h1>
 		<font color="red">
 	    		Dulles Robotics Club Points Page
-			<!--SITE UNDERGOING CHANGES; IGNORE ANYTHING WEIRD-->
-			
 			<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
 		</font>
 		</h1>
-		
-		<!--<script>
-			$(document).ready(function(e) {
-			    var refresher = setInterval("update_content();",5000); // 5 seconds
-			})
-
-			function update_content(){
-			    $.ajax({
-			      type: "GET",
-			      url: "index.php", // post it back to itself - use relative path or consistent www. or non-www. to avoid cross domain security issues
-			      cache: false, // be sure not to cache results
-			    })
-			      .done(function( page_html ) {
-				    var newDoc = document.documentElement.innerHTML;
-					if (page_html != newDoc)
-					{
-					    	var newDoc = document.open("text/html", "replace");
-						newDoc.write(page_html);
-					    	newDoc.close();
-					}
-			    });   
-			}
-		</script>-->
 		 
 		<?php
 		require("secretSettings.php");
