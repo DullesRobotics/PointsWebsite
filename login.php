@@ -24,7 +24,6 @@
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
-	color: #fff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -37,7 +36,6 @@
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
-	color: #fff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -69,9 +67,6 @@
 
   <div class="body"></div>
 		<div class="grad"></div>
-		<div class="header">
-			<div>Dew<span>Clarke</span></div>
-		</div>
 		<br>
 		<form name="login">
 		<div class="login">
