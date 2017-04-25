@@ -6,7 +6,7 @@
 		<style>
 			.login{
 				position:absolute;
-				bottom:0;
+				top:0;
 
 			}
 		</style>
