@@ -68,7 +68,7 @@
 			$getMembers->execute();
 			$data = $getMembers->fetchAll();
 			for ($data as $person) {
-				echo "<a href = \"#\">".$person["First_Name"]." ".$person["Last_Name"]."</a>";
+				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
 		  }catch(PDOException $e){
 			  echo $e;
