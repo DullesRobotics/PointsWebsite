@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-	if(isset($_COOKIE("admin")) && $_COOKIE("admin")){
-		echo "Allowed! ".$_COOKIE("admin");
+	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
+		echo "Allowed! ".$_COOKIE["admin"];
 	}else {
-		echo "Nope! ".$_COOKIE("admin");
+		echo "Nope! ".$_COOKIE["admin"];
 	   	//header("location:index.php");
 	   	//die;
 	}	
