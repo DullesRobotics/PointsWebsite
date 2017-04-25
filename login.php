@@ -82,9 +82,9 @@
 function check(form)
 {
 	switch(form.userid.value) {
-		case "123": if (form.pswrd.value == "123") { alert("Do something here"); }
+		case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
 			else { alert("Try again!"); } break;
-		case "admin": if (form.pswrd.value == "okgo") { alert('Welcome Admin, you\'re signed in"); }
+		case "admin": if (form.pswrd.value == "okgo") { alert('Welcome Admin!"); }
 								      else { alert("Invalid request!"); } break;	
 		default: alert("This user Does Not Exist!");
 	}
