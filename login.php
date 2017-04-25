@@ -86,17 +86,30 @@
 
 </form>
 <script language="javascript">
+	<?php
+		require("secretSettings.php");
+	$ADMINPASSWORD = $PAGEPASSWORD;
+	$ADMINUSERNAME = $PAGEUSERNAME;
+	?>
+	
+	/*<div id="dom-target">
+	    <?php 
+		//$output = "42"; //Again, do some operation, get the output.
+		//echo htmlspecialchars($output); /* You have to escape because the result
+						   will not be valid HTML otherwise. */
+	    ?>
+	</div>*/
 	var tries = 3;
 	function check(form)
 	{
 
-		if (tries <= 0) {
+		if (tries <= 1) {
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
 		switch(form.userid.value) {
-			case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
-				else { alert("Incorrect password"); } break;
-			case "admin": if (form.pswrd.value == "okgo") { alert("Welcome Admin, you're signed in!"); }
+			/*case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
+				else { alert("Incorrect password"); } break;*/
+			case $ADMINUSERNAME: if (form.pswrd.value == "okgo") { alert("Welcome Admin, you're signed in!"); }
 									      else { alert("Incorrect password; " + tries + " tries left."); tries--; } break;	
 			default: alert("This user Does Not Exist!");
 		}
