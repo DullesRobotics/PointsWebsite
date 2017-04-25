@@ -26,11 +26,16 @@
 	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
 	  <div id="myDropdown" class="dropdown-content">
 		  <?php
-		  	
+		  	$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			echo "\nConnected successfully\n";
+			$getMembers = $conn->prepare("SELECT * FROM Members");
+			$getMembers->execute();
+			$data = $getMembers->fetchAll();
+		  	for ($data as $person) {
+				echo "<a href = \"#\">".$person["First_Name"]." ".$person["Last_Name"]."</a>";
+			}
 		  ?>
-	    <a href="#">Link 1</a>
-	    <a href="#">Link 2</a>
-	    <a href="#">Link 3</a>
 	  </div>
 	</div>
     <script language="javascript">
