@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+	if(!$_SESSION['login']){
+		alert("wot");
+	   	header("location:index.php");
+	   	die;
+	}	
+?>	
+
 <html>
 
 <head>
@@ -10,18 +18,11 @@
 </head>
 
 <body oncontextmenu="return false">
-
   <div class="body"></div>
 		<div class="grad"></div>
 		<br>
     <script language="javascript">
 	    
     </script>
-	<?php
-		if(!$_SESSION['login']){
-		   header("location:index.php");
-		   die;
-		}	
-	?>
 </body>
 </html>
