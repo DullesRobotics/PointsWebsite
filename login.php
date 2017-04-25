@@ -89,7 +89,7 @@
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
 	var splitData = str.split(myData," ");
-	alert(myData + "n\" + splitData);
+	alert(myData + "n\");
 	var username = splitData[0];
 	var password = splitData[1];
 	alert("Username? " + username + "\nPassword? " + password);
