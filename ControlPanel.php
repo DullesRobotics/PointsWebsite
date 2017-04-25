@@ -18,7 +18,6 @@
   <title>Control Panel</title>
 	
 <style>
-	/* Dropdown Button */
 	.dropbtn {
 	    background-color: #4CAF50;
 	    color: white;
@@ -27,19 +26,13 @@
 	    border: none;
 	    cursor: pointer;
 	}
-
-	/* Dropdown button on hover & focus */
 	.dropbtn:hover, .dropbtn:focus {
 	    background-color: #3e8e41;
 	}
-
-	/* The container <div> - needed to position the dropdown content */
 	.dropdown {
 	    position: relative;
 	    display: inline-block;
 	}
-
-	/* Dropdown Content (Hidden by Default) */
 	.dropdown-content {
 	    display: none;
 	    position: absolute;
@@ -48,19 +41,13 @@
 	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	    z-index: 1;
 	}
-
-	/* Links inside the dropdown */
 	.dropdown-content a {
 	    color: black;
 	    padding: 12px 16px;
 	    text-decoration: none;
 	    display: block;
 	}
-
-	/* Change color of dropdown links on hover */
 	.dropdown-content a:hover {background-color: #f1f1f1}
-
-	/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 	.show {display:block;}	
 </style>
 
@@ -73,7 +60,7 @@
 	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
 	  <div id="myDropdown" class="dropdown-content">
 		  <?php
-		  	require("secretSettings.php");
+		  	/*require("secretSettings.php");
 		  	$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$getMembers = $conn->prepare("SELECT * FROM Members");
@@ -81,7 +68,7 @@
 			$data = $getMembers->fetchAll();
 		  	for ($data as $person) {
 				echo "<a href = \"#\">".$person["First_Name"]." ".$person["Last_Name"]."</a>";
-			}
+			}*/
 		  ?>
 	  </div>
 	</div>
