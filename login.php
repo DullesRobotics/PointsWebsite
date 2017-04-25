@@ -87,22 +87,10 @@
 		//$output = "42"; //Again, do some operation, get the output.
 		//echo htmlspecialchars($PAGEUSERNAME); // You have to escape because the result
 						  // will not be valid HTML otherwise. 
-		echo json_encode($PAGEUSERNAME);
+		echo htmlspecialchars($PAGEUSERNAME);
 	    ?>
 	</div>
 <script language="javascript">
-	    var oReq = new XMLHttpRequest(); //New request object
-	    oReq.onload = function() {
-		//This is where you handle what to do with the response.
-		//The actual data is found on this.responseText
-		alert(this.responseText); //Will alert: 42
-	    };
-	    oReq.open("GET", "get-data.php", true);
-	    //                               ^ Don't block the rest of the execution.
-	    //                                 Don't wait until the request finishes to 
-	    //                                 continue.
-	    oReq.send();
-	
 	var tries = 3;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
