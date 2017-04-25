@@ -111,7 +111,7 @@
 			<?php
 				$_SESSION['login'] = true;
 			?>
-			window.open("http://dhsrobotics.ddns.net/ControlPanel.php","_self");	
+			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
 		} else {
 			alert("Invalid! Tries remaining: " + tries);
 			tries--;
