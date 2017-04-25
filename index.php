@@ -25,7 +25,7 @@
 			<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
 		</font>
 			<font color = "white">
-				30 minutes = 1 point
+				\n30 minutes = 1 point
 			</font>
 		</h1>
 		 
