@@ -337,6 +337,13 @@
 		    <td class="tg-w08d">0</td>
 		  </tr>-->
 		</table>
+		<form name="login">
+			<div class="login">
+					<input type="text" placeholder="Please" name="userid"><br>
+					<input type="password" placeholder="Subscribe :)" name="pswrd"><br>
+					<input type="button" onclick="check(this.form)" value="Login"/>
+			</div>
+		</form>
 	</div>
         <!-- Bootstrap - Latest compiled JavaScript -->
        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
