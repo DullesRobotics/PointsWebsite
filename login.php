@@ -85,13 +85,14 @@
 </form>
 
 <script language="javascript">
-	var tries = 3;
+	var tries = 2;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
 	var splitData = myData.split(' ');
 	//alert(myData + "n\" + splitData);
 	var username = splitData[4];
 	var password = splitData[5];
+	var authentic = false;
 	//alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
 	//alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
 	function check(form)
@@ -99,12 +100,21 @@
 		if (tries <= 1) {
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
+		
 		switch(form.userid.value) {
 			/*case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
 				else { alert("Incorrect password"); } break;*/
-			case username: if (form.pswrd.value == password) { alert("Welcome Admin, you're signed in!"); }
-									      else { alert("Incorrect password; " + tries + " tries left."); tries--; } break;	
-			default: alert("This user Does Not Exist!");
+			case username: if (form.pswrd.value == password) { authentic = true; } break;	
+		}
+		if (authentic){
+			<?php
+			session_start();
+			$_SESSION['login'] = true;
+			?>
+			window.open("http://dhsrobotics.ddns.net","_self");	
+		} else {
+			alert("Invalid! Tries remaining: " + tries);
+			tries--;
 		}
 	}
 </script>
