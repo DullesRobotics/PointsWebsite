@@ -8,8 +8,6 @@
   <title>Login</title>
 
     <style>
-@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 
 
 
@@ -147,8 +145,8 @@
 		<br>
 		<form name="login">
 		<div class="login">
-				<input type="text" placeholder="Please" name="userid"><br>
-				<input type="password" placeholder="Subscribe :)" name="pswrd"><br>
+				<input type="text" placeholder="Username" name="userid"><br>
+				<input type="password" placeholder="Password" name="pswrd"><br>
 				<input type="button" onclick="check(this.form)" value="Login"/>
 		</div>
 
@@ -159,13 +157,13 @@
 function check(form)
 {
  
- if(form.userid.value == "subscribe" && form.pswrd.value == "dewclarke")
+ if(form.userid.value == "123" && form.pswrd.value == "123")
   {
-    window.open('https://www.youtube.com/c/dewclarke?sub_confirmation=1')
+    alert("Do something here");
   }
  else
  {
-   alert("Please subscribe to my channel for more coding!")
+   alert("Invalid!")
   }
 }
 </script>
