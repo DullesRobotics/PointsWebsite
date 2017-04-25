@@ -90,10 +90,10 @@
     	var myData = div.textContent;
 	var splitData = myData.split(' ');
 	//alert(myData + "n\" + splitData);
-	var username = splitData[0];
-	var password = splitData[1];
-	alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
-	alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
+	var username = splitData[4];
+	var password = splitData[5];
+	//alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
+	//alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
 	function check(form)
 	{
 		if (tries <= 1) {
@@ -102,7 +102,7 @@
 		switch(form.userid.value) {
 			/*case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
 				else { alert("Incorrect password"); } break;*/
-			case myData: if (form.pswrd.value == "okgo") { alert("Welcome Admin, you're signed in!"); }
+			case username: if (form.pswrd.value == password) { alert("Welcome Admin, you're signed in!"); }
 									      else { alert("Incorrect password; " + tries + " tries left."); tries--; } break;	
 			default: alert("This user Does Not Exist!");
 		}
