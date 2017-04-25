@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>ControlPanel</title>
+  <title>Control Panel</title>
 
 </head>
 
@@ -14,9 +14,6 @@
   <div class="body"></div>
 		<div class="grad"></div>
 		<br>
-		<form name="login">
-		
-    </form>
     <script language="javascript">
       
     </script>
