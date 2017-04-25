@@ -21,11 +21,11 @@
 	<div style="text-align:center;">
 		<h1>
 		<font color="red">
-	    		Dulles Robotics Club Points Page
+	    		Dulles Robotics Club Points Page<br/>
 			<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
 		</font>
 			<font color = "white">
-				30 minutes = 1 point<br/>
+				30 minutes = 1 point
 			</font>
 		</h1>
 		 
