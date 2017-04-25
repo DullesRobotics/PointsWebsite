@@ -217,7 +217,7 @@
 		<script>
 			function loadLogin()
 			{
-			    this.open('http://dhsrobotics.ddns.net/login.php');
+			    window.open('http://dhsrobotics.ddns.net/login.php',"_self");
 			}
 		</script>
 	</div>
