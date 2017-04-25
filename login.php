@@ -88,15 +88,7 @@ function check(form)
 				else { alert("Invalid request!"); }	
 		default: alert("This user Does Not Exist!");
 	}
-	
-//	if(form.userid.value == "123" && form.pswrd.value == "123")
-//  {
-   // alert("Do something here");
-  //}
- //else
- //{
-  // alert("Invalid!")
-  //}
+
 }
 </script>
 </body>
