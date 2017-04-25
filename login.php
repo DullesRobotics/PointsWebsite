@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <div id="username-target" style="display: none;">
     <?php
-	session_start();
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
@@ -109,14 +108,10 @@
 		}
 		if (authentic){
 			<?php
-				$_SESSION['login'] = 1;
-				//echo $_SESSION['login'];
+				setcookie("admin",true);
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
 		} else {
-			<?php
-			$_SESSION['login'] = 0;
-			?>
 			alert("Invalid! Tries remaining: " + tries);
 			tries--;
 		}
