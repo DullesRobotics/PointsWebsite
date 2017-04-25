@@ -5,11 +5,8 @@
 		
 		<style>
 			.login{
-				position:relative;
-				left: 50%;
-				margin-top:50%;
-				height: 150px;
-				width: 350px;
+				position:absolute;
+				bottom:0;
 
 			}
 		</style>
