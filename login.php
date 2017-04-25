@@ -69,11 +69,11 @@
 		<div class="grad"></div>
 		<br>
 		<form name="login">
-		<center><div class="login">
+		<div class="login">
 			<input type="text" placeholder="Username" name="userid"><br>
-				<input type="password" placeholder="Password" name="pswrd"><br>
-				<input type="button" onclick="check(this.form)" value="Login"/>
-			</div></center>
+			<input type="password" placeholder="Password" name="pswrd"><br>
+			<input type="button" onclick="check(this.form)" value="Login"/>
+		</div>
 
 
 
@@ -81,15 +81,22 @@
 <script language="javascript">
 function check(form)
 {
- 
- if(form.userid.value == "123" && form.pswrd.value == "123")
-  {
-    alert("Do something here");
-  }
- else
- {
-   alert("Invalid!")
-  }
+	switch(form.userid.value) {
+		case "123": if (form.pswrd.value == "123") { alert("Do something here"); }
+				else { alert("Try again!"); }
+		case "admin": if (form.pswrd.value == "okgo") { alert('Welcome Admin, you\'re signed in"); }
+				else { alert("Invalid request!"); }	
+		default: alert("This user Does Not Exist!");
+	}
+	
+//	if(form.userid.value == "123" && form.pswrd.value == "123")
+//  {
+   // alert("Do something here");
+  //}
+ //else
+ //{
+  // alert("Invalid!")
+  //}
 }
 </script>
 </body>
