@@ -69,11 +69,11 @@
 		<div class="grad"></div>
 		<br>
 		<form name="login">
-		<div class="login">
-				<input type="text" placeholder="Username" name="userid"><br>
+		<center><div class="login">
+			<input type="text" placeholder="Username" name="userid"><br>
 				<input type="password" placeholder="Password" name="pswrd"><br>
 				<input type="button" onclick="check(this.form)" value="Login"/>
-		</div>
+			</div></center>
 
 
 
