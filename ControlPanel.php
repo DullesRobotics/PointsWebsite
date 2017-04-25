@@ -62,7 +62,7 @@
 	}
 	.dropdown-content a {
 	    color: black;
-	    padding: 12px 16px;
+	    padding: 6px 8px;
 	    text-decoration: none;
 	    display: block;
 	}
@@ -76,7 +76,7 @@
   <div class="body"></div>
 	<div class="grad"></div>
 	<div class="dropdown">
-	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+	  <button onclick="myFunction()" class="dropbtn">Pick User</button>
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
@@ -92,20 +92,6 @@
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
 
-		// Close the dropdown menu if the user clicks outside of it
-		window.onclick = function(event) {
-		  if (!event.target.matches('.dropbtn')) {
-
-		    var dropdowns = document.getElementsByClassName("dropdown-content");
-		    var i;
-		    for (i = 0; i < dropdowns.length; i++) {
-		      var openDropdown = dropdowns[i];
-		      if (openDropdown.classList.contains('show')) {
-			openDropdown.classList.remove('show');
-		      }
-		    }
-		  }
-		}
 		
 		function filterFunction() {
 		    var input, filter, ul, li, a, i;
