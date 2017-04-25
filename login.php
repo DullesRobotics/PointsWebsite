@@ -109,7 +109,7 @@
 		if (authentic){
 			<?php
 				session_start();
-				$_SESSION['login'] = true;
+				$_SESSION['login'] = 1;
 				//echo $_SESSION['login'];
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
