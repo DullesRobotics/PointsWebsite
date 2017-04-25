@@ -2,7 +2,7 @@
 <?php
 	session_start();
 	if($_SESSION['login']){
-		echo "Allowed!";
+		echo "Allowed! ".$_SESSION['login'];
 	}else {
 		echo "Nope! ".$_SESSION['login'];
 	   	//header("location:index.php");
