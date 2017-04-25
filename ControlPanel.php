@@ -84,7 +84,7 @@
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
 			foreach ($data as $person) {
-				echo '<button id="btn" onclick = "assignUser()" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</button>';
+				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
 		  ?>
 	  </div>
@@ -94,12 +94,6 @@
 	    	function myFunction() {
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
-	    
-	    	function assignUser(){
-			var button_text = document.getElementById('btn').innerHTML;
-			alert(button_text);
-		}
-
 		
 		function filterFunction() {
 		    var input, filter, ul, li, a, i;
