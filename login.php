@@ -115,6 +115,7 @@
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
 		} else {
 			<?php
+			session_start();
 			$_SESSION['login'] = 0;
 			?>
 			alert("Invalid! Tries remaining: " + tries);
