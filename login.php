@@ -4,7 +4,6 @@
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
-	session_start();
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
@@ -109,6 +108,7 @@
 		}
 		if (authentic){
 			<?php
+				session_start();
 				$_SESSION['login'] = true;
 				echo $_SESSION['login'];
 			?>
