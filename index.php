@@ -211,7 +211,7 @@
 		</table>
 		<form name="login">
 			<div class="login">
-					<input type="button" onclick="loadLogin()" value="Login"/>
+					<input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>
 			</div>
 		</form>
 		<script>
