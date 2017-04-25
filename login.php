@@ -88,8 +88,8 @@
 	var tries = 3;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
-	var splitData = str.split(myData," ");
-	alert(myData + "n\");
+	var splitData = myData.split(' ');
+	alert(myData + "n\" + splitData);
 	var username = splitData[0];
 	var password = splitData[1];
 	alert("Username? " + username + "\nPassword? " + password);
