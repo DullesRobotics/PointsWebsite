@@ -110,7 +110,7 @@
 			<?php
 				setcookie("admin",true);
 			?>
-			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
+			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_self");	
 		} else {
 			alert("Invalid! Tries remaining: " + tries);
 			tries--;
