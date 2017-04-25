@@ -110,7 +110,7 @@
 			<?php
 				session_start();
 				$_SESSION['login'] = true;
-				echo $_SESSION['login'];
+				//echo $_SESSION['login'];
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_blank");	
 		} else {
