@@ -60,15 +60,19 @@
 	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
 	  <div id="myDropdown" class="dropdown-content">
 		  <?php
-		  	/*require("secretSettings.php");
-		  	$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+		  require("secretSettings.php");
+		  try{
+			$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$getMembers = $conn->prepare("SELECT * FROM Members");
 			$getMembers->execute();
 			$data = $getMembers->fetchAll();
-		  	for ($data as $person) {
+			for ($data as $person) {
 				echo "<a href = \"#\">".$person["First_Name"]." ".$person["Last_Name"]."</a>";
-			}*/
+			}
+		  }catch(PDOException $e){
+			  echo $e;
+		  }
 		  ?>
 	  </div>
 	</div>
