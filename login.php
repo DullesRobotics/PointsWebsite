@@ -83,6 +83,7 @@
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
 	echo htmlspecialchars($PAGEUSERNAME);
+	echo htmlspecialchars($PAGEPASSWORD);
     ?>
 </div>
 <script language="javascript">
