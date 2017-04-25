@@ -82,15 +82,17 @@
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
-	echo htmlspecialchars($PAGEUSERNAME);
-	echo htmlspecialchars($PAGEPASSWORD);
+	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
+
 <script language="javascript">
 	var tries = 3;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
-	alert(myData);
+	var username = str.split(myData," ")[0];
+	var password = str.split(myData," ")[1];
+	alert(username);
 	function check(form)
 	{
 
