@@ -88,11 +88,15 @@
 <script language="javascript">
 function check(form)
 {
+	var tries = 0;
+	if (tries >= 3) {
+		window.open("http://dhsrobotics.ddns.net","_self");
+	}
 	switch(form.userid.value) {
 		case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
-			else { alert("Try again!"); } break;
+			else { alert("Incorrect password"); } break;
 		case "admin": if (form.pswrd.value == "okgo") { alert("Welcome Admin, you're signed in!"); }
-								      else { alert("Invalid request!"); } break;	
+								      else { alert("Incorrect password; " + tries + " tries left."); } break;	
 		default: alert("This user Does Not Exist!");
 	}
 
