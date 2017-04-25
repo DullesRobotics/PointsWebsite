@@ -10,23 +10,7 @@
 				margin-top:50%;
 				height: 150px;
 				width: 350px;
-				padding: 10px;
 
-			}
-			
-			.login input[type=button]{
-				width: 260px;
-				height: 35px;
-				background: #fff;
-				border: 1px solid #fff;
-				cursor: pointer;
-				border-radius: 2px;
-				color: #a18d6c;
-				font-family: 'Exo', sans-serif;
-				font-size: 16px;
-				font-weight: 400;
-				padding: 6px;
-				margin-top: 10px;
 			}
 		</style>
 		     <meta http-equiv="refresh" content = "5" />
