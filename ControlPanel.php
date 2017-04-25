@@ -15,7 +15,13 @@
 		<div class="grad"></div>
 		<br>
     <script language="javascript">
-      
+	    
     </script>
+	<?php
+		if(!$_SESSION['login']){
+		   header("location:index.php");
+		   die;
+		}	
+	?>
 </body>
 </html>
