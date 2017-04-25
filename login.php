@@ -8,46 +8,6 @@
   <title>Login</title>
 
     <style>
-
-
-
-.body{
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
-	width: auto;
-	height: auto;
-	background-image: url(http://dewclarke.com/subscribe.png);
-	background-size: cover;
-	-webkit-filter: blur(0px);
-	
-}
-
-
-
-.header{
-	position: absolute;
-	top: calc(50% - 35px);
-	left: calc(50% - 255px);
-	
-}
-
-.header div{
-	float: left;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 40px;
-	font-weight: 200;
-}
-
-.header div span{
-	color: #F29E20 !important;
-}
-
 .login{
 	position: absolute;
 	top: calc(50% - 75px);
@@ -98,36 +58,6 @@
 	font-weight: 400;
 	padding: 6px;
 	margin-top: 10px;
-}
-
-.login input[type=button]:hover{
-	opacity: 0.8;
-}
-
-.login input[type=button]:active{
-	opacity: 0.6;
-}
-
-.login input[type=text]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=password]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=button]:focus{
-	outline: none;
-}
-
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
 }
 </style>
 
