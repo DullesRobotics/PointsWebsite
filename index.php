@@ -5,9 +5,9 @@
 		
 		<style>
 			.login{
-				position: absolute;
-				top: calc(50% - 75px);
-				left: calc(50% - 50px);
+				position:relative;
+				left: 50%;
+				margin-top:50%;
 				height: 150px;
 				width: 350px;
 				padding: 10px;
