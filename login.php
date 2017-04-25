@@ -89,13 +89,12 @@
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
 	var splitData = myData.split(' ');
-	alert(myData + "n\" + splitData);
+	//alert(myData + "n\" + splitData);
 	var username = splitData[0];
 	var password = splitData[1];
 	alert("Username? " + username + "\nPassword? " + password);
 	function check(form)
 	{
-
 		if (tries <= 1) {
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
@@ -106,7 +105,6 @@
 									      else { alert("Incorrect password; " + tries + " tries left."); tries--; } break;	
 			default: alert("This user Does Not Exist!");
 		}
-
 	}
 </script>
 </body>
