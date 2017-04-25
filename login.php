@@ -75,25 +75,21 @@
 			<input type="password" placeholder="Password" name="pswrd"><br>
 			<input type="button" onclick="check(this.form)" value="Login"/>
 		</div>
-
-
-
 </form>
-	<div id="username-target">
-	    <?php 
-		require("secretSettings.php");
-		//$PAGEPASSWORD;
-		//$PAGEUSERNAME;
-		//$output = "42"; //Again, do some operation, get the output.
-		//echo htmlspecialchars($PAGEUSERNAME); // You have to escape because the result
-						  // will not be valid HTML otherwise. 
-		echo htmlspecialchars($PAGEUSERNAME);
-	    ?>
-	</div>
+	
+<div id="username-target" style="display: none;">
+    <?php 
+	require("secretSettings.php");
+	//$PAGEPASSWORD;
+	//$PAGEUSERNAME;
+	echo htmlspecialchars($PAGEUSERNAME);
+    ?>
+</div>
 <script language="javascript">
 	var tries = 3;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
+	alert(myData);
 	function check(form)
 	{
 
