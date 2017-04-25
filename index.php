@@ -22,6 +22,7 @@
 		<h1>
 		<font color="red">
 	    		Dulles Robotics Club Points Page
+			30 minutes = 1 point
 			<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
 		</font>
 		</h1>
