@@ -90,9 +90,10 @@
 	var tries = 3;
 	var div = document.getElementById("username-target");
     	var myData = div.textContent;
-	var username = str.split(myData," ")[0];
-	var password = str.split(myData," ")[1];
-	alert(username);
+	var splitData = str.split(myData," ");
+	var username = splitData[0];
+	var password = splitData[1];
+	alert("Username? " + username + "\nPassword? " + password);
 	function check(form)
 	{
 
