@@ -76,12 +76,15 @@
   <div class="body"></div>
 	<div class="grad"></div>
 	<div class="dropdown">
-	  <button onclick="myFunction()" class="dropbtn">Pick User</button>
+		<?php
+			$userPicked = "Pick User";
+			echo '<button onclick="myFunction()" class="dropbtn">'.$userPicked.'</button>';
+		?>
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
 			foreach ($data as $person) {
-				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
+				echo '<button id="btn" onclick = "assignUser()" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</button>';
 			}
 		  ?>
 	  </div>
@@ -90,6 +93,11 @@
     <script language="javascript">
 	    	function myFunction() {
 		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+	    
+	    	function assignUser(){
+			var button_text = document.getElementById('btn').innerHTML;
+			alert(button_text);
 		}
 
 		
