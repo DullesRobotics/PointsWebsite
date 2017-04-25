@@ -48,34 +48,7 @@
 				padding: 10px;
 
 			}
-
-			.login input[type=text]{
-				width: 250px;
-				height: 30px;
-				background: transparent;
-				border: 1px solid rgba(255,255,255,0.6);
-				border-radius: 2px;
-				color: #fff;
-				font-family: 'Exo', sans-serif;
-				font-size: 16px;
-				font-weight: 400;
-				padding: 4px;
-			}
-
-			.login input[type=password]{
-				width: 250px;
-				height: 30px;
-				background: transparent;
-				border: 1px solid rgba(255,255,255,0.6);
-				border-radius: 2px;
-				color: #fff;
-				font-family: 'Exo', sans-serif;
-				font-size: 16px;
-				font-weight: 400;
-				padding: 4px;
-				margin-top: 10px;
-			}
-
+			
 			.login input[type=button]{
 				width: 260px;
 				height: 35px;
@@ -89,28 +62,6 @@
 				font-weight: 400;
 				padding: 6px;
 				margin-top: 10px;
-			}
-
-			.login input[type=button]:hover{
-				opacity: 0.8;
-			}
-
-			.login input[type=button]:active{
-				opacity: 0.6;
-			}
-
-			.login input[type=text]:focus{
-				outline: none;
-				border: 1px solid rgba(255,255,255,0.9);
-			}
-
-			.login input[type=password]:focus{
-				outline: none;
-				border: 1px solid rgba(255,255,255,0.9);
-			}
-
-			.login input[type=button]:focus{
-				outline: none;
 			}
 		</style>
 		     <meta http-equiv="refresh" content = "5" />
