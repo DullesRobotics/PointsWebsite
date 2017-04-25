@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <?php
+ 	require("secretSettings.php");
 	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
 		//echo "Allowed! ".$_COOKIE["admin"];
 	}else {
 		//echo "Nope! ".$_COOKIE["admin"];
 	   	header("location:index.php");
 	   	die;
-	}	
+	}
+	try{
+		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$getMembers = $conn->prepare("SELECT * FROM Members");
+		$getMembers->execute();
+		$data = $getMembers->fetchAll();
+	}catch(PDOException $e){
+	 	echo $e;
+  	}
 ?>	
 
 <html>
@@ -60,19 +70,9 @@
 	  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
 	  <div id="myDropdown" class="dropdown-content">
 		  <?php
-		  require("secretSettings.php");
-		  try{
-			$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$getMembers = $conn->prepare("SELECT * FROM Members");
-			$getMembers->execute();
-			$data = $getMembers->fetchAll();
 			for ($data as $person) {
 				echo '<a href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
-		  }catch(PDOException $e){
-			  echo $e;
-		  }
 		  ?>
 	  </div>
 	</div>
