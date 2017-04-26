@@ -101,6 +101,7 @@
 	    	{
 		    var user = button.innerHTML;
 		    changeBtnName(button);
+		    myFunction();
 	    	}
 		
 		function filterFunction() {
