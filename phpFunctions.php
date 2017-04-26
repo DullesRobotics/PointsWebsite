@@ -19,10 +19,10 @@ th {text-align: left;}
 
 <?php
     require("secretSettings.php");
-    $q = intval($_GET['q']);
+    $q = $_GET['q'];
     echo $q;
 
-    try{
+    /*try{
         $con = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e)
@@ -33,7 +33,7 @@ th {text-align: left;}
     $getMembers = $conn->prepare("SELECT * FROM Members");
     $getMembers->execute();
     $data = $getMembers->fetchAll();
-    $found = false;
+    $found = false;*/
     /*foreach ($data as $person){
         if ($person[])
     }*/
