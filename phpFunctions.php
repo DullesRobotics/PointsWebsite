@@ -19,7 +19,7 @@ th {text-align: left;}
 
 <?php
     require("secretSettings.php");
-    $q = $_GET['q'];
+    $q = intval($_GET['q']);
     echo $q;
 
     /*try{
