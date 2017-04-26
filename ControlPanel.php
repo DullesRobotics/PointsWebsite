@@ -84,7 +84,7 @@
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
 			foreach ($data as $person) {
-				echo '<a onclick = "clicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
+				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
 		  ?>
 	  </div>
