@@ -19,10 +19,15 @@ th {text-align: left;}
 
 <?php
     require("secretSettings.php");
-    $q = intval($_GET['q']);
-    echo $q;
+    $user = $_GET['user'];
+    $NameSplit = user.split(' ');
+    $firstName = $NameSplit[0].substr(1,strlen($NameSplit[0]));
+    $lastName = $NameSplit[1].substr(1,strlen($NameSplit[1]));
+    
+    $action = $_GET['action'];
+    //echo $q;
 
-    /*try{
+    try{
         $con = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e)
@@ -34,9 +39,12 @@ th {text-align: left;}
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     $found = false;*/
-    /*foreach ($data as $person){
-        if ($person[])
-    }*/
+    foreach ($data as $person){
+        if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
+            echo "Found: ".$firstName." ".$lastName."!";
+            break;
+        }
+    }
 
     /*echo "<table>
         <tr>
