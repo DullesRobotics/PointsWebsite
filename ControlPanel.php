@@ -76,10 +76,7 @@
   <div class="body"></div>
 	<div class="grad"></div>
 	<div class="dropdown">
-		<?php
-			$userPicked = "Pick User";
-			echo '<button onclick="myFunction()" class="dropbtn">'.$userPicked.'</button>';
-		?>
+	  <button onclick="myFunction()" class="dropbtn">Pick Member</button>
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
@@ -95,9 +92,15 @@
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
 	    
+	    	function changeBtnName(to)
+	    	{
+			document.getElementById("myDropdown").value = to;
+		}
+	    
 	    	function dropdownClicked(button)
 	    	{
-		    alert(button.innerHTML);
+		    var user = button.innerHTML;
+		    changeBtnName(button);
 	    	}
 		
 		function filterFunction() {
