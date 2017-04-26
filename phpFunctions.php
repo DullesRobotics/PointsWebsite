@@ -20,7 +20,7 @@ th {text-align: left;}
 <?php
     require("secretSettings.php");
     $user = $_GET['user'];
-    $NameSplit = user.split(' ');
+    $NameSplit = $user.split(' ');
     $firstName = $NameSplit[0].substr(1,strlen($NameSplit[0]));
     $lastName = $NameSplit[1].substr(1,strlen($NameSplit[1]));
     
