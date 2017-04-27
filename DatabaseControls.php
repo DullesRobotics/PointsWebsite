@@ -23,8 +23,8 @@ th {text-align: left;}
     $NameSplit = split(" ",$user);
     echo "First: ".$NameSplit[0]." Last: ".$NameSplit[1];
     //$NameSplit = $user.split('%20');
-    //$firstName = $NameSplit[0].substr(1,strlen($NameSplit[0]));
-    //$lastName = $NameSplit[1].substr(1,strlen($NameSplit[1]));
+    $firstName = $NameSplit[0]
+    $lastName = $NameSplit[1]
     
     $action = $_GET['action'];
     echo "\n".$action;
