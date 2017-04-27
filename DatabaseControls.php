@@ -21,13 +21,13 @@ th {text-align: left;}
     require("secretSettings.php");
     $user = $_GET['user'];
     $NameSplit = split(" ",$user);
-    echo "First: ".$NameSplit[0]." Last: ".$NameSplit[1];
+    //echo "First: ".$NameSplit[0]." Last: ".$NameSplit[1];
     //$NameSplit = $user.split('%20');
-    $firstName = $NameSplit[0]
-    $lastName = $NameSplit[1]
+    $firstName = $NameSplit[0];
+    $lastName = $NameSplit[1];
     
     $action = $_GET['action'];
-    echo "\n".$action;
+    //echo "\n".$action;
     //echo $q;
 
     try{
