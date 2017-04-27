@@ -30,7 +30,7 @@ th {text-align: left;}
     echo "\n".$action;
     //echo $q;
 
-    /*try{
+    try{
         $con = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e)
@@ -42,12 +42,12 @@ th {text-align: left;}
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     $found = false;*/
-    /*foreach ($data as $person){
+    foreach ($data as $person){
         if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
-            echo "Found: ".$firstName." ".$lastName."!";
+            echo "\nFound: ".$firstName." ".$lastName."!";
             break;
         }
-    }*/
+    }
 
     function addPoints($tagId,$pointsToAdd,$connection){
          $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
