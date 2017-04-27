@@ -45,6 +45,8 @@ th {text-align: left;}
         if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
             echo "\nFound: ".$firstName." ".$lastName."!";
             break;
+        } else {
+            echo $person['First_Name'].." found, searching...\n";   
         }
     }
 
