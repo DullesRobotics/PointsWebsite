@@ -41,7 +41,6 @@ th {text-align: left;}
     $getMembers = $conn->prepare("SELECT * FROM Members");
     $getMembers->execute();
     $data = $getMembers->fetchAll();
-    $found = false;*/
     foreach ($data as $person){
         if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
             echo "\nFound: ".$firstName." ".$lastName."!";
