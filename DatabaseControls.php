@@ -49,6 +49,14 @@ th {text-align: left;}
         }
     }*/
 
+    function addPoints($tagId,$pointsToAdd,$connection){
+         $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
+    }
+    
+    function addMeetings($tagId,$meetingsToAdd,$connection){
+        $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
+    }
+    
     /*echo "<table>
         <tr>
         <th>Firstname</th>
