@@ -58,6 +58,7 @@ th {text-align: left;}
     }
     
     function signOut($person){
+        echo "Command received <br>";
         $tagID = $person["Tag_ID"];
         $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
         $url = 'http://dhsrobotics.ddns.net/reply.php';
@@ -78,6 +79,7 @@ th {text-align: left;}
     }
     
     function signIn($person){
+        echo "Command received <br>";
         $tagID = $person["Tag_ID"];
         $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
         $url = 'http://dhsrobotics.ddns.net/reply.php';
