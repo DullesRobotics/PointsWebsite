@@ -40,11 +40,11 @@ th {text-align: left;}
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
         if ($user != "all" && $person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
-            executeCommand($action,$person);
+            executeCommand($action,$person,$conn);
             echo $action." to ".$person['First_Name'];
             break;
         } elseif ($user == "all") {
-            executeCommand($action,$person);
+            executeCommand($action,$person,$conn);
             echo $action." to ".$person['First_Name']." <br>";
         }
     }
@@ -57,7 +57,7 @@ th {text-align: left;}
         $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
     }
     
-    function signOut($person){
+    function signOut($person,$conn){
         echo "Command received <br>";
         $tagID = $person["Tag_ID"];
         $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
@@ -78,7 +78,7 @@ th {text-align: left;}
         break;
     }
     
-    function signIn($person){
+    function signIn($person,$conn){
         echo "Command received <br>";
         $tagID = $person["Tag_ID"];
         $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
@@ -99,13 +99,13 @@ th {text-align: left;}
         break;
     }
     
-    function executeCommand($command,$person){
+    function executeCommand($command,$person,$conn){
         echo "Command: ".$command." to: ".$person["First_Name"]."<br>";
         switch($command){
             case "sign out":
-                signOut($person); break;
+                signOut($person,$conn); break;
             case "sign in":
-                signIn($person); break;
+                signIn($person,$conn); break;
         }
     }
     
