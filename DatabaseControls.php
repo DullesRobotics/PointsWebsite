@@ -20,9 +20,11 @@ th {text-align: left;}
 <?php
     require("secretSettings.php");
     $user = $_GET['user'];
-    $NameSplit = split(" ",$user);
-    $firstName = $NameSplit[0];
-    $lastName = $NameSplit[1];
+    if ($user != "all") {
+        $NameSplit = split(" ",$user);
+        $firstName = $NameSplit[0];
+        $lastName = $NameSplit[1];
+    }
     $action = $_GET['action'];
 
     try{
@@ -37,11 +39,11 @@ th {text-align: left;}
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
-        if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
-            echo "\nFound: ".$firstName." ".$lastName."!";
+        if ($user != "all" && $person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
+            executeCommand($action,$person);
             break;
-        } else {
-            echo $person['First_Name']." found, searching...\n";   
+        } elseif ($user == "all") {
+            executeCommand($action,$person);
         }
     }
 
@@ -51,6 +53,55 @@ th {text-align: left;}
     
     function addMeetings($tagId,$meetingsToAdd,$connection){
         $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
+    }
+    
+    function signOut($person){
+        $tagID = $person["Tag_ID"];
+        $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$tagID'");
+        $url = 'http://dhsrobotics.ddns.net/reply.php';
+        $data = array($person["Tag_ID"]);
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+        var_dump($result);
+        break;
+    }
+    
+    function signIn($person){
+        $tagID = $person["Tag_ID"];
+        $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$tagID'");
+        $url = 'http://dhsrobotics.ddns.net/reply.php';
+        $data = array($person["Tag_ID"]);
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
+        var_dump($result);
+        break;
+    }
+    
+    function executeCommand($command,$person){
+        switch($command){
+            case "sign out":
+                signOut($person); break;
+            case "sign in":
+                signIn($person); break;
+        }
     }
     
     /*echo "<table>
