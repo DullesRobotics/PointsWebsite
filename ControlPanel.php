@@ -81,9 +81,6 @@
 		function changeBtnName(to)
 		{
 			document.getElementById("myDropdown").value = to;
-			<?php
-				echo "done?";
-			?>
 		}
 
 		function dropdownClicked(button)
