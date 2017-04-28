@@ -87,7 +87,7 @@
 			//var user = button.innerHTML;
 			changeBtnName(button);
 			toggleDropdown();
-			if document.getElementById("CurrentPerson") == null){
+			if (document.getElementById("CurrentPerson") == null){
 				var x = document.createElement("LABEL");
 			    	var t = document.createTextNode("person");
 			    	x.setAttribute("for", "CurrentPerson");
