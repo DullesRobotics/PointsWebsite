@@ -41,7 +41,6 @@
 	}
 	#myInput {
 	    border-box: box-sizing;
-	    background-image: url('searchicon.png');
 	    background-position: 14px 12px;
 	    background-repeat: no-repeat;
 	    font-size: 16px;
@@ -80,14 +79,16 @@
 
 		function changeBtnName(to)
 		{
-			document.getElementById("myDropdown").value = to.innerHMTL;
+			//document.getElementById("myDropdown").value = to.innerHMTL;
+			$find('<%=FileAdminRadGrid.ClientID %>').get_masterTableView().showFilterItem();
+        		objButton.value = to.innerHTML;
 		}
 
 		function dropdownClicked(button)
 		{
 			//var user = button.innerHTML;
 			changeBtnName(button);
-			document.getElementById("myDropdown").classList.toggle("show");
+			toggleDropdown();
 			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
