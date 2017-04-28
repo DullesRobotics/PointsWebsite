@@ -80,14 +80,13 @@
 
 		function changeBtnName(to)
 		{
-			alert(to);
+			alert(to.innerHTML);
 			document.getElementById("myDropdown").value = to.innerHMTL;
 		}
 
 		function dropdownClicked(button)
 		{
 			//var user = button.innerHTML;
-			alert("ok");
 			changeBtnName(button);
 			document.getElementById("myDropdown").classList.toggle("show");
 			/*if (window.XMLHttpRequest) {
