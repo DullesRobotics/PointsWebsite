@@ -124,9 +124,9 @@
 		  ?>
 	  </div>
 	</div>
-	
+	<br>
 	<label id="CurrentPerson">Current Person: None</label>
-	
+	<br>
 	<input type="number" name="PointsToAdd" value="0">
 </body>
 </html>
