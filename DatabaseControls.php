@@ -39,7 +39,7 @@ th {text-align: left;}
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
-        if ($user != "all" && $person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
+        if ($user != "all" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
             executeCommand($action,$person,$conn);
             echo $action." to ".$person['First_Name'];
             break;
