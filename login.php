@@ -4,9 +4,8 @@
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
-	if (!(isset($_COOKIE['admin']) && $_COOKIE['admin'])) {
+	if (isset($_COOKIE['admin']) && $_COOKIE['admin']) {
 	   	header("location:ControlPanel.php");
-	   	die;
 	}
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
