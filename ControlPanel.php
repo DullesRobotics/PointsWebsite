@@ -87,7 +87,14 @@
 			//var user = button.innerHTML;
 			changeBtnName(button);
 			toggleDropdown();
-			alert(document.getElementById("CurrentPerson") != null);
+			if document.getElementById("CurrentPerson") == null){
+				var x = document.createElement("LABEL");
+			    	var t = document.createTextNode("person");
+			    	x.setAttribute("for", "CurrentPerson");
+			    	x.appendChild(t);
+			} else {
+				alert("Already created.");
+			}
 			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
