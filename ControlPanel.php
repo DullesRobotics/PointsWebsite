@@ -76,7 +76,7 @@
   <div class="body"></div>
 	<div class="grad"></div>
 	<div class="dropdown">
-	  <button onclick="myFunction()" class="dropbtn">Pick Member</button>
+	  <button onclick="toggleDropdown()" class="dropbtn">Pick Member</button>
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
@@ -88,7 +88,7 @@
 	</div>
 	
     <script language="javascript">
-	    	function myFunction() {
+	    	function toggleDropdown() {
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
 	    
@@ -104,7 +104,7 @@
 	    	{
 			//var user = button.innerHTML;
 			changeBtnName(button);
-			myFunction();
+			document.getElementById("myDropdown").classList.toggle("show");
 			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
