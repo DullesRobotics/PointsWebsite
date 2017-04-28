@@ -75,7 +75,6 @@ th {text-align: left;}
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
         var_dump($result);
-        break;
     }
     
     function signIn($person,$conn){
@@ -96,7 +95,6 @@ th {text-align: left;}
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
         var_dump($result);
-        break;
     }
     
     function executeCommand($command,$person,$conn){
