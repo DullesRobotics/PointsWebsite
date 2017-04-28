@@ -80,7 +80,6 @@
 
 		function changeBtnName(to)
 		{
-			alert(to.innerHTML);
 			document.getElementById("myDropdown").value = to.innerHMTL;
 		}
 
