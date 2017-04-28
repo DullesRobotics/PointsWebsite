@@ -45,7 +45,7 @@ th {text-align: left;}
             break;
         } elseif ($user == "all") {
             executeCommand($action,$person);
-            echo $action." to ".$person." <br>";
+            echo $action." to ".$person['First_Name']." <br>";
         }
     }
 
@@ -98,6 +98,7 @@ th {text-align: left;}
     }
     
     function executeCommand($command,$person){
+        echo "<br> Command: ".$command." to: ".$person["First_Name"];
         switch($command){
             case "sign out":
                 signOut($person); break;
