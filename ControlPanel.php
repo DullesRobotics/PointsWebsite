@@ -80,6 +80,7 @@
 		function changeBtnName(to)
 		{
         		document.getElementById("myDropdown").value = to.innerHTML;
+			document.getElemenyById("CurrentPerson").value = to.innerHTML;
 		}
 
 		function dropdownClicked(button)
