@@ -72,36 +72,22 @@
 
 </head>
 	
-<body oncontextmenu="return false">
-  <div class="body"></div>
-	<div class="grad"></div>
-	<div class="dropdown">
-	  <button onclick="toggleDropdown()" class="dropbtn">Pick Member</button>
-	  <div id="myDropdown" class="dropdown-content">
-	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-		  <?php
-			foreach ($data as $person) {
-				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
-			}
-		  ?>
-	  </div>
-	</div>
-	
-    <script language="javascript">
-	    	function toggleDropdown() {
+<body oncontextmenu="return false">	
+	<script language="javascript">
+		function toggleDropdown() {
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
-	    
-	    	function changeBtnName(to)
-	    	{
+
+		function changeBtnName(to)
+		{
 			document.getElementById("myDropdown").value = to;
 			<?php
 				echo "done?";
 			?>
 		}
-	    
-	    	function dropdownClicked(button)
-	    	{
+
+		function dropdownClicked(button)
+		{
 			//var user = button.innerHTML;
 			changeBtnName(button);
 			document.getElementById("myDropdown").classList.toggle("show");
@@ -114,8 +100,8 @@
 			}
 			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?q="+user,true);
 			xmlhttp.send();*/
-	    	}
-		
+		}
+
 		function filterFunction() {
 		    var input, filter, ul, li, a, i;
 		    input = document.getElementById("myInput");
@@ -130,6 +116,19 @@
 			}
 		    }
 		}
-    </script>
+	</script>
+  <div class="body"></div>
+	<div class="grad"></div>
+	<div class="dropdown">
+	  <button onclick="toggleDropdown()" class="dropbtn">Pick Member</button>
+	  <div id="myDropdown" class="dropdown-content">
+	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+		  <?php
+			foreach ($data as $person) {
+				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
+			}
+		  ?>
+	  </div>
+	</div>
 </body>
 </html>
