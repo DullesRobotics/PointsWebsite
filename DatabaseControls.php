@@ -33,12 +33,13 @@ th {text-align: left;}
     try{
         $con = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "\nConnected Successfully.";
     }catch(PDOException $e)
     {
         echo "\nConnection aborted: " . $e->getMessage();
         exit;
     }
-    $getMembers = $conn->prepare("SELECT * FROM Members");
+    /*$getMembers = $conn->prepare("SELECT * FROM Members");
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
@@ -48,7 +49,7 @@ th {text-align: left;}
         } else {
             echo $person['First_Name']." found, searching...\n";   
         }
-    }
+    }*/
 
     function addPoints($tagId,$pointsToAdd,$connection){
          $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
