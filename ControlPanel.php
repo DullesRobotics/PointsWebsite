@@ -73,6 +73,8 @@
 	
 <body oncontextmenu="return false">	
 	<script language="javascript">
+		var person = null;
+		
 		function toggleDropdown() {
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
@@ -81,6 +83,7 @@
 		{
 			//var user = button.innerHTML;
 			document.getElementById("CurrentPerson").innerHTML = "Current Person: " + button.innerHTML;
+			person = button.innerHTML;
 			toggleDropdown();
 			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -123,5 +126,7 @@
 	</div>
 	
 	<label id="CurrentPerson">Current Person: None</label>
+	
+	<input type="number" name="PointsToAdd" value="0">
 </body>
 </html>
