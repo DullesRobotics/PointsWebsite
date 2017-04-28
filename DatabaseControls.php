@@ -41,7 +41,7 @@ th {text-align: left;}
     foreach ($data as $person){
         if ($user != "all" && $person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
             executeCommand($action,$person);
-            echo $action." to ".$person;
+            echo $action." to ".$person['First_Name'];
             break;
         } elseif ($user == "all") {
             executeCommand($action,$person);
