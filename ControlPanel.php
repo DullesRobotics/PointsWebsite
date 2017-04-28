@@ -77,16 +77,10 @@
 		    document.getElementById("myDropdown").classList.toggle("show");
 		}
 
-		function changeBtnName(to)
-		{
-        		document.getElementById("myDropdown").innerHTML = to.innerHTML;
-			document.getElementById("CurrentPerson").innerHTML = to.innerHTML;
-		}
-
 		function dropdownClicked(button)
 		{
 			//var user = button.innerHTML;
-			changeBtnName(button);
+			document.getElementById("CurrentPerson").innerHTML = "Current Person: " + button.innerHTML;
 			toggleDropdown();
 			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
