@@ -20,23 +20,14 @@ th {text-align: left;}
 <?php
     require("secretSettings.php");
     $user = $_GET['user'];
-    echo "User found";
     $NameSplit = split(" ",$user);
-    echo "\nSplit: ".$NameSplit[0]." ".$NameSplit[1];
-    //echo "First: ".$NameSplit[0]." Last: ".$NameSplit[1];
-    //$NameSplit = $user.split('%20');
     $firstName = $NameSplit[0];
     $lastName = $NameSplit[1];
-    
-    echo "\nFinding actiong..";
     $action = $_GET['action'];
-    echo "\nAction found: ".$action;
-    //echo "\n".$action;
-    //echo $q;
 
     try{
         echo "Attempting connection...";
-        $con = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+        $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "\nConnected Successfully.";
     }catch(PDOException $e)
