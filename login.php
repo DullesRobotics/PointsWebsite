@@ -4,6 +4,10 @@
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
+	if (!(isset($_COOKIE['admin']) && $_COOKIE['admin'])) {
+	   	header("location:index.php");
+	   	die;
+	}
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
