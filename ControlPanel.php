@@ -95,14 +95,17 @@
 	    	function changeBtnName(to)
 	    	{
 			document.getElementById("myDropdown").value = to;
+			<?php
+				echo "done?";
+			?>
 		}
 	    
 	    	function dropdownClicked(button)
 	    	{
-			var user = button.innerHTML;
+			//var user = button.innerHTML;
 			changeBtnName(button);
 			myFunction();
-			if (window.XMLHttpRequest) {
+			/*if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
 			} else {
@@ -110,7 +113,7 @@
 			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
 			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?q="+user,true);
-			xmlhttp.send();
+			xmlhttp.send();*/
 	    	}
 		
 		function filterFunction() {
