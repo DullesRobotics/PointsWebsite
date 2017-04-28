@@ -41,14 +41,14 @@ th {text-align: left;}
     $getMembers = $conn->prepare("SELECT * FROM Members");
     $getMembers->execute();
     $data = $getMembers->fetchAll();
-    /*foreach ($data as $person){
+    foreach ($data as $person){
         if ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName){
             echo "\nFound: ".$firstName." ".$lastName."!";
             break;
         } else {
-            echo $person['First_Name'].." found, searching...\n";   
+            echo $person['First_Name']." found, searching...\n";   
         }
-    }*/
+    }
 
     function addPoints($tagId,$pointsToAdd,$connection){
          $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
