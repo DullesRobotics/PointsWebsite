@@ -5,7 +5,7 @@
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
 	if (!(isset($_COOKIE['admin']) && $_COOKIE['admin'])) {
-	   	header("location:index.php");
+	   	header("location:ControlPanel.php");
 	   	die;
 	}
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
