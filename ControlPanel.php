@@ -79,8 +79,6 @@
 
 		function changeBtnName(to)
 		{
-			//document.getElementById("myDropdown").value = to.innerHMTL;
-			$find('<%=FileAdminRadGrid.ClientID %>').get_masterTableView().showFilterItem();
         		document.getElementById("myDropdown").value = to.innerHTML;
 		}
 
