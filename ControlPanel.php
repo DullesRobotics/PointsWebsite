@@ -118,7 +118,7 @@
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
-		  	echo '<a onclock = "dropdownClicked(this)" href = "#"> All Members</a>';
+		  	echo '<a onclick = "dropdownClicked(this)" href = "#"> All Members</a>';
 			foreach ($data as $person) {
 				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
