@@ -127,15 +127,16 @@
 			var pointsToAdd = document.getElementsByName("PointsToAdd")[0].value;
 			var meetingsToAdd = document.getElementsByName("MeetingsToAdd")[0].value;
 			var radios = document.getElementsByName('status');
-			var status = [0,0,0];
+			//var status = [0,0,0];
+			var status = null;
 			for (var i = 0, length = radios.length; i < length; i++) {
 			    if (radios[i].checked) {
-				status[i] = radios[i].value;
+				status = radios[i].value;
 				break;
 			    }
 			}
 
-			alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + JSON.stringify(status));
+			alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 		}
 	</script>
   <div class="body"></div>
