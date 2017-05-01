@@ -122,7 +122,7 @@
 			}
 		    }
 			
-			function execute(){
+			function executeMain(){
 				var pointsToAdd = document.getElementByName("PointsToAdd").value;
 				var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
 				var radios = document.getElementsByName('status');
@@ -171,7 +171,7 @@
 	<br>
 	<br>
 	<br>
-	<button onclick = "execute();">
+	<button onclick = "executeMain();">
 		<font color = "red">
 			Update Database
 		</font>
