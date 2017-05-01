@@ -58,7 +58,7 @@ th {text-align: left;}
          $tagID = $person["Tag_ID"];
          //$conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
         $url = 'http://dhsrobotics.ddns.net/reply.php';
-        $data = array("karimiscool ".$tagID." change points by ".$pointsToAdd);
+        $data = array("karimiscool  ".$tagID."  change points by  ".$pointsToAdd);
         // use key 'http' even if you send the request to https://...
         $options = array(
             'http' => array(
