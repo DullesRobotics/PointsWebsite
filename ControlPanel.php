@@ -82,7 +82,7 @@
 		function dropdownClicked(button)
 		{
 			//var user = button.innerHTML;
-			document.getElementById("CurrentPerson").innerHTML = "Current Person: " + button.innerHTML;
+			document.getElementById("CurrentPerson").innerHTML = "Currently Picked: " + button.innerHTML;
 			person = button.innerHTML;
 			toggleDropdown();
 			/*if (window.XMLHttpRequest) {
@@ -118,6 +118,7 @@
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
+		  	echo '<a onclock = "dropdownClicked(this)" href = "#"> All Members</a>';
 			foreach ($data as $person) {
 				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
@@ -125,7 +126,8 @@
 	  </div>
 	</div>
 	<br>
-	<label id="CurrentPerson">Current Person: None</label>
+	<br>
+	<label id="CurrentPerson">Currently Picked: No one</label>
 	<br>
 	<br>
 	<label id = "PointsLabel">Points to add:</label>
