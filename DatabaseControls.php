@@ -57,13 +57,13 @@ th {text-align: left;}
 
     function addPoints($person,$pointsToAdd,$conn){
          $tagID = $person["Tag_ID"];
-         $conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
+         $conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagID'");
         echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
     function addMeetings($person,$meetingsToAdd,$conn){
         $tagID = $person["Tag_ID"];
-        $conn->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
+        $conn->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
         echo "\n<br>added meetings";
     }
     
