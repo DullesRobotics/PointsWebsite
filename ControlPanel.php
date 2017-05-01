@@ -123,7 +123,7 @@
 		    }
 			
 			function executeMain(){
-				var pointsToAdd = document.getElementByName("PointsToAdd").value;
+				/*var pointsToAdd = document.getElementByName("PointsToAdd").value;
 				var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
 				var radios = document.getElementsByName('status');
 				var status = [0,0,0];
@@ -134,7 +134,7 @@
 				    }
 				}
 				
-				alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + JSON.stringify(status));
+				alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + JSON.stringify(status));*/
 			}
 		}
 	</script>
