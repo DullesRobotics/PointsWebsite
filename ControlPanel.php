@@ -124,8 +124,8 @@
 		}
 		
 		function executeMain(){
-			var pointsToAdd = document.getElementByName("PointsToAdd").value;
-			var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
+			var pointsToAdd = document.getElementsByName("PointsToAdd")[0].value;
+			var meetingsToAdd = document.getElementsByName("MeetingsToAdd")[0].value;
 			var radios = document.getElementsByName('status');
 			var status = [0,0,0];
 			for (var i = 0, length = radios.length; i < length; i++) {
