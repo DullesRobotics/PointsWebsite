@@ -57,7 +57,7 @@ th {text-align: left;}
 
     function addPoints($person,$pointsToAdd,$conn){
          $tagID = $person["Tag_ID"];
-         $conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagID'");
+         $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagID'");
         echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
