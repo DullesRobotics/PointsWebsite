@@ -136,7 +136,7 @@
 			    }
 			}
 
-			alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
+			//alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 			postDatabase(person,pointsToAdd,meetingsToAdd,status);
 		}
 	</script>
@@ -147,7 +147,7 @@
 	  <div id="myDropdown" class="dropdown-content">
 	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 		  <?php
-		  	echo '<a onclick = "dropdownClicked(this)" href = "#"> All Members</a>';
+		  	echo '<a onclick = "dropdownClicked(this)" href = "#">All Members</a>';
 			foreach ($data as $person) {
 				echo '<a onclick = "dropdownClicked(this)" href = "#">'.$person["First_Name"].' '.$person["Last_Name"].'</a>';
 			}
