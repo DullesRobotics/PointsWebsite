@@ -136,7 +136,7 @@
 			    }
 			}
 
-			//alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
+			alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 			postDatabase(person,pointsToAdd,meetingsToAdd,status);
 		}
 	</script>
