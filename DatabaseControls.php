@@ -45,11 +45,11 @@ th {text-align: left;}
     $getMembers->execute();
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
-        if ($user != "all" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
+        if ($user != "All Members" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
             echo "\n<br>Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
             break;
-        } elseif ($user == "all") {
+        } elseif ($user == "All Members") {
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
             echo "\n<br>Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
         }
