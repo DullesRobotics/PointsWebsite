@@ -121,15 +121,6 @@
 			    a[i].style.display = "none";
 			}
 		    }
-			
-			document.getElementById("pointsToAdd")
-			    .addEventListener("keydown", function(event) {
-				    event.preventDefault();
-				    if (event.keyCode == 13) {
-					    alert("o");
-					postDatabase(person,"change points",document.getElementById("pointsToAdd").value);
-				    }
-			});
 		}
 	</script>
   <div class="body"></div>
@@ -152,6 +143,19 @@
 	<br>
 	<br>
 	<label id = "PointsLabel">Points to add:</label>
-	<input id = "pointsToAdd" type="number" name="PointsToAdd" value="0">
+	<input type="number" name = "PointsToAdd" value="0">
+	<br>
+	<label id = "MeetingsLabel">Meetings to add:</label>
+	<input type = "number" name = "MeetingsToAdd" value = "0">
+	<br>
+	<input type = "radio" name = "status" value = "sign in">Sign In
+	<input type = "radio" name  = "status" value = "sign out">Sign Out
+	<input type = "radio" name = "status" value = "no change">No Change
+	<br>
+	<button onclick = "execute();">
+		<font color = "red">
+			Update Database
+		</font>
+	</button>
 </body>
 </html>
