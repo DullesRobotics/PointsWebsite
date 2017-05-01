@@ -145,12 +145,16 @@
 	<label id = "PointsLabel">Points to add:</label>
 	<input type="number" name = "PointsToAdd" value="0">
 	<br>
+	<br>
 	<label id = "MeetingsLabel">Meetings to add:</label>
 	<input type = "number" name = "MeetingsToAdd" value = "0">
+	<br>
 	<br>
 	<input type = "radio" name = "status" value = "sign in">Sign In
 	<input type = "radio" name  = "status" value = "sign out">Sign Out
 	<input type = "radio" name = "status" value = "no change">No Change
+	<br>
+	<br>
 	<br>
 	<button onclick = "execute();">
 		<font color = "red">
