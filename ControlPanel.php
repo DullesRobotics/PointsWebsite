@@ -121,6 +121,10 @@
 			    a[i].style.display = "none";
 			}
 		    }
+			
+			function execute(){
+				var pointsToAdd = document.getElementById();
+			}
 		}
 	</script>
   <div class="body"></div>
@@ -150,9 +154,9 @@
 	<input type = "number" name = "MeetingsToAdd" value = "0">
 	<br>
 	<br>
-	<input type = "radio" name = "status" value = "sign in">Sign In
-	<input type = "radio" name  = "status" value = "sign out">Sign Out
-	<input type = "radio" name = "status" value = "no change">No Change
+	<input type = "radio" id = "status" value = "sign in">Sign In
+	<input type = "radio" id = "status" value = "sign out">Sign Out
+	<input type = "radio" id = "status" value = "no change">No Change
 	<br>
 	<br>
 	<br>
