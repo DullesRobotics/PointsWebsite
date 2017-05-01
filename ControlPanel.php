@@ -95,6 +95,18 @@
 			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?q="+user,true);
 			xmlhttp.send();*/
 		}
+		
+		function postDatabase(user,action,pts){
+			if (window.XMLHttpRequest) {
+			    // code for IE7+, Firefox, Chrome, Opera, Safari
+			    xmlhttp = new XMLHttpRequest();
+			} else {
+			    // code for IE6, IE5
+			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?user=" + user + "&action=" + action + "&addPts="+pts,true);
+			xmlhttp.send();
+		}
 
 		function filterFunction() {
 		    var input, filter, ul, li, a, i;
@@ -109,6 +121,14 @@
 			    a[i].style.display = "none";
 			}
 		    }
+			
+			document.getElementById("pointsToAdd")
+			    .addEventListener("keydown", function(event) {
+				    event.preventDefault();
+				    if (event.keyCode == 13) {
+					postDatabase(person,"change points",document.getElementById("pointsToAdd").value);
+				    }
+			});
 		}
 	</script>
   <div class="body"></div>
@@ -131,6 +151,6 @@
 	<br>
 	<br>
 	<label id = "PointsLabel">Points to add:</label>
-	<input type="number" name="PointsToAdd" value="0">
+	<input id = "pointsToAdd" type="number" name="PointsToAdd" value="0">
 </body>
 </html>
