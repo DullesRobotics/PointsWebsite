@@ -160,11 +160,11 @@
 	<br>
 	<br>
 	<label id = "PointsLabel">Points to add:</label>
-	<input id = "pts" type="number" name = "PointsToAdd" value="0">
+	<input id = "pts" type="number" step = ".01" name = "PointsToAdd" value="0">
 	<br>
 	<br>
 	<label id = "MeetingsLabel">Meetings to add:</label>
-	<input id = "meetings" type = "number" name = "MeetingsToAdd" value = "0">
+	<input id = "meetings" type = "number" step = ".01" name = "MeetingsToAdd" value = "0">
 	<br>
 	<br>
 	<input id = "choice1" type = "radio" name = "status" value = "sign in">Sign In
