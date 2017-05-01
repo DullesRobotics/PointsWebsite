@@ -58,8 +58,7 @@ th {text-align: left;}
          $tagID = $person["Tag_ID"];
          //$conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
         $url = 'http://dhsrobotics.ddns.net/reply.php';
-        /*$data = array("karimiscool C413C0DA change points by 1");
-        // use key 'http' even if you send the request to https://...
+        $data = array("karimiscool C413C0DA change points by 1");
         $options = array(
             'http' => array(
                 'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -71,18 +70,7 @@ th {text-align: left;}
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
         var_dump($result);
-        echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;*/
-        // Get cURL resource
-        $curl = curl_init();
-        // Set some options - we are passing in a useragent too here
-        curl_setopt_array($curl, array(
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $url,
-            CURLOPT_POST => 1,
-            CURLOPT_POSTFIELDS => array(
-                "karimiscool C413C0DA change points by 1"
-            )
-        ));
+        echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
     function addMeetings($person,$meetingsToAdd,$conn){
