@@ -25,9 +25,9 @@ th {text-align: left;}
         $firstName = $NameSplit[0];
         $lastName = $NameSplit[1];
     }
-    $ptsToAdd = $_GET['addPts'];
-    $mtsToAdd = $_GET['addMts'];
-    $status = $_GET['status'];
+    $ptsToAdd = $_GET['addPts'] ?: 0;
+    $mtsToAdd = $_GET['addMts'] ?: 0;
+    $status = $_GET['status'] ?: "no change";
 
     try{
         $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
@@ -54,11 +54,13 @@ th {text-align: left;}
     function addPoints($person,$pointsToAdd,$connection){
          $tagID = $person["Tag_ID"];
          $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
+        echo "added pts";
     }
     
     function addMeetings($person,$meetingsToAdd,$connection){
         $tagID = $person["Tag_ID"];
         $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
+        echo "added meetings";
     }
     
     function signOut($person,$conn){
