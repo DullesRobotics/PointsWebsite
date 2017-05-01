@@ -54,15 +54,15 @@ th {text-align: left;}
         }
     }
 
-    function addPoints($person,$pointsToAdd,$connection){
+    function addPoints($person,$pointsToAdd,$conn){
          $tagID = $person["Tag_ID"];
-         $connection->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
+         $conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
         echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
-    function addMeetings($person,$meetingsToAdd,$connection){
+    function addMeetings($person,$meetingsToAdd,$conn){
         $tagID = $person["Tag_ID"];
-        $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
+        $conn->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
         echo "\n<br>added meetings";
     }
     
