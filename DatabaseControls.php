@@ -57,13 +57,13 @@ th {text-align: left;}
     function addPoints($person,$pointsToAdd,$connection){
          $tagID = $person["Tag_ID"];
          $connection->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
-        echo "\nadded ".$pointsToAdd." pts to ".$tagID;
+        echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
     function addMeetings($person,$meetingsToAdd,$connection){
         $tagID = $person["Tag_ID"];
         $connection->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagId'");
-        echo "\nadded meetings";
+        echo "\n<br>added meetings";
     }
     
     function signOut($person,$conn){
