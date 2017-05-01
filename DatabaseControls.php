@@ -46,18 +46,18 @@ th {text-align: left;}
     foreach ($data as $person){
         if ($user != "all" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
-            echo "\nPoints to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
+            echo "\n<br>Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
             break;
         } elseif ($user == "all") {
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
-            echo "\nPoints to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
+            echo "\n<br>Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
         }
     }
 
     function addPoints($person,$pointsToAdd,$connection){
          $tagID = $person["Tag_ID"];
          $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
-        echo "\nadded".$pointsToAdd." pts to ".$tagID;
+        echo "\nadded ".$pointsToAdd." pts to ".$tagID;
     }
     
     function addMeetings($person,$meetingsToAdd,$connection){
