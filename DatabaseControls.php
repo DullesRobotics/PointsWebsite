@@ -25,9 +25,9 @@ th {text-align: left;}
         $firstName = $NameSplit[0];
         $lastName = $NameSplit[1];
     }
-    $action = $_GET['action'];
-    
     $ptsToAdd = $_GET['addPts'];
+    $mtsToAdd = $_GET['addMts'];
+    $status = $_GET['status'];
 
     try{
         $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
@@ -42,11 +42,11 @@ th {text-align: left;}
     $data = $getMembers->fetchAll();
     foreach ($data as $person){
         if ($user != "all" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
-            executeCommand($action,$person,$conn);
+            executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
             echo $action." to ".$person['First_Name'];
             break;
         } elseif ($user == "all") {
-            executeCommand($action,$person,$conn);
+            executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
             echo $action." to ".$person['First_Name']." <br>";
         }
     }
@@ -99,15 +99,17 @@ th {text-align: left;}
         var_dump($result);
     }
     
-    function executeCommand($command,$person,$conn){
-        echo "Command: ".$command." to: ".$person["First_Name"]."<br>";
-        switch($command){
-            case "sign out":
-                signOut($person,$conn); break;
-            case "sign in":
-                signIn($person,$conn); break;
-            case "change points":
-                addPoints($person,$ptsToAdd,$conn); break;
+    function executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn){
+        if $ptsToAdd > 0 {
+            addPoints($person,$ptsToAdd,$conn);
+        }
+        if $mtsToAdd > 0 {
+            addMeetings($person,$mtsToAdd,$conn);
+        }
+        if $status == "sign in"{
+            signIn($person,$conn);
+        } elseif $status == "sign out"{
+            signOut($person,$conn);
         }
     }
     
