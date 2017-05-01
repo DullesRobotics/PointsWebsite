@@ -110,10 +110,10 @@ th {text-align: left;}
     function executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn){
         echo "\n<br>Data:";
         echo "\n<br> Person: ".$person." Points: ".$ptsToAdd." Meetings: ".$mtsToAdd." Status: ".$status;
-        if ($ptsToAdd > 0) {
+        if ($ptsToAdd != 0) {
             addPoints($person,$ptsToAdd,$conn);
         }
-        if ($mtsToAdd > 0) {
+        if ($mtsToAdd != 0) {
             addMeetings($person,$mtsToAdd,$conn);
         }
         if ($status == "sign in"){
