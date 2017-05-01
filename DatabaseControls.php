@@ -31,7 +31,8 @@ th {text-align: left;}
     echo "\naddMts: ".$mtsToAdd;
     $status = $_GET['status'] ?: "no change";
     echo "\nstatus: ".$status;
-
+    $conn = null;
+    
     try{
         $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -56,20 +57,7 @@ th {text-align: left;}
 
     function addPoints($person,$pointsToAdd,$conn){
          $tagID = $person["Tag_ID"];
-         //$conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
-        $url = 'http://dhsrobotics.ddns.net/reply.php';
-        $data = array("karimiscool C413C0DA change points by 1");
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-        if ($result === FALSE) { echo "\n ERROR: self-post failed"; }
-        var_dump($result);
+         $conn->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
         echo "\n<br>added ".$pointsToAdd." pts to ".$tagID;
     }
     
