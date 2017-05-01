@@ -126,6 +126,7 @@
 			    .addEventListener("keydown", function(event) {
 				    event.preventDefault();
 				    if (event.keyCode == 13) {
+					    alert("o");
 					postDatabase(person,"change points",document.getElementById("pointsToAdd").value);
 				    }
 			});
