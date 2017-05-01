@@ -26,8 +26,11 @@ th {text-align: left;}
         $lastName = $NameSplit[1];
     }
     $ptsToAdd = $_GET['addPts'] ?: 0;
+    echo "\naddPts: ".$ptsToAdd;
     $mtsToAdd = $_GET['addMts'] ?: 0;
+    echo "\naddMts: ".$mtsToAdd;
     $status = $_GET['status'] ?: "no change";
+    echo "\nstatus: ".$status;
 
     try{
         $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
