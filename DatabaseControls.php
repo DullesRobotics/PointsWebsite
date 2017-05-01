@@ -43,9 +43,11 @@ th {text-align: left;}
     foreach ($data as $person){
         if ($user != "all" && ($person['First_Name'] == $firstName && $person['Last_Name'] == $lastName)){
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
+            echo "Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
             break;
         } elseif ($user == "all") {
             executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn);
+            echo "Points to add: ".$ptsToAdd." Meetings To Add: ".$mtsToadd." Status to change: ".$status;
         }
     }
 
