@@ -96,7 +96,7 @@
 			xmlhttp.send();*/
 		}
 		
-		function postDatabase(user,action,pts){
+		function postDatabase(user,action,pts,meetings,status){
 			if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
@@ -123,7 +123,18 @@
 		    }
 			
 			function execute(){
-				var pointsToAdd = document.getElementById();
+				var pointsToAdd = document.getElementByName("PointsToAdd").value;
+				var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
+				var radios = document.getElementsByName('status');
+				var status = {0,0,0};
+				for (var i = 0, length = radios.length; i < length; i++) {
+				    if (radios[i].checked) {
+					status[i] = radios[i].value;
+					break;
+				    }
+				}
+				
+				alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 			}
 		}
 	</script>
@@ -147,16 +158,16 @@
 	<br>
 	<br>
 	<label id = "PointsLabel">Points to add:</label>
-	<input type="number" name = "PointsToAdd" value="0">
+	<input id = "pts" type="number" name = "PointsToAdd" value="0">
 	<br>
 	<br>
 	<label id = "MeetingsLabel">Meetings to add:</label>
-	<input type = "number" name = "MeetingsToAdd" value = "0">
+	<input id = "meetings" type = "number" name = "MeetingsToAdd" value = "0">
 	<br>
 	<br>
-	<input type = "radio" id = "status" value = "sign in">Sign In
-	<input type = "radio" id = "status" value = "sign out">Sign Out
-	<input type = "radio" id = "status" value = "no change">No Change
+	<input id = "choice1" type = "radio" name = "status" value = "sign in">Sign In
+	<input id = "choice2" type = "radio" name = "status" value = "sign out">Sign Out
+	<input id = "choice3" type = "radio" name = "status" value = "no change">No Change
 	<br>
 	<br>
 	<br>
