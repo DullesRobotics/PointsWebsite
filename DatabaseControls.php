@@ -64,7 +64,7 @@ th {text-align: left;}
     function addMeetings($person,$meetingsToAdd,$conn){
         $tagID = $person["Tag_ID"];
         $conn->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
-        echo "\n<br>added meetings";
+        echo "\n<br> added ".$meetingsToAdd." meetings to ".$tagID;
     }
     
     function signOut($person,$conn){
@@ -111,9 +111,11 @@ th {text-align: left;}
         echo "\n<br>Data:";
         echo "\n<br> Person: ".$person." Points: ".$ptsToAdd." Meetings: ".$mtsToAdd." Status: ".$status;
         if ($ptsToAdd != 0) {
+            echo "<br> Attempting to add points...";
             addPoints($person,$ptsToAdd,$conn);
         }
         if ($mtsToAdd != 0) {
+            echo "<br> Attemptng to add meetings...";
             addMeetings($person,$mtsToAdd,$conn);
         }
         if ($status == "sign in"){
