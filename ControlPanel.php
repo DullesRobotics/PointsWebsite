@@ -96,7 +96,7 @@
 			xmlhttp.send();*/
 		}
 		
-		function postDatabase(user,action,pts,meetings,status){
+		function postDatabase(user,pts,meetings,status){
 			if (window.XMLHttpRequest) {
 			    // code for IE7+, Firefox, Chrome, Opera, Safari
 			    xmlhttp = new XMLHttpRequest();
@@ -136,8 +136,8 @@
 			    }
 			}
 
-			alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
-			//postDatabase();
+			//alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
+			postDatabase(person,pointsToAdd,meetingsToAdd,status);
 		}
 	</script>
   <div class="body"></div>
