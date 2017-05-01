@@ -56,7 +56,7 @@ th {text-align: left;}
 
     function addPoints($person,$pointsToAdd,$connection){
          $tagID = $person["Tag_ID"];
-         $connection->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$tagId'");
+         $connection->exec("UPDATE Members SET Points = 0 WHERE Tag_ID = '$tagId'");
         echo "\nadded ".$pointsToAdd." pts to ".$tagID;
     }
     
