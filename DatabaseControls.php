@@ -26,6 +26,8 @@ th {text-align: left;}
         $lastName = $NameSplit[1];
     }
     $action = $_GET['action'];
+    
+    $ptsToAdd = $_GET['addPts'];
 
     try{
         $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
@@ -104,6 +106,8 @@ th {text-align: left;}
                 signOut($person,$conn); break;
             case "sign in":
                 signIn($person,$conn); break;
+            case "change points":
+                addPoints($person,$ptsToAdd,$conn); break;
         }
     }
     
