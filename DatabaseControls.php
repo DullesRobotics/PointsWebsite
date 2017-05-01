@@ -100,15 +100,15 @@ th {text-align: left;}
     }
     
     function executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn){
-        if $ptsToAdd > 0 {
+        if ($ptsToAdd > 0) {
             addPoints($person,$ptsToAdd,$conn);
         }
-        if $mtsToAdd > 0 {
+        if ($mtsToAdd > 0) {
             addMeetings($person,$mtsToAdd,$conn);
         }
-        if $status == "sign in"{
+        if ($status == "sign in"){
             signIn($person,$conn);
-        } elseif $status == "sign out"{
+        } elseif ($status == "sign out"){
             signOut($person,$conn);
         }
     }
