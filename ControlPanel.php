@@ -104,7 +104,7 @@
 			    // code for IE6, IE5
 			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
-			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?user=" + user + "&action=" + action + "&addPts="+pts,true);
+			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?user=" + user + "&addPts="+pts + "&addMts=" + meetings + "&status=" + status,true);
 			xmlhttp.send();
 		}
 
@@ -128,7 +128,7 @@
 			var meetingsToAdd = document.getElementsByName("MeetingsToAdd")[0].value;
 			var radios = document.getElementsByName('status');
 			//var status = [0,0,0];
-			var status = null;
+			var status = "no change";
 			for (var i = 0, length = radios.length; i < length; i++) {
 			    if (radios[i].checked) {
 				status = radios[i].value;
@@ -136,7 +136,8 @@
 			    }
 			}
 
-			alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
+			alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
+			//postDatabase();
 		}
 	</script>
   <div class="body"></div>
