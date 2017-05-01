@@ -63,7 +63,7 @@ th {text-align: left;}
     
     function addMeetings($person,$meetingsToAdd,$conn){
         $tagID = $person["Tag_ID"];
-        $conn->exec("UPDATE Members SET Meetings = Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
+        $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
         echo "\n<br> added ".$meetingsToAdd." meetings to ".$tagID;
     }
     
