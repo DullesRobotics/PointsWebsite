@@ -121,21 +121,21 @@
 			    a[i].style.display = "none";
 			}
 		    }
-			
-			function executeMain(){
-				/*var pointsToAdd = document.getElementByName("PointsToAdd").value;
-				var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
-				var radios = document.getElementsByName('status');
-				var status = [0,0,0];
-				for (var i = 0, length = radios.length; i < length; i++) {
-				    if (radios[i].checked) {
-					status[i] = radios[i].value;
-					break;
-				    }
-				}
-				
-				alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + JSON.stringify(status));*/
+		}
+		
+		function executeMain(){
+			var pointsToAdd = document.getElementByName("PointsToAdd").value;
+			var meetingsToAdd = document.getElementByName("MeetingsToAdd").value;
+			var radios = document.getElementsByName('status');
+			var status = [0,0,0];
+			for (var i = 0, length = radios.length; i < length; i++) {
+			    if (radios[i].checked) {
+				status[i] = radios[i].value;
+				break;
+			    }
 			}
+
+			alert("Points: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + JSON.stringify(status));
 		}
 	</script>
   <div class="body"></div>
