@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <?php
  	require("secretSettings.php");
-	if(isset($_COOKIE["admin_".round(time()/60)*60]) && $_COOKIE["admin_".round(time()/60)*60] == "true"){
-		echo "Allowed! ".$_COOKIE["admin_".round(time()/60)*60];
+	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "true"){
+		echo "Allowed! ".$_COOKIE["admin"];
 	}else {
-		echo "Nope! ".$_COOKIE["admin_"..round(time()/60)*60];
-		echo "<br>"..round(time()/60)*60;
+		echo "Nope! ".$_COOKIE["admin"];
 	   	//header("location:index.php");
 	   	//die;
 	}
