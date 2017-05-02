@@ -2,11 +2,11 @@
 <?php
  	require("secretSettings.php");
 	if(isset($_COOKIE["admin_".time()]) && $_COOKIE["admin_".time()] == "true"){
-		//echo "Allowed! ".$_COOKIE["admin"];*/
+		echo "Allowed! ".$_COOKIE["admin_".time()];
 	}else {
-		//echo "Nope! ".$_COOKIE["admin"];
-	   	header("location:index.php");
-	   	die;
+		echo "Nope! ".$_COOKIE["admin_".time()];
+	   	//header("location:index.php");
+	   	//die;
 	}
 	try{
 		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
