@@ -5,6 +5,8 @@
 		echo "Allowed! ".$_COOKIE["admin"];
 	}else {
 		echo "Nope! ".$_COOKIE["admin"];
+		echo "<br>".isset($_COOKIE["admin"]);
+		echo "<br>".$_COOKIE["admin"];
 	   	//header("location:index.php");
 	   	//die;
 	}
