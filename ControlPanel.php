@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
  	require("secretSettings.php");
-	if(isset($_COOKIE["admin"."_".time()]) && $_COOKIE["admin"."_".time()] == "true"){
+	if(isset($_COOKIE["admin_".time()]) && $_COOKIE["admin_".time()] == "true"){
 		//echo "Allowed! ".$_COOKIE["admin"];*/
 	}else {
 		//echo "Nope! ".$_COOKIE["admin"];
