@@ -6,7 +6,7 @@
 	//}else {
 		//echo "Nope! ".$_COOKIE["admin"];
 	   	header("location:index.php");
-	   	die;
+	   	//die;
 	//}
 	try{
 		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
