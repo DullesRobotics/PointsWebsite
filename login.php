@@ -4,7 +4,7 @@
 	require("secretSettings.php");
 	//$PAGEPASSWORD;
 	//$PAGEUSERNAME;
-	if (isset($_COOKIE['admin']) && $_COOKIE['admin']) {
+	if (isset($_COOKIE["admin_".time()]) && $_COOKIE["admin_".time()] == "true") {
 	   	header("location:ControlPanel.php");
 	}
 	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
@@ -111,7 +111,7 @@
 		}
 		if (authentic){
 			<?php
-				setcookie("admin",true);
+				setcookie("admin_".time(),"true");
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_self");	
 		} else {
