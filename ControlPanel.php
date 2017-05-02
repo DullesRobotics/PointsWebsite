@@ -5,6 +5,7 @@
 		echo "Allowed! ".$_COOKIE["admin_".time()];
 	}else {
 		echo "Nope! ".$_COOKIE["admin_".time()];
+		echo "<br>".time();
 	   	//header("location:index.php");
 	   	//die;
 	}
