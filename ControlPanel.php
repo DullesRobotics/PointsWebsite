@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
  	require("secretSettings.php");
-	/*if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
+	if(isset($_COOKIE["admin"."_".time()]) && $_COOKIE["admin"."_".time()] == "true"){
 		//echo "Allowed! ".$_COOKIE["admin"];*/
-	//}else {
+	}else {
 		//echo "Nope! ".$_COOKIE["admin"];
 	   	header("location:index.php");
-	   	//die;
-	//}
+	   	die;
+	}
 	try{
 		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
