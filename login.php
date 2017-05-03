@@ -112,7 +112,7 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 		}
 		if (authentic){
 			<?php
-				setcookie("admin","allowed",time() + 5,'/');
+				setcookie("admin",true,time() + 60,'/');
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_self");	
 		} else {
