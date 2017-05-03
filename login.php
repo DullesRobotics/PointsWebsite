@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<div id="username-target" style="display: none;">
-    <?php
-	require("secretSettings.php");
-	if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
-	   	header("location:ControlPanel.php");
-	}
-    ?>
-</div>
+<?php
+require("secretSettings.php");
+if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
+	header("location:ControlPanel.php");
+}
+?>
 <html>
 
 <head>
