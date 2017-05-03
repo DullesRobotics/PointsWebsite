@@ -7,7 +7,7 @@
 	if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 	   	header("location:ControlPanel.php");
 	}
-	echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
+	//echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
 <html>
