@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?php
  	require("secretSettings.php");
-	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
-		echo "Allowed! ".$_COOKIE["admin"];
-	}else {
-		echo "Nope! ".$_COOKIE["admin"];
-		echo "<br>".isset($_COOKIE["admin"]);
-	   	//header("location:index.php");
+	//if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
+		//echo "Allowed! ".$_COOKIE["admin"];
+	//}else {
+		//echo "Nope! ".$_COOKIE["admin"];
+		//echo "<br>".isset($_COOKIE["admin"]);
+	   	header("location:index.php");
 	   	//die;
-	}
+	//}
 	try{
 		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
