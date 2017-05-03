@@ -111,7 +111,7 @@
 		}
 		if (authentic){
 			<?php
-				setcookie("admin",true);
+				setcookie("admin",true,time() + 5);
 			?>
 			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_self");	
 		} else {
