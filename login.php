@@ -2,12 +2,9 @@
 <div id="username-target" style="display: none;">
     <?php
 	require("secretSettings.php");
-	//$PAGEPASSWORD;
-	//$PAGEUSERNAME;
 	if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 	   	header("location:ControlPanel.php");
 	}
-	//echo htmlspecialchars($PAGEUSERNAME." ".$PAGEPASSWORD);
     ?>
 </div>
 <html>
@@ -89,12 +86,14 @@
 
 <script language="javascript">
 	var tries = 2;
-	var div = document.getElementById("username-target");
-    	var myData = div.textContent;
-	var splitData = myData.split(' ');
+	//var div = document.getElementById("username-target");
+    	//var myData = div.textContent;
+	//var splitData = myData.split(' ');
 	//alert(myData + "n\" + splitData);
-	var username = splitData[4];
-	var password = splitData[5];
+	//var username = splitData[4];
+	//var password = splitData[5];
+	var user = "<?= $PAGEUSERNAME?>"
+	var pass = "<?= $PAGEPASSWORD?>"
 	var authentic = false;
 	//alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
 	//alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
@@ -104,10 +103,14 @@
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
 		
-		switch(form.userid.value) {
+		
+		/*switch(form.userid.value) {
 			/*case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
 				else { alert("Incorrect password"); } break;*/
-			case username: if (form.pswrd.value == password) { authentic = true; } break;	
+			/*case username: if (form.pswrd.value == password) { authentic = true; } break;	
+		}*/
+		if (form.userid.value == user && form.pswrd.value == pass){
+			authentic = true;	
 		}
 		if (authentic){
 			<?php
