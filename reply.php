@@ -26,7 +26,7 @@
             fwrite($file,"ID: ".$id."\n");
             fwrite($file,"raw: ".$raw."\n");
             fwrite($file,"contents 1: ".$contents[1]."\n");
-            fwrite($file,"Time: ".date("Y-m-d\TH:i:s\Z", time()));
+            fwrite($file,"Time: ".date("Y-m-d\TH:i:s\Z", time())."\n");
             fwrite($file,"------------------------");
             fclose($file);
             
@@ -58,12 +58,12 @@
                         if ($person["Signed_In"] % 2 == 1){
                             //Signing out
                             $pointsToAdd = round($difference/1800,2);
-                            fwrite($logs,"------------------------------");
+                            fwrite($logs,"------------------------------\n");
                             if ($difference > 900){
                                 $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + 1 WHERE Tag_ID = '$id'");
                                 $name = $person['First_Name']." ".$person['Last_Name'];
                                 $status = "Sign Out";
-                                fwrite($logs,"Sign out: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']);
+                                fwrite($logs,"Sign out: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
                                 $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
                                 $conn->exec($sql);
                             } else {
@@ -71,27 +71,27 @@
                                //fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." signed out too quick.\n");
                                $name = $person['First_Name']." ".$person['Last_Name'];
                                $status = "Early Sign Out";
-                               fwrite($logs,"Early Sign out: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']);
+                               fwrite($logs,"Early Sign out: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
                                $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
                                $conn->exec($sql);
                                 $pointsToAdd = 0;
                             }
                             if ($difference > 43200) {
                                 echo "Difference is greater than 12 hours \n";
-                                fwrite($logs,"Difference greater than 12 hrs: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']);
+                                fwrite($logs,"Difference greater than 12 hrs: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
                                 //fwrite($signedLogs,$person["First_Name"]." ".$person["Last_Name"]." did not sign out for over 12 hours and was not awarded points.\n");
                                 $pointsToAdd = 0;
                             }
                             //$pointsToAdd = ((floatval($difference))/3600.0;
                             
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed out. \n";
-                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
+                            //fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed out. Awarded ".$pointsToAdd." points!\n");
                             echo "Time Difference: ".gmdate("H:i:s", $difference)."\n";
                             if ($pointsToAdd > 0) {
                                 $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
                                 echo "Points awarded: ".$pointsToAdd."\n";
-                                fwrite($logs,"Points Added:".$pointsToAdd."ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']);
-                                fwrite($signedLogs,$person['First_Name']." ".$person['Last_Name']." awarded ".$pointsToAdd."\n");
+                                fwrite($logs,"Points Added:".$pointsToAdd."ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
+                                //fwrite($signedLogs,$person['First_Name']." ".$person['Last_Name']." awarded ".$pointsToAdd."\n");
                             }
                             $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$id'");
                         } else {
@@ -101,8 +101,8 @@
                             $sql = "INSERT INTO attendance (Status,Full_Name,badgeID) VALUES ('$status','$name','$id')";
                             $conn->exec($sql);
                             echo $person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n";
-                            fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
-                            fwrite($logs,"Sign In: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']." Time: ".date('Y-m-d H:i:s'));
+                            //fwrite($signedLogs,date('Y-m-d H:i:s')." ".$person["First_Name"]." ".$person["Last_Name"]." successfully signed in. \n");
+                            fwrite($logs,"Sign In: ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']." Time: ".date('Y-m-d H:i:s')."\n");
                             $conn->exec("UPDATE Members SET Signed_In = 1 WHERE Tag_ID = '$id'");
                         }
                         break;
@@ -173,7 +173,7 @@
                                 } elseif (sizeof($meetingsAddSplit) > 1) {
                                     $meetingsToAdd = doubleval($meetingsAddSplit[1]);
                                     $tagID = $person["Tag_ID"];
-                                     $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
+                                    $conn->exec("UPDATE Members SET Num_Meetings = Num_Meetings + '$meetingsToAdd' WHERE Tag_ID = '$tagID'");
                                     echo "\n Successfully changed meetings attended by ".$meetingsToAdd." for ".$person["First_Name"]." ".$person["Last_Name"];
                                     break;
                                 } else {
@@ -237,6 +237,7 @@
             $conn->exec("INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')");
         }
         //fclose($signedLogs);
+        fwrite($logs,"\n");
         fclose($logs);
         
         ?>
