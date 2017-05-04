@@ -97,7 +97,7 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 	//alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
 	function check(form)
 	{
-		if (tries <= 1) {
+		if (tries < 1) {
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
 		
