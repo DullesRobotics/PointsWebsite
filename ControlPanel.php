@@ -8,6 +8,7 @@
 		fwrite($logsFile,"----------------------\n");
 		fwrite($logsFile,"Time Signed In: ".date("Y-m-d\TH:i:s\Z", time())."\n");
 		fwrite($logsFile,"IP Address: ".$_SERVER['REMOTE_ADDR']."\n");
+		fclose($logsFile);
 		setcookie("admin",null,-1);
 	}else {
 		//echo "Nope! ".$_COOKIE["admin"];
