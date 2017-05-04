@@ -113,6 +113,9 @@ th {text-align: left;}
         if ($ptsToAdd != 0) {
             echo "<br> Attempting to add points...";
             addPoints($person,$ptsToAdd,$conn);
+            <?php
+                $logsFile = fopen("logs/ControlPanelLogs.txt","a+") or die();
+                ?>
         }
         if ($mtsToAdd != 0) {
             echo "<br> Attemptng to add meetings...";
