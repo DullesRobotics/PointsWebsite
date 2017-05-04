@@ -236,7 +236,8 @@
             $name = "UNKNOWN";
             $conn->exec("INSERT INTO attendance (Full_Name,badgeID) VALUES ('$name','$id')");
         }
-        fclose($signedLogs);
+        //fclose($signedLogs);
+        fclose($logs);
         
         ?>
         <h3>Cron job test</h3>
