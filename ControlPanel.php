@@ -146,6 +146,7 @@
 
 			//alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 			postDatabase(person,pointsToAdd,meetingsToAdd,status);
+			alert("Successfully updated.");
 		}
 	</script>
   <div class="body"></div>
