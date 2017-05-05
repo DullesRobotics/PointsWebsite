@@ -140,13 +140,16 @@
 			for (var i = 0, length = radios.length; i < length; i++) {
 			    if (radios[i].checked) {
 				status = radios[i].value;
+				radios[i].value = 0;
 				break;
 			    }
 			}
-
+			
 			//alert("User: " + person + "\nPoints: " + pointsToAdd + "\nMeetings: " + meetingsToAdd + "\nStatus: " + status);
 			postDatabase(person,pointsToAdd,meetingsToAdd,status);
 			alert("Successfully updated.");
+			pointsToAdd.value = 0;
+			meetingsToAdd.value = 0;
 		}
 	</script>
   <div class="body"></div>
