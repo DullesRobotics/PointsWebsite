@@ -90,7 +90,7 @@
                             if ($pointsToAdd > 0) {
                                 $conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
                                 echo "Points awarded: ".$pointsToAdd."\n";
-                                fwrite($logs,"Points Added:".$pointsToAdd."ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
+                                fwrite($logs,"Points Added: ".$pointsToAdd." ID: ".$id." Name: ".$person['First_Name']." ".$person['Last_Name']."\n");
                                 //fwrite($signedLogs,$person['First_Name']." ".$person['Last_Name']." awarded ".$pointsToAdd."\n");
                             }
                             $conn->exec("UPDATE Members SET Signed_In = 0 WHERE Tag_ID = '$id'");
