@@ -54,8 +54,8 @@
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		//$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
-		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Average DESC");
+		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
+		//$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Average DESC");
 		//echo "Got Table Members";
 		$getMembers->execute();
 		//echo "Executed";
