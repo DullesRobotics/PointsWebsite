@@ -35,7 +35,7 @@
                     echo("<td> <nput type='text' name='points' value='".$member['Points'] . "'></td>");
                     echo "</tr>";
                 }
-                echo "</table>"
+                echo "</table>";
                 
             }catch(PDOException $e){
                 echo "<h3>Connection Failed: " . $e->getMessage() . "</h3>";
