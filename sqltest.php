@@ -31,8 +31,8 @@
                 </tr>";
                 foreach ($MemberData as $member) {
                     echo "<tr>";
-                    echo("<td> <nput type='text' name='FirstName' value='".$member['First_Name'] . "'></td>");
-                    echo("<td> <nput type='text' name='points' value='".$member['Points'] . "'></td>");
+                    echo("<td> <input type='text' name='FirstName' value='".$member['First_Name'] . "'></td>");
+                    echo("<td> <input type='text' name='points' value='".$member['Points'] . "'></td>");
                     echo "</tr>";
                 }
                 echo "</table>";
