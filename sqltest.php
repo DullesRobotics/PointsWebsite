@@ -24,9 +24,18 @@
                 $getMembers->execute();
                 $MemberData = $getMembers->fetchAll();
                 
+                echo "<table>
+                <tr>
+                    <th>Name</th>
+                    <th>Points></th>
+                </tr>";
                 foreach ($MemberData as $member) {
-                    echo($member["Tag_ID"]. " ". $member["First_Name"]. " ". $member["Points"] . "<br />");
+                    echo "<tr>";
+                    echo("<td> <nput type='text' name='FirstName' value='".$member['First_Name'] . "'></td>");
+                    echo("<td> <nput type='text' name='points' value='".$member['Points'] . "'></td>");
+                    echo "</tr>";
                 }
+                echo "</table>"
                 
             }catch(PDOException $e){
                 echo "<h3>Connection Failed: " . $e->getMessage() . "</h3>";
