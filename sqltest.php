@@ -25,7 +25,7 @@
                 $MemberData = $getMembers->fetchAll();
                 
                 foreach ($MemberData as $member) {
-                    echo($member . "<br />");
+                    echo($member["Tag_ID"]. " ". $member["First_Name"]. " ". $member["Points"] . "<br />");
                 }
                 
             }catch(PDOException $e){
