@@ -100,7 +100,7 @@
 			    // code for IE6, IE5
 			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
-			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?q="+user,true);
+			xmlhttp.open("GET","http://dhsrobotics.ddns.net/secure/DatabaseControls.php?q="+user,true);
 			xmlhttp.send();*/
 		}
 		
@@ -112,7 +112,7 @@
 			    // code for IE6, IE5
 			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
-			xmlhttp.open("GET","http://dhsrobotics.ddns.net/DatabaseControls.php?user=" + user + "&addPts="+pts + "&addMts=" + meetings + "&status=" + status,true);
+			xmlhttp.open("GET","http://dhsrobotics.ddns.net/secure/DatabaseControls.php?user=" + user + "&addPts="+pts + "&addMts=" + meetings + "&status=" + status,true);
 			xmlhttp.send();
 		}
 

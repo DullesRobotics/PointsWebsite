@@ -114,7 +114,7 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 			<?php
 				setcookie("admin",true);
 			?>
-			window.open("http://dhsrobotics.ddns.net/ControlPanel.php", "_self");	
+			window.open("http://dhsrobotics.ddns.net/secure/ControlPanel.php", "_self");	
 		} else {
 			alert("Invalid! Tries remaining: " + tries);
 			tries--;
