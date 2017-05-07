@@ -20,11 +20,11 @@
         </noscript>
 	</head>
 	<body>
-	<nav class="navbar navbar-inverse">
+
 	    <form name="Secure Area" action="/secure">
-            <input style="color: black" type="submit" value="Secure Area">
+            <input style="color: black; background-color: black" type="submit" value="Secure Area">
         </form>
-	</nav>
+
 	<div style="text-align:center;">
 		<h1>
 		<font color="red">
