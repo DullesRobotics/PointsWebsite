@@ -14,7 +14,8 @@
                 $MemberData = $getMembers->fetchAll();
                 
                 foreach ($MemberData as $member) {
-                    echo $member["First_Name"];
+                    echo "<p> Nayme ov da per son akording tu da databaz: " . $member["First_Name"] . " " . $member["Last_Name"]. " </p>";
+                    echo "<p> Preev1ous amount ov p01nt5: " . $member["Points"]. " </p>";
                 }
                 
             }catch(PDOException $e){
