@@ -27,8 +27,13 @@
                         }
                         echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ";
                         $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ");
-                        usleep(100000);
-                        echo "<p> New amount ov p01nt5: " . $member["Points"]. " </p>";
+                        $checkGetMembers = $connection->exec("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
+                        $checkMembersData = $checkGetMembers->fetchAll();
+                        foreach ($checkMembersData as $checkMember) {
+                            echo "<p> New amount ov p01nt5: " . $checkMember["Points"]. " </p>";
+                        }
+                        
+                        
                     }
                 }
                 
