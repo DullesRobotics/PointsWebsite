@@ -26,8 +26,10 @@
                 
                 echo "<table>
                 <tr>
-                    <th>Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
                     <th>Points</th>
+                    
                 </tr>";
                 foreach ($MemberData as $member) {
                     echo "<tr>";
@@ -35,7 +37,7 @@
                     echo("<td>" . $member['First_Name'] . "</td>");
                     echo("<td>" . $member['Last_Name'] . "</td>");
                     echo("<td> <input type='text' name='points' value='".$member['Points'] . "'></td>");
-                    echo("<button>Submit</button>");
+                    echo("<td><button name=". $member['Tag_ID']. ">Change ". $member['First_Name'] ."</button></td>");
                     echo "</tr>";
                 }
                 echo "</table>";
