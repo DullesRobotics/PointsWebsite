@@ -10,6 +10,7 @@
 
 			}
 			body{
+			    height: 100%;
 			    background-color: black;
 			}
 		</style>
