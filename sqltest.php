@@ -26,6 +26,7 @@
                 
                 echo "<table>
                 <tr>
+                    <th>Tag ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Points</th>
