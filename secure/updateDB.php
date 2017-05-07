@@ -26,11 +26,12 @@
                             echo "Tag_ID = POST[\'tag\']";
                         }
                         echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ";
-                        $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ");
-                        echo "END CHANGE";
+                        $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' <br>");
+                        echo "FLAG 1 <br>";
                         $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
-                        
+                        echo "FLAG 2 <br>";
                         $checkGetMembers = $connection->execute();
+                        echo "FLAG 3 <br>";
                         $checkMembersData = $checkGetMembers->fetchAll();
                         echo "BEGIN CHECK";
                         echo $checkMembersData;
