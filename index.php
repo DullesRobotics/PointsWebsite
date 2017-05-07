@@ -22,7 +22,7 @@
 	<body>
 
 	    <form name="Secure Area" action="/secure">
-            <input style="color: black; background-color: black" type="submit" value="Secure Area">
+            <input type="submit" value="Secure Area">
         </form>
 
 	<div style="text-align:center;">
