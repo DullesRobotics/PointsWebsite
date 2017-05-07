@@ -4,7 +4,7 @@
 	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
 		//echo "Allowed! ".$_COOKIE["admin"];
 		unset($_COOKIE["admin"]);
-		$logsFile = fopen("/logs/ControlPanelLogs.txt","a+") or die("Error opennign log file");
+		$logsFile = fopen("../logs/ControlPanelLogs.txt","a+") or die("Error opennign log file");
 		fwrite($logsFile,"----------------------\n");
 		fwrite($logsFile,"Time Signed In: ".date("Y-m-d\TH:i:s\Z", time())."\n");
 		fwrite($logsFile,"IP Address: ".$_SERVER['REMOTE_ADDR']."\n");
