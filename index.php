@@ -9,10 +9,7 @@
 				top:0;
 
 			}
-			body{
-			    height: 100%;
-			    background-color: black;
-			}
+
 		</style>
 		     <!--<meta http-equiv="refresh" content = "5" />-->
 			<!-- Bootstrap - Latest compiled and minified CSS -->
@@ -23,7 +20,7 @@
             <meta http-equiv="refresh" content="5">
         </noscript>
 	</head>
-	<body>
+	<body style="background-color: black">
 
 	    <form name="Secure Area" action="/secure">
             <input type="submit" value="Secure Area">
