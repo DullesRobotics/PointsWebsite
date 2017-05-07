@@ -9,7 +9,7 @@
                 
                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "<h3>Connected sucessfully</h3>";
-                $getMembers = $connection->prepare("SELECT * FROM Members WHERE Tag_ID = " . $_POST['tag']);
+                $getMembers = $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
                 $getMembers->execute();
                 $MemberData = $getMembers->fetchAll();
                 
