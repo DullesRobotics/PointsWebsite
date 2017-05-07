@@ -9,6 +9,9 @@
 				top:0;
 
 			}
+			body{
+			    background-color: black;
+			}
 		</style>
 		     <!--<meta http-equiv="refresh" content = "5" />-->
 			<!-- Bootstrap - Latest compiled and minified CSS -->
