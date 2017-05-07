@@ -19,7 +19,7 @@
                     if($member["Points"] == $_POST['points']){
                         echo "<h1>Hold UP JUST A SEC! THERE IS N0000000000 CH4NG3!!!</h1>";
                     }else{
-                        $connection->prepare("UPDATE Members SET Points='".$_POST["points"] ."' WHERE Tag_ID='" . $_POST['tag'] . "'");
+                        $connection->prepare("UPDATE Members SET Points=".$_POST["points"] ." WHERE Tag_ID='" . $_POST['tag'] . "'");
                         $connection->execute();
                     }
                 }
