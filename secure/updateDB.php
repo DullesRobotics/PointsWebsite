@@ -15,12 +15,13 @@
                 
                 foreach ($MemberData as $member) {
                     echo "<p> Nayme ov da per son akording tu da databaz: " . $member["First_Name"] . " " . $member["Last_Name"]. " </p>";
+                    echo "<p> Member'z tag as per databaz: " . $member["Tag_ID"] . "</p>";
                     echo "<p> Preev1ous amount ov p01nt5: " . $member["Points"]. " </p>";
                     if($member["Points"] == $_POST['points']){
                         echo "<h1>Hold UP JUST A SEC! THERE IS N0000000000 CH4NG3!!!</h1>";
                     }else{
-                        echo "UPDATE Members SET Points= 0 + '".$_POST['points']." WHERE Tag_ID='" . $_POST['tag'] . "'";
-                        $connection->execute("UPDATE Members SET Points= 0 + \'".$_POST['points']."\' WHERE Tag_ID='" . $_POST['tag'] . "'");
+                        echo "UPDATE Members SET Points= 0 + '".$_POST['points']."'"." WHERE Tag_ID='" . $_POST['tag'] . "'";
+                        $connection->execute("UPDATE Members SET Points= 0 + '".$_POST['points']."'"." WHERE Tag_ID='" . $_POST['tag'] . "'");
                         //$conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
                         //$connection->execute();
                     }
