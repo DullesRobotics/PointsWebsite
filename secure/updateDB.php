@@ -12,7 +12,7 @@
                 $getMembers = $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
                 $getMembers->execute();
                 $MemberData = $getMembers->fetchAll();
-                
+                $tag = $_POST['tag'];
                 foreach ($MemberData as $member) {
                     echo "<p> Nayme ov da per son akording tu da databaz: " . $member["First_Name"] . " " . $member["Last_Name"]. " </p>";
                     echo "<p> Member'z tag as per databaz: " . $member["Tag_ID"] . "</p>";
@@ -28,7 +28,7 @@
                         echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ";
                         $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' <br>");
                         echo "FLAG 1 <br>";
-                        $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
+                        $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '$tag'");
                         echo "FLAG 2 <br>";
                         $checkGetMembers = $connection->execute();
                         echo "FLAG 3 <br>";
