@@ -25,7 +25,7 @@
                         if($id == $member["Tag_ID"]){
                             echo "Tag_ID = POST[\'tag\']";
                         }
-                        echo "UPDATE Members SET Points= 0 + '".$_POST['points']."'"." WHERE Tag_ID='" . $_POST['tag'] . "'";
+                        echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ";
                         $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ");
                         
                         //$conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
