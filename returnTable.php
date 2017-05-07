@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Points Page</title>
-		
-		<style>
-			.login{
-				position:absolute;
-				top:0;
-
-			}
-		</style>
-		     <!--<meta http-equiv="refresh" content = "5" />-->
-			<!-- Bootstrap - Latest compiled and minified CSS -->
-        		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <noscript>
-            <meta http-equiv="refresh" content="5">
-        </noscript>
-	</head>
-	<body>
-	<nav class="navbar navbar-inverse"
-	<div style="text-align:center;">
-		<h1>
-		<font color="red">
-	    		Dulles Robotics Club Points Page<br/>
-			<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
-		</font>
-			<font color = "white">
-				30 minutes = 1 point
-			</font>
-		</h1>
-		 
-		 
-		<noscript>
-		    <h1>This page works better with javascript enabled</h1>
-		</noscript>
-	<div id="tableContainer">
-		            <?php
+        <?php
         require("secretSettings.php");
         function getIDurl($stringID){
              if (strlen($stringID) >= 6 && strlen($stringID) <= 10){
@@ -221,29 +182,3 @@
             <td class="tg-w08d">0</td>
           </tr>-->
         </table>
-	</div>
-	    <script>
-	    
-	        function loadTable(){
-	            $("#tableContainer").load("returnTable.php");
-	            console.log("Table loaded");
-	        }
-	        window.setInterval(function(){loadTable()},5000);
-	    </script>
-		<form name="login">
-			<div class="login">
-					<input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>
-			</div>
-		</form>
-		<script>
-			function loadLogin()
-			{
-			    window.open('http://dhsrobotics.ddns.net/login.php',"_self");
-			}
-		</script>
-	</div>
-        <!-- Bootstrap - Latest compiled JavaScript -->
-       	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	</body>
-</html>
-
