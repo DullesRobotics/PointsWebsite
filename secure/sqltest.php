@@ -37,8 +37,7 @@
                     echo("<td>" . $member['Tag_ID'] . "</td>");
                     echo("<td>" . $member['First_Name'] . "</td>");
                     echo("<td>" . $member['Last_Name'] . "</td>");
-                    echo("<td> <input type='text' name='points' value='".$member['Points'] . "'></td>");
-                    echo("<td><button name=". $member['Tag_ID']. ">Change ". $member['First_Name'] ."</button></td>");
+                    echo("<td><form action='updateDB.php'<input type='text' name='points' value='".$member['Points'] . "'><input type='submit' name=". $member['Tag_ID']. ">Change ". $member['First_Name'] . "></form></td>");
                     echo "</tr>";
                 }
                 echo "</table>";
