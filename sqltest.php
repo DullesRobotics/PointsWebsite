@@ -27,12 +27,15 @@
                 echo "<table>
                 <tr>
                     <th>Name</th>
-                    <th>Points></th>
+                    <th>Points</th>
                 </tr>";
                 foreach ($MemberData as $member) {
                     echo "<tr>";
-                    echo("<td> <input type='text' name='FirstName' value='".$member['First_Name'] . "'></td>");
+                    echo("<td>" . $member['Tag_ID'] . "</td>");
+                    echo("<td>" . $member['First_Name'] . "</td>");
+                    echo("<td>" . $member['Last_Name'] . "</td>");
                     echo("<td> <input type='text' name='points' value='".$member['Points'] . "'></td>");
+                    echo("<button>Submit</button>");
                     echo "</tr>";
                 }
                 echo "</table>";
