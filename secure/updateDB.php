@@ -28,11 +28,11 @@
                         echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' <br>";
                         $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id'");
                         echo "FLAG 1 <br>";
-                        $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '$tag'");
+                        $getMembers = $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
                         echo "FLAG 2 <br>";
-                        $checkGetMembers = $connection->execute();
+                        $getMembers->execute();
                         echo "FLAG 3 <br>";
-                        $checkMembersData = $checkGetMembers->fetchAll();
+                        $checkMembersData = $getMembers->fetchAll();
                         echo "BEGIN CHECK";
                         echo $checkMembersData;
                         foreach ($checkMembersData as $checkMember) {
