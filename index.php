@@ -19,9 +19,10 @@
         <noscript>
             <meta http-equiv="refresh" content="5">
         </noscript>
+        <?php include_once("analyticstracking.php") ?>
 	</head>
 	<body style="background-color: black">
-	    <?php include_once("analyticstracking.php") ?>
+	    
         <form name="login">
             <div class="login">
                     <input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>

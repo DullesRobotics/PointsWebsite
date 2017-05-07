@@ -66,11 +66,11 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 </style>
 
   
-
+<?php include_once("analyticstracking.php") ?>
 </head>
 
 <body oncontextmenu="return false">
-<?php include_once("analyticstracking.php") ?>
+
   <div class="body"></div>
 		<div class="grad"></div>
 		<br>

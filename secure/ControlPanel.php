@@ -76,7 +76,7 @@
 	.dropdown-content a:hover {background-color: #f1f1f1}
 	.show {display:block;}	
 </style>
-
+<?php include_once("analyticstracking.php") ?>
 </head>
 	
 <body oncontextmenu="return false">	
