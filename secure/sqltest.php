@@ -26,14 +26,18 @@
                 
                 echo "<table>
                 <tr>
+                    <th>Rank</th>
                     <th>Tag ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Points</th>
                     
                 </tr>";
+                $i = 0;
                 foreach ($MemberData as $member) {
+                    $i = $i + 1;
                     echo "<tr>";
+                    echo("<td>" . $i . "</td>");
                     echo("<td>" . $member['Tag_ID'] . "</td>");
                     echo("<td>" . $member['First_Name'] . "</td>");
                     echo("<td>" . $member['Last_Name'] . "</td>");
