@@ -3,7 +3,7 @@
     <head>
         <title>SQL Test Page</title>
         <style>
-            #main_title,#date{
+            #main_title,#date,table{
                 margin-left: auto;
                 margin-right: auto;
                 text-align: center;
