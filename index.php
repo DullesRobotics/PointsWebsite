@@ -31,10 +31,11 @@
 				30 minutes = 1 point
 			</font>
 		</h1>
+		<p style="color: white">The page will update every 5 secondss automatically - no refreshing needed</p>
 		 
 		 
 		<noscript>
-		    <h1>This page works better with javascript enabled</h1>
+		    <h1 style="color: yellow">This page works better with javascript enabled</h1>
 		</noscript>
 	<div id="tableContainer">
 		            <?php
@@ -234,6 +235,9 @@
 			<div class="login">
 					<input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>
 			</div>
+		</form>
+		<form name="Secure Area" action="/secure">
+		      <input style="color: black" type="submit" value="Secure Area">
 		</form>
 		<script>
 			function loadLogin()
