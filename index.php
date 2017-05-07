@@ -4,13 +4,12 @@
 		<title>Points Page</title>
 		
 		<style>
-		/*
-			.login{
-				position:absolute;
-				top:0;
+		
+			form{
+				display: inline-block;
 
 			}
-        */
+        
 		</style>
 		     <!--<meta http-equiv="refresh" content = "5" />-->
 			<!-- Bootstrap - Latest compiled and minified CSS -->
