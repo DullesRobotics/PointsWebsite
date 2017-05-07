@@ -4,12 +4,13 @@
 		<title>Points Page</title>
 		
 		<style>
+		/*
 			.login{
 				position:absolute;
 				top:0;
 
 			}
-
+        */
 		</style>
 		     <!--<meta http-equiv="refresh" content = "5" />-->
 			<!-- Bootstrap - Latest compiled and minified CSS -->
@@ -21,7 +22,11 @@
         </noscript>
 	</head>
 	<body style="background-color: black">
-
+        <form name="login">
+            <div class="login">
+                    <input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>
+            </div>
+        </form>
 	    <form name="Secure Area" action="/secure">
             <input type="submit" value="Secure Area">
         </form>
@@ -36,7 +41,7 @@
 				30 minutes = 1 point
 			</font>
 		</h1>
-		<p style="color: white">The page will update every 5 secondss automatically - no refreshing needed</p>
+		<p style="color: white">The page will update every 5 seconds automatically - no refreshing needed</p>
 		 
 		 
 		<noscript>
@@ -236,11 +241,7 @@
 	        }
 	        window.setInterval(function(){loadTable()},5000);
 	    </script>
-		<form name="login">
-			<div class="login">
-					<input type="button" onclick="loadLogin()" value="Login" style="padding: 5px 10px;"/>
-			</div>
-		</form>
+
 
 		<script>
 			function loadLogin()
