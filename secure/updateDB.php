@@ -30,6 +30,7 @@
                         $connection->prepare("SELECT * FROM Members WHERE Tag_ID= '" . $_POST['tag']."'");
                         $checkGetMembers = $connection->execute();
                         $checkMembersData = $checkGetMembers->fetchAll();
+                        echo "BEGIN CHECK";
                         echo $checkMembersData;
                         foreach ($checkMembersData as $checkMember) {
                             echo "<p> New amount ov p01nt5: " . $checkMember["Points"]. " </p>";
