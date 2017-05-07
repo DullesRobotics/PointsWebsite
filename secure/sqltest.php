@@ -20,7 +20,7 @@
                 $connection = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME",$USERNAME,$PASSWORD);
                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "<h3>Connected sucessfully</h3>";
-                $getMembers = $connection->prepare("SELECT * FROM Members");
+                $getMembers = $connection->prepare("SELECT * FROM Members ORDER BY Points DESC");
                 $getMembers->execute();
                 $MemberData = $getMembers->fetchAll();
                 
