@@ -70,7 +70,7 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 </head>
 
 <body oncontextmenu="return false">
-
+<?php include_once("analyticstracking.php") ?>
   <div class="body"></div>
 		<div class="grad"></div>
 		<br>

@@ -12,6 +12,7 @@
         </style>
     </head>
     <body>
+        <?php include_once("analyticstracking.php") ?>
         <h1 id="main_title">SQL Test Page</h1>
         <?php
             require 'secretSettings.php';
