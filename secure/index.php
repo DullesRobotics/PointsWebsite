@@ -9,8 +9,9 @@
                 text-align: center;
             }
             input {
-                padding-left: 10px;
-                padding-right: 10px;
+                width: auto;
+                margin-left: 10px;
+                margin-right: 10px;
             }
         </style>
     </head>
