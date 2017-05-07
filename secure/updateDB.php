@@ -27,9 +27,7 @@
                         }
                         echo "UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ";
                         $connection->exec("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ");
-                        
-                        //$conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
-                        //$connection->execute();
+                        usleep(100000);
                         echo "<p> New amount ov p01nt5: " . $member["Points"]. " </p>";
                     }
                 }
