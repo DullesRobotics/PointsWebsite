@@ -36,7 +36,7 @@
                         echo "BEGIN CHECK";
                         echo $checkMembersData;
                         foreach ($checkMembersData as $checkMember) {
-                            echo "<p> New amount ov p01nt5: " . $checkMember["Points"]. " </p>";
+                            echo "<h1> New amount ov p01nt5: " . $checkMember["Points"]. " </h1>";
                         }
                         
                         
