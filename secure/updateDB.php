@@ -20,8 +20,10 @@
                     if($member["Points"] == $_POST['points']){
                         echo "<h1>Hold UP JUST A SEC! THERE IS N0000000000 CH4NG3!!!</h1>";
                     }else{
+                        $newPoints = $_POST['points'];
+                        $id = $_POST['tag'];
                         echo "UPDATE Members SET Points= 0 + '".$_POST['points']."'"." WHERE Tag_ID='" . $_POST['tag'] . "'";
-                        $connection->execute("UPDATE Members SET Points= 0 + '".$_POST['points']."'"." WHERE Tag_ID='" . $_POST['tag'] . "'");
+                        $connection->execute("UPDATE Members SET Points= '$newPoints' WHERE Tag_ID='$id' ");
                         //$conn->exec("UPDATE Members SET Points = Points + '$pointsToAdd' WHERE Tag_ID = '$id'");
                         //$connection->execute();
                     }
