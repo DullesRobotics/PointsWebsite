@@ -110,7 +110,7 @@ th {text-align: left;}
     function executeCommand($person,$ptsToAdd,$mtsToAdd,$status,$conn){
         echo "\n<br>Data:";
         echo "\n<br> Person: ".$person." Points: ".$ptsToAdd." Meetings: ".$mtsToAdd." Status: ".$status;
-        //$logsFile = fopen("logs/ControlPanelLogs.txt","a+") or die();
+        $logsFile = fopen("logs/ControlPanelLogs.txt","a+") or die();
         //fwrite($logsFile,"IP: ".$_SERVER['REMOTE_ADDR']."\n");
         if ($ptsToAdd != 0) {
             echo "<br> Attempting to add points...";
@@ -125,8 +125,8 @@ th {text-align: left;}
         } elseif ($status == "sign out"){
             signOut($person,$conn);
         }
-        //fwrite($logsFile,"Changes: Points Added: ".$ptsToAdd." Meetings Added: ".$mtsToAdd." Status: ".$status."\n");
-        //fclose($logsFile);
+        fwrite($logsFile,"Changes: Points Added: ".$ptsToAdd." Meetings Added: ".$mtsToAdd." Status: ".$status."\n");
+        fclose($logsFile);
     }
     
     /*echo "<table>
