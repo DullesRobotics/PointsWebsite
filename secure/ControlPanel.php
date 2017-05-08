@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
  	require("secretSettings.php");
-	if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
+	/*if(isset($_COOKIE["admin"]) && $_COOKIE["admin"]){
 		//echo "Allowed! ".$_COOKIE["admin"];
 		unset($_COOKIE["admin"]);
 		$logsFile = fopen("../logs/ControlPanelLogs.txt","a+") or die("Error opennign log file");
@@ -15,7 +15,7 @@
 		//echo "<br>".isset($_COOKIE["admin"]);
 	   	header("location:/index.php");
 	   	die;
-	}
+	}*/
 	try{
 		$conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
