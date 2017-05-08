@@ -247,7 +247,7 @@
 		<script>
 			function loadLogin()
 			{
-			    window.open('http://dhsrobotics.ddns.net/secure/login.php',"_self");
+			    window.open('http://dhsrobotics.ddns.net/secure/ControlPanel.php',"_self");
 			}
 		</script>
 	</div>
