@@ -90,8 +90,8 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 	//alert(myData + "n\" + splitData);
 	//var username = splitData[4];
 	//var password = splitData[5];
-	var user = "<?= $PAGEUSERNAME?>"
-	var pass = "<?= $PAGEPASSWORD?>"
+	var tries2 = "<?= $PAGEUSERNAME?>";
+	var tries3 = "<?= $PAGEPASSWORD?>"
 	var authentic = false;
 	//alert("MyData? " + myData + "\nUsername? " + username + "\nPassword? " + password + "\nSplit length: " + splitData.length);
 	//alert("Pos2: " + splitData[2] + "\nPos3: " + splitData[3] + "\nPos4: " + splitData[4] + "\nPos5: " + splitData[5] + "\nPos6: " + splitData[6]);
@@ -101,13 +101,7 @@ if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "allowed") {
 			window.open("http://dhsrobotics.ddns.net","_self");
 		}
 		
-		
-		/*switch(form.userid.value) {
-			/*case "123": if (form.pswrd.value == "123") { alert("Do something here!"); }
-				else { alert("Incorrect password"); } break;*/
-			/*case username: if (form.pswrd.value == password) { authentic = true; } break;	
-		}*/
-		if (form.userid.value == user && form.pswrd.value == pass){
+		if (form.userid.value == tries2 && form.pswrd.value == tries3){
 			authentic = true;	
 		}
 		if (authentic){
