@@ -220,7 +220,7 @@
 	    <script>
 	    
 	        function loadTable(){
-	            $("#tableContainer").load("returnTable.php");
+	            //$("#tableContainer").load("returnTable.php");
 	            console.log("Table loaded");
 	        }
 	        window.setInterval(function(){loadTable()},5000);
