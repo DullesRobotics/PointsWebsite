@@ -127,18 +127,12 @@
             
             foreach($data as $person){
                 echo "<tr>";
-                /*if (strlen($person['Custom_Image']) > 0){
+                if (strlen($person['Custom_Image']) > 0){
                     $imgHTML = "<img src=". $person['Custom_Image'] . " height=" . "57" . " width =" ."76".">";
-                }else{*/
+                }else{
                     $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
-                //} 
-                /*
-                if ($person['Student_ID'] == 1337){
-                    $imgHTML = getIdImageHTMLwithDim($person['Custom_Image'], "57", "76");
-                } else {
-                            $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
-                }
-                 * */
+                } 
+		 
 		if ($indexOn % 2 == 0){
 		    if ($indexOn == 2){
 			if (isOfficer($person["First_Name"],$person["Last_Name"])){
