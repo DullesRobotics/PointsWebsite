@@ -79,10 +79,10 @@
         //echo "Executed";
         $data = $getMembers->fetchAll();
         //echo "Fetched";
-        
+        //border-collapse:collapse;
         ?>
         <style type="text/css">
-            .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;margin:0px auto;}
+            .tg  {border-spacing:0;border-color:#aabcfe;margin:0px auto;}
             .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
             .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
             .tg .tg-fity{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;color:#000000;text-align:center;vertical-align:top}
@@ -208,7 +208,7 @@
 			} 
 		    } else {
 			    //echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ? </font></td>";
-			    echo "</br>";
+			    //echo "</br>";
 		    }
                 echo "</tr>";
                 $indexOn++;
