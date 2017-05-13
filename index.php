@@ -221,33 +221,12 @@
 				echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
 			    }
 			} else {
-				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">  </font></td>";
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ? </font></td>";
 			}
                 echo "</tr>";
-                //echo "Index: ".$indexOn;
-                /*if (isOfficer($person["First_Name"],$person["Last_Name"])){
-                    echo "\nOfficer!";
-                } else {
-                    $indexOn++;
-                }*/
-		    if ($person["Tag_ID"] != "spacer"){
-                	$indexOn++;
-		    }
-                
+                $indexOn++;
             }
             ?>
-          <!--<tr>
-            <td class="tg-rqeu">TEST</td>
-            <td class="tg-rqeu">TWO</td>
-            <td class="tg-rqeu">0</td>
-            <td class="tg-rqeu">0</td>
-          </tr>
-          <tr>
-            <td class="tg-w08d">TEST</td>
-            <td class="tg-w08d">THREE</td>
-            <td class="tg-w08d">0</td>
-            <td class="tg-w08d">0</td>
-          </tr>-->
         </table>
 	</div>
 	    <script>
