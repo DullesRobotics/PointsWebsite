@@ -47,41 +47,42 @@
 		    <h1 style="color: yellow">This page works better with javascript enabled</h1>
 		</noscript>
 	<div id="tableContainer">
-		            <?php
-        require("secretSettings.php");
-        function getIDurl($stringID){
-             if (strlen($stringID) >= 6 && strlen($stringID) <= 10){
-             return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
-             }
-             elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
-             return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
-             } else {
-             return NULL;
-             }
-        }
-        function getIdImageHTMLwithDim($StringId,$w,$h){
-                $url = getIDurl($StringId) ?: $StringId;
-            return "<img src=". $url . " height=" . $h . " width =" .$w.">";
-        }
-        try
-        {
-           $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
-           echo "Connected Successfully";
-        }
-        catch (PDOException $e) {
-            echo "Failed to connect to database";
-            exit;
-        }
-        $getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
-        //$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Average DESC");
-        //echo "Got Table Members";
-        $getMembers->execute();
-        //echo "Executed";
-        $data = $getMembers->fetchAll();
-        //echo "Fetched";
-        //border-collapse:collapse;
+	<?php
+		require("secretSettings.php");
+		function getIDurl($stringID){
+		     if (strlen($stringID) >= 6 && strlen($stringID) <= 10){
+		     return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
+		     }
+		     elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
+		     return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
+		     } else {
+		     return NULL;
+		     }
+		}
+		function getIdImageHTMLwithDim($StringId,$w,$h){
+			$url = getIDurl($StringId) ?: $StringId;
+		    return "<img src=". $url . " height=" . $h . " width =" .$w.">";
+		}
+		try
+		{
+		   $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
+		   echo "Connected Successfully";
+		}
+		catch (PDOException $e) {
+		    echo "Failed to connect to database";
+		    exit;
+		}
+		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
+		//$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Average DESC");
+		//echo "Got Table Members";
+		$getMembers->execute();
+		//echo "Executed";
+		$data = $getMembers->fetchAll();
+		//echo "Fetched";
+		//border-collapse:collapse;
         ?>
         <style type="text/css">
+	     .noborder{border: none}
             .tg  {border-spacing:0;border-color:#aabcfe;margin:0px auto;}
             .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
             .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
@@ -207,7 +208,7 @@
 				    }
 			} 
 		    } else {
-			    echo "<td class = \"tg-7ttm\" style=\"display:none;\"> <font color = \"#000000\"> ? </font></td>";
+			    echo "<td class = \"noborder\"> <font color = \"#000000\"> ? </font></td>";
 			    //echo "</br>";
 		    }
                 echo "</tr>";
