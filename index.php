@@ -133,93 +133,96 @@
                     $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
                 } 
 		 
-		if ($indexOn % 2 == 0){
-		    if ($indexOn == 2){
-			if (isOfficer($person["First_Name"],$person["Last_Name"])){
-			    echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
-			} else {
-			   	if ($person["Tag_ID"] != "spacer"){
-					echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
+		    if ($indexOn != 16) {
+			if ($indexOn % 2 == 0){
+			    if ($indexOn == 2){
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				    echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
 				} else {
-					echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">  </font></td>";
+					if ($person["Tag_ID"] != "spacer"){
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
+					} else {
+						echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">  </font></td>";
+					}
 				}
-			}
-			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
-			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Points']." </font></td>";
-			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
-		    } else {
-			if (isOfficer($person["First_Name"],$person["Last_Name"])){
-			    echo "<td class = \"tg-c3ly\"> <font color = \"#000000\"> Officer</font></td>";
-			} else {
-			    if ($person["Tag_ID"] != "spacer"){
-					echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
+				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
+				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
+			    } else {
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				    echo "<td class = \"tg-c3ly\"> <font color = \"#000000\"> Officer</font></td>";
 				} else {
-					echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">  </font></td>";
+				    if ($person["Tag_ID"] != "spacer"){
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
+					} else {
+						echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">  </font></td>";
+					}
 				}
-			}
-			echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
-			echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-			echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Points']." </font></td>";
-			echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
-		    }
-		    if ($person['Signed_In']%2 == 0){
-			echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out </font> </td>";
-		    } else {
-			echo "<td class = \"tg-c3ly\"> <font color = \"green\"> Signed In </font> </td>";
-		    }
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
+			    }
+			    if ($person['Signed_In']%2 == 0){
+				echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out </font> </td>";
+			    } else {
+				echo "<td class = \"tg-c3ly\"> <font color = \"green\"> Signed In </font> </td>";
+			    }
 
-		} else {
-		    if ($indexOn == 1){
-			if (isOfficer($person["First_Name"],$person["Last_Name"])){
-			    echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer</font></td>";
 			} else {
-			    	if ($person["Tag_ID"] != "spacer"){
-					echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
+			    if ($indexOn == 1){
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				    echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer</font></td>";
 				} else {
-					echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">  </font></td>";
+					if ($person["Tag_ID"] != "spacer"){
+						echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
+					} else {
+						echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">  </font></td>";
+					}
 				}
-			}
-			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$imgHTML." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Points']." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Num_Meetings']." </font></td>";
-		    } elseif ($indexOn == 3){
-			if (isOfficer($person["First_Name"],$person["Last_Name"])){
-			    echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\"> Officer </font></td>";
-			} else {
-				if ($person["Tag_ID"] != "spacer"){
-			    		echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">".$indexOn." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$imgHTML." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Num_Meetings']." </font></td>";
+			    } elseif ($indexOn == 3){
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				    echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\"> Officer </font></td>";
 				} else {
-					echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">  </font></td>";
+					if ($person["Tag_ID"] != "spacer"){
+						echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">".$indexOn." </font></td>";
+					} else {
+						echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">  </font></td>";
+					}
 				}
-			}
-			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$imgHTML." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Points']." </font></td>";
-			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Num_Meetings']." </font></td>";
-		    } else {
-			if (isOfficer($person["First_Name"],$person["Last_Name"])){
-			    echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> Officer </font></td>";
-			} else {
-				if ($person["Tag_ID"] != "spacer"){
-			    		echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$imgHTML." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Num_Meetings']." </font></td>";
+			    } else {
+				if (isOfficer($person["First_Name"],$person["Last_Name"])){
+				    echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> Officer </font></td>";
 				} else {
-					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">  </font></td>";
+					if ($person["Tag_ID"] != "spacer"){
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
+					} else {
+						echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">  </font></td>";
+					}
 				}
-			}
 
-			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
-			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Points']." </font></td>";
-			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
-		    }
-		    if ($person['Signed_In']%2 == 0){
-			echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
-		    } else {
-			echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
-		    }
-		}
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
+			    }
+			    if ($person['Signed_In']%2 == 0){
+				echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
+			    } else {
+				echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
+			    }
+			} else {
+				echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">  </font></td>";
+			}
                 echo "</tr>";
                 //echo "Index: ".$indexOn;
                 /*if (isOfficer($person["First_Name"],$person["Last_Name"])){
