@@ -208,6 +208,7 @@
 			} 
 		    } else {
 			    //echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ? </font></td>";
+			    echo "</br>";
 		    }
                 echo "</tr>";
                 $indexOn++;
