@@ -208,10 +208,10 @@
 				    }
 			} 
 		    } else {
-			    //echo "<td class = \"noborder\" >  <font color = \"#000000\"> ? </font></td>";
+			    echo "<td class = \"spacer\" >  <font color = \"#000000\"> ? </font></td>";
 			    //echo "</br>";
 			    //echo "<h1> ----------- </h1>";
-			    echo "<tr class=\"spacer\"><td></td></tr>";
+			    //echo "<tr class=\"spacer\"><td></td></tr>";
 		    }
                 echo "</tr>";
                 $indexOn++;
