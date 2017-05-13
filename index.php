@@ -82,7 +82,7 @@
 		//border-collapse:collapse;
         ?>
         <style type="text/css">
-	     .noborder{border: none}
+	    .spacer {opacity: 1;}
             .tg  {border-spacing:0;border-color:#aabcfe;margin:0px auto;}
             .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
             .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
@@ -211,7 +211,7 @@
 			    //echo "<td class = \"noborder\" >  <font color = \"#000000\"> ? </font></td>";
 			    //echo "</br>";
 			    //echo "<h1> ----------- </h1>";
-			    echo "<tr class=\"spacer\" style = \"opacity: 1;\"><td></td></tr>";
+			    echo "<tr class=\"spacer\"><td></td></tr>";
 		    }
                 echo "</tr>";
                 $indexOn++;
