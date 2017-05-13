@@ -206,6 +206,8 @@
 					echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
 				    }
 			} 
+		    
+		     echo "</tr>";
 		    if ($indexOn == 15){
 			    echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
 		    }
@@ -216,7 +218,7 @@
 			    //echo "<h1> ----------- </h1>";
 			    //echo "<tr class=\"spacer\"><td></td></tr>";
 		    //}
-                echo "</tr>";
+               
                 $indexOn++;
             }
             ?>
