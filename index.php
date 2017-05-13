@@ -82,7 +82,7 @@
 		//border-collapse:collapse;
         ?>
         <style type="text/css">
-	    .tg  .spacer{border-collapse:separate; border-spacing:5em;}
+	    .tg  .spacer{opacity: .5;}
             .tg  {border-spacing:0;border-color:#aabcfe;margin:0px auto;}
             .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
             .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
