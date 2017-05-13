@@ -144,7 +144,11 @@
 			if (isOfficer($person["First_Name"],$person["Last_Name"])){
 			    echo "<td class = \"tg-c3lz\"<font color = \"#708090\"> Officer</font></td>";
 			} else {
-			    echo "<td class = \"tg-c3lz\"<font color = \"#708090\">".$indexOn." </font></td>";
+			   	if ($person["Tag_ID"] != "spacer"){
+					echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
+				} else {
+					echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">  </font></td>";
+				}
 			}
 			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
 			echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
@@ -172,7 +176,11 @@
 			if (isOfficer($person["First_Name"],$person["Last_Name"])){
 			    echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\"> Officer</font></td>";
 			} else {
-			    echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
+			    	if ($person["Tag_ID"] != "spacer"){
+					echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
+				} else {
+					echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">  </font></td>";
+				}
 			}
 			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$imgHTML." </font></td>";
 			echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
@@ -182,7 +190,11 @@
 			if (isOfficer($person["First_Name"],$person["Last_Name"])){
 			    echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\"> Officer </font></td>";
 			} else {
-			    echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">".$indexOn." </font></td>";
+				if ($person["Tag_ID"] != "spacer"){
+			    		echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">".$indexOn." </font></td>";
+				} else {
+					echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">  </font></td>";
+				}
 			}
 			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$imgHTML." </font></td>";
 			echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
