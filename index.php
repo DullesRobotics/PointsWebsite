@@ -161,9 +161,6 @@
 			    } else {
 				echo "<td class = \"tg-c3ly\"> <font color = \"green\"> Signed In </font> </td>";
 			    }
-				if ($indexOn == 15){
-					    echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
-				    }
 
 			} else {
 			    if ($indexOn == 1){
@@ -208,10 +205,10 @@
 				    } else {
 					echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
 				    }
-				if ($indexOn == 15){
-					    echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
-				    }
 			} 
+		    if ($indexOn == 15){
+			    echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
+		    }
 		    //} else {
 			    //echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
 			    
