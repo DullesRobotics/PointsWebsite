@@ -213,7 +213,9 @@
                 } else {
                     $indexOn++;
                 }*/
-                $indexOn++;
+		    if ($person["Tag_ID"] != 0){
+                	$indexOn++;
+		    }
                 
             }
             ?>
