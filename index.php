@@ -208,8 +208,8 @@
 				    }
 			} 
 		    } else {
-			    echo "<td class = \"noborder\" width = \"767\">  <font color = \"#000000\"> ? </font></td>";
-			    //echo "</br>";
+			    //echo "<td class = \"noborder\" >  <font color = \"#000000\"> ? </font></td>";
+			    echo "</br>";
 		    }
                 echo "</tr>";
                 $indexOn++;
