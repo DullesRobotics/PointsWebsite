@@ -192,7 +192,11 @@
 			if (isOfficer($person["First_Name"],$person["Last_Name"])){
 			    echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> Officer </font></td>";
 			} else {
-			    echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
+				if ($person["Tag_ID"] != "spacer"){
+			    		echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
+				} else {
+					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">  </font></td>";
+				}
 			}
 
 			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
