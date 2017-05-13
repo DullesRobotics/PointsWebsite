@@ -211,7 +211,7 @@
 			    }
 			}
 		}else{
-			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ------------------------------------- </font></td>";
+			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ? </font></td>";
 		}
                 echo "</tr>";
                 //echo "Index: ".$indexOn;
