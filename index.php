@@ -141,7 +141,8 @@
                             $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
                 }
                  * */
-                 
+                
+		if ($indexOn != 15){
                 if ($indexOn % 2 == 0){
                     if ($indexOn == 2){
                         if (isOfficer($person["First_Name"],$person["Last_Name"])){
@@ -208,7 +209,9 @@
                     } else {
                         echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
                     }
-                }
+                }else{
+			echo "<td class = \"tg-7ttm\"> <font color = \"#000000\"> ------------------------------- </font></td>";
+		}
                 echo "</tr>";
                 //echo "Index: ".$indexOn;
                 /*if (isOfficer($person["First_Name"],$person["Last_Name"])){
