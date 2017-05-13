@@ -213,7 +213,7 @@
                 } else {
                     $indexOn++;
                 }*/
-		    if ($person["Tag_ID"] != 0){
+		    if ($person["Tag_ID"] != "spacer"){
                 	$indexOn++;
 		    }
                 
