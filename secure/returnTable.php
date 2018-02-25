@@ -1,36 +1,19 @@
  <?php
 		require("secretSettings.php");
-		function getIDurl($stringID){
-		     if (strlen($stringID) >= 6 && strlen($stringID) <= 10){
-		     return "https://skystorage.iscorp.com/pictures/tx/fortbend//0".$stringID.".JPG";
-		     }
-		     elseif (strlen($stringID) >= 0 && strlen($stringID) < 6) {
-		     return "http://iamattila.com/wp-content/uploads/2014/09/Spy1.png";
-		     } else {
-		     return NULL;
-		     }
-		}
-		function getIdImageHTMLwithDim($StringId,$w,$h){
-			$url = getIDurl($StringId) ?: $StringId;
-		    return "<img src=". $url . " height=" . $h . " width =" .$w.">";
-		}
+
 		try
 		{
 		   $conn = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME", $USERNAME, $PASSWORD);
-		   echo "Connected Successfully";
+		   echo "Connected to database";
 		}
 		catch (PDOException $e) {
 		    echo "Failed to connect to database";
 		    exit;
 		}
-		$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Points DESC");
-		//$getMembers = $conn->prepare("SELECT * FROM Members ORDER BY Average DESC");
-		//echo "Got Table Members";
+
+		$getMembers = $conn->prepare("SELECT * FROM Student_Info ORDER BY Hours DESC");
 		$getMembers->execute();
-		//echo "Executed";
 		$data = $getMembers->fetchAll();
-		//echo "Fetched";
-		//border-collapse:collapse;
         ?>
         <style type="text/css">
 	    .tg  .spacer{border-right: none; border-left: none; opacity: 0;}
@@ -50,41 +33,25 @@
         </style>
         <table class="tg">
           <tr>
-            <th class="tg-5ofl">Rank</th>
-            <th class="tg-5ofl"> </th>
+            <th class="tg-5ofl">Position</th>
             <th class="tg-5ofl">Name</th>
-            <th class="tg-5ofl">Points</th>
+            <th class="tg-5ofl">Hours</th>
             <th class="tg-5ofk">Meetings<br/>Attended</th>
             <th class="tg-5ofl">Status</th>
           </tr>
             <?php
             $indexOn = 1;
-            
-            
-            
             function isOfficer($firstName,$lastName){
-                $officers = array('Karim Karim','Kenneth Mitra','Austin Joseph');
-                //echo var_dump($officers);
-                foreach ($officers as $current){
-                    //echo "Current: ".$current."\n";
-                    list($first,$last) = split(' ',$current);
-                    //echo "First: ".$first."\n";
-                    //echo "Last: ".$last."\n";
-                    if ($first == $firstName && $last == $lastName) {
-                        return true;
-                    }
-                }
                 return false;
             }
-            
-            foreach($data as $person){
+    $totalHours = 0;
+    $totalMeetings = 0;
+    $totalSignedIn = 0;
+    foreach($data as $person){
+      $totalHours = $totalHours + $person['Hours'];
+      $totalMeetings = $totalMeetings + $person['Num_Meetings'];
+      $totalSignedIn = $totalSignedIn + ($person['Signed_In']%2);
                 echo "<tr>";
-                /*if (strlen($person['Custom_Image']) > 0){
-                    $imgHTML = "<img src=". $person['Custom_Image'] . " height=" . "57" . " width =" ."76".">";
-                }else{
-                    $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
-                } */
-		    $imgHTML = getIdImageHTMLwithDim($person['Student_ID'], "57", "76");
 			if ($indexOn % 2 == 0){
 			    if ($indexOn == 2){
 				if (isOfficer($person["First_Name"],$person["Last_Name"])){
@@ -92,9 +59,8 @@
 				} else {
 				    echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$indexOn." </font></td>";
 				}
-				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$imgHTML." </font></td>";
 				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Hours']." </font></td>";
 				echo "<td class = \"tg-c3lz\"> <font color = \"#708090\">".$person['Num_Meetings']." </font></td>";
 			    } else {
 				if (isOfficer($person["First_Name"],$person["Last_Name"])){
@@ -102,10 +68,9 @@
 				} else {
 				    echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$indexOn." </font></td>";
 				}
-				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$imgHTML." </font></td>";
 				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Points']." </font></td>";
-				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>"; 
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Hours']." </font></td>";
+				echo "<td class = \"tg-c3ly\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
 			    }
 			    if ($person['Signed_In']%2 == 0){
 				echo "<td class = \"tg-c3ly\"> <font color = \"red\"> Signed Out </font> </td>";
@@ -120,9 +85,9 @@
 				} else {
 				    echo "<td class = \"tg-7ttj\"> <font color = \"#FFD700\">".$indexOn." </font></td>";
 				}
-				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$imgHTML." </font></td>";
+				//echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$imgHTML." </font></td>";
 				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Hours']." </font></td>";
 				echo "<td class = \"tg-7ttj\"> <font color = \" #FFD700\">".$person['Num_Meetings']." </font></td>";
 			    } elseif ($indexOn == 3){
 				if (isOfficer($person["First_Name"],$person["Last_Name"])){
@@ -134,9 +99,9 @@
 						echo "<td class = \"tg-7ttj\"> <font color = \"#8B4513\">  </font></td>";
 					}
 				}
-				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$imgHTML." </font></td>";
+				//echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$imgHTML." </font></td>";
 				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Points']." </font></td>";
+				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Hours']." </font></td>";
 				echo "<td class = \"tg-7ttj\"> <font color = \" #8B4513\">".$person['Num_Meetings']." </font></td>";
 			    } else {
 				    if (isOfficer($person["First_Name"],$person["Last_Name"])){
@@ -145,32 +110,32 @@
 					    echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$indexOn." </font></td>";
 					}
 
-					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
+					//echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$imgHTML." </font></td>";
 					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['First_Name']." ".$person['Last_Name']." </font></td>";
-					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Points']." </font></td>";
+					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Hours']." </font></td>";
 					echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$person['Num_Meetings']." </font></td>";
-				    
+
 				    }
 				    if ($person['Signed_In']%2 == 0){
 					echo "<td class = \"tg-7ttm\"> <font color = \"red\"> Signed Out </font> </td>";
 				    } else {
 					echo "<td class = \"tg-7ttm\"> <font color = \"green\"> Signed In </font> </td>";
 				    }
-			} 
-		    
+			}
+
 		     echo "</tr>";
 		    if ($indexOn == 15){
 			    echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
 		    }
-		    //} else {
-			    //echo "<td class = \"spacer\" >  <font color = \"#000000\">  </font></td>";
-			    
-			    //echo "</br>";
-			    //echo "<h1> ----------- </h1>";
-			    //echo "<tr class=\"spacer\"><td></td></tr>";
-		    //}
-               
+
                 $indexOn++;
             }
+      echo "<tr>";
+      echo "<td class = \"tg-7ttm\"> </td>";
+      echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">"."Total" ."</font></td>";
+      echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$totalHours." </font></td>";
+      echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$totalMeetings." </font></td>";
+      echo "<td class = \"tg-7ttm\"> <font color = \"#000000\">".$totalSignedIn." </font></td>";
+      echo "</tr>";
             ?>
         </table>

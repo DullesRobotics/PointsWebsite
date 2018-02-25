@@ -1,60 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SQL Test Page</title>
-        <style>
-            #main_title,#date,table{
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-            }
-            input {
-                width: auto;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-        </style>
+	<head>
+		<title>Hours Page</title>
+
+		     <!--<meta http-equiv="refresh" content = "5" />-->
+				 <!-- Bootstrap - Latest compiled and minified CSS -->
+	         		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	         <!-- jQuery library -->
+	         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <noscript>
+            <meta http-equiv="refresh" content="5">
+        </noscript>
         <?php include_once("analyticstracking.php") ?>
-    </head>
-    <body>
-        
-        <h1 id="main_title">SQL Test Page</h1>
-        <?php
-            require 'secretSettings.php';
-            echo "<p id='date'>Today is " . date("d/m/Y") . "</p>";
-            try{
-                $connection = new PDO("mysql:host=$SERVERNAME;dbname=$DBNAME",$USERNAME,$PASSWORD);
-                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "<h3>Connected sucessfully</h3>";
-                $getMembers = $connection->prepare("SELECT * FROM Members ORDER BY Points DESC");
-                $getMembers->execute();
-                $MemberData = $getMembers->fetchAll();
-                
-                echo "<table>
-                <tr>
-                    <th>Rank</th>
-                    <th>Tag ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Points</th>
-                    
-                </tr>";
-                $i = 0;
-                foreach ($MemberData as $member) {
-                    $i = $i + 1;
-                    echo "<tr>";
-                    echo("<td>" . $i . "</td>");
-                    echo("<td>" . $member['Tag_ID'] . "</td>");
-                    echo("<td>" . $member['First_Name'] . "</td>");
-                    echo("<td>" . $member['Last_Name'] . "</td>");
-                    echo("<td><form action='updateDB.php' method='post'><input type='hidden' name='tag' value='". $member["Tag_ID"]. "'><input type='text' name='points' value='".$member['Points'] . "'><input type='submit' name='submit' value='Change ". $member['First_Name'] . " " . $member['Last_Name'] . "'></form></td>");
-                    echo "</tr>";
-                }
-                echo "</table>";
-                
-            }catch(PDOException $e){
-                echo "<h3>Connection Failed: " . $e->getMessage() . "</h3>";
-            }
-        ?>
-    </body>
+	</head>
+	<body style="background-color: black" onload="loadTable()">
+		<?php include($_SERVER['DOCUMENT_ROOT'] . "/navigationBar.php"); ?>
+
+
+	<div style="text-align:center;">
+		<h1>
+			<font color="red">
+				Dulles Robotics Club Hours Page<br/>
+				<!--TEMPORARILY OFFLINE; CHECK BACK SOON-->
+			</font>
+			<font color = "white">
+				How long have you spent in robotics?
+			</font>
+		</h1>
+		<p style="color: white">This page automatically updates every 2 seconds.</p>
+		<noscript>
+		    <h1 style="color: yellow">This page works better with javascript enabled</h1>
+				<h3>But Kenneth the Genius has programmed the web page to accomodate your anti Javascript stance</h3>
+		</noscript>
+
+	<div id="tableContainer"><!--Begin Container -->
+
+	</div> <!--close table container-->
+	    <script>
+
+	        function loadTable(){
+	            $("#tableContainer").load("returnTable.php");
+	            console.log("Table loaded");
+	        }
+	        window.setInterval(function(){loadTable()},2000);
+	    </script>
+
+
+
+	</div>
+
 </html>
